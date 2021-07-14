@@ -12,3 +12,5 @@ http://csjtohoku.jp/
 
 ここに足りないファイルがある
 [no_git.zip](https://github.com/comee-system1/mts/files/6813450/no_git.zip)
+
+- define.phpについては nikkaにあるので取得をする
