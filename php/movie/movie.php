@@ -12,8 +12,16 @@ class movie{
         $this->array_ippanKouenposter = $array_ippanKouenposter;
         global $array_judge;
         $this->array_judge = $array_judge;
+        global $five;
+        $this->five = $five;
+        global $four;
+        $this->four = $four;
         global $third;
         $this->third = $third;
+        global $first;
+        $this->first = $first;
+        global $sec;
+        $this->sec = $sec;
 
         global $tcpdf;
         $this->tcpdf = $tcpdf;
@@ -31,6 +39,123 @@ class movie{
             
         }
         */
+        
+
+
+        $key = 0;
+
+        //キーは7日の9時とする
+        $array_times[7][9][$key++] = [
+            'code'=>'',
+            'date'=>'9-7',
+            'endainame'=>"開会の挨拶",
+            'sub'=>"",
+            'zatyo_name'=>"〇佐藤太郎",
+            'zatyo_group'=>"東北大学",
+            'tyosya_name'=>"",
+            'syozokuKikanRyaku'=>"",
+            'time'=>'09:00～09:10',
+            'number'=>'',
+            'other'=>'',
+            'url'=>'',
+            'pdf'=>'',
+            'publication'=>'',
+            'chat'=>0,
+            'top'=>0,
+            'height'=>''
+        ];
+
+        
+        $array_times[7][9][$key++] = [
+            'date'=>'9-7',
+            'endainame'=>"【依頼講演：1. ニューノーマルと分析化学】",
+            'sub'=>"呼気オミックスによる新型コロナ感染診断法と未来型医療",
+            'zatyo_name'=>"〇赤池 孝章",
+            'zatyo_group'=>"東北大医",
+            'tyosya_name'=>"",
+            'syozokuKikanRyaku'=>"",
+            'time'=>'09:10～09:40',
+            'number'=>'',
+            'other'=>'',
+            'url'=>'http://yahoo.com',
+            'pdf'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+            'publication'=>'A0001',
+            'chat'=>1,
+            'top'=>50,
+            'height'=>''
+        ];
+        $array_times[7][9][$key++] = [
+            'date'=>'9-7',
+            'endainame'=>"【依頼講演：1. ニューノーマルと分析化学】",
+            'sub'=>"ニューノーマルと体外診断薬",
+            'zatyo_name'=>"〇佐藤 貴哉",
+            'zatyo_group'=>"日立化成DS",
+            'tyosya_name'=>"",
+            'syozokuKikanRyaku'=>"",
+            'time'=>'09:40～10:10',
+            'number'=>'',
+            'other'=>'',
+            'url'=>'http://google.com',
+            'pdf'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+            'publication'=>'A0002',
+            'chat'=>1,
+            'top'=>100,
+            'height'=>''
+        ];
+        $array_times[7][10][$key++] = [
+            'date'=>'9-7',
+            'endainame'=>"",
+            'sub'=>"ナフタレンジイミド誘導体によるウイルス4本鎖RNAの検出",
+            'zatyo_name'=>"〇竹中 繁織",
+            'zatyo_group'=>"九工大院工",
+            'tyosya_name'=>"○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting ・ 安川 瑠依 ・ 佐藤 友香 ・ 金好 秀馬",
+            'syozokuKikanRyaku'=>"九工大院工",
+            'time'=>'10:10～10:40',
+            'number'=>'',
+            'other'=>'',
+            'url'=>'http://google.com',
+            'pdf'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+            'publication'=>'A0002',
+            'chat'=>1,
+            'top'=>30,
+            'height'=>60
+        ];
+
+        $array_times[8][9][$key++] = [
+            'date'=>'9-8',
+            'endainame'=>"",
+            'sub'=>"ナフタレンジイミド誘導体によるウイルス4本鎖RNAの検出",
+            'zatyo_name'=>"〇竹中 繁織",
+            'zatyo_group'=>"九工大院工",
+            'tyosya_name'=>"○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting ・ 安川 瑠依 ・ 佐藤 友香 ・ 金好 秀馬",
+            'syozokuKikanRyaku'=>"九工大院工",
+            'time'=>'09:10～09:40',
+            'number'=>'',
+            'other'=>'',
+            'url'=>'http://google.com',
+            'pdf'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+            'publication'=>'B0001',
+            'chat'=>1,
+            'top'=>20,
+            'height'=>80
+        ];
+
+
+
+        $array_times_session = [];
+        $n=0;
+        foreach($array_times as $values){
+            foreach($values as $val){
+                foreach($val as $k=>$v){
+                    $array_times_session[$v[ 'date' ]][$n] = $v;
+                    $n++;
+                }
+            }
+        }
+
+        $this->array_times = $array_times;
+        $this->array_times_session = $array_times_session;
+
     }
     
     public function index(){
@@ -136,6 +261,7 @@ class movie{
             $html['array_movie_date'] = $this->array_movie_date;
             $html['array_ippanKouenposter'] = $this->array_ippanKouenposter;
             $html['array_judge'] = $this->array_judge;
+            $html['array_times'] = $this->array_times;
             
             //説明文の取得
             $explain = $this->db->getMovieExplain();
@@ -168,6 +294,7 @@ class movie{
             $explain = $this->db->getMovieExplain();
             $html['explain'] = $explain[ 'sessionlist_text' ];
 
+            /*
             //講演者データ取得
             $data=[];
             foreach($this->array_movie_date as $key=>$val){
@@ -181,6 +308,8 @@ class movie{
             //動画情報取得
             $html[ 'zoom' ] = $this->db->getMoveData();
             $html['list'] = $data;          
+            */
+            $html[ 'list' ] = $this->array_times_session;
             return $html;
         }else{
             header("Location:/movie/");
@@ -195,7 +324,7 @@ class movie{
 
 
             $user = $this->db->getMovieLogin();
-           
+
             if($user){
                 $_SESSION[ 'movies' ][ 'login' ] = "on";
                 $_SESSION[ 'movies' ][ 'id' ] = $user[ 'id' ];
@@ -226,12 +355,29 @@ class movie{
         if($_SESSION[ 'movies' ][ 'login' ] == "on"){
             
             //チャット登録
-            $id = $this->third;
+            $id = $this->five;
+            //取得データの保存を行う
+            $posterdata = $this->array_times_session[$this->third][$this->four];
+            $set = [];
+            $set[ 'code' ] = $posterdata[ 'publication' ];
+            $set[ 'snum' ] = $posterdata[ 'publication' ];
+            $set[ 'num' ] = $posterdata[ 'publication' ];
+            $set[ 'endainame' ] = $posterdata[ 'endainame' ]."<br />".$posterdata[ 'sub' ];
+            $set[ 'publication' ] = $posterdata[ 'publication' ];
+            $table = "kagaku_endai";
+            //ポスター発表データ取得
+            if(empty($_SESSION[ 'movies' ][ 'endai_code' ])){
+                $_SESSION[ 'movies' ][ 'endai_code' ] = $id;       
+            }
+            if(!$this->db->getPosterList($id)){
+                $this->db->setUserData($table,$set);
+            }
+            
             if($_REQUEST[ 'ajax' ] == "on"){
                 $set = [];
                 $set['note'] = $_REQUEST[ 'note' ];
                 $set[ 'kagaku_sanka_code' ] = $_SESSION[ 'movies' ][ 'code' ];
-                $set[ 'endai_code' ] = $id;
+                $set[ 'endai_code' ] = $_SESSION[ 'movies' ][ 'endai_code' ];;
                 $set[ 'regist_date' ] = date("Y-m-d H:i:s");
                 $set[ 'regist_ts' ] = date("Y-m-d H:i:s");
                 $table = "question";
@@ -258,9 +404,9 @@ class movie{
                 $this->db->editUserData($table,$edit);
                 exit();
             }
-
             //ポスター発表データ取得            
             $poster = $this->db->getPosterList($id);
+
 
             //返答登録
             if($_REQUEST[ 'ajax' ] == "replay"){
@@ -292,7 +438,6 @@ class movie{
             }
             //説明文
             $explain = $this->db->getMovieExplain();
-            
 
             $html['id'] = $id;
             $html['code'] = $_SESSION['movies'][ 'code' ];
@@ -302,10 +447,12 @@ class movie{
             $html['syozokuKikanRyaku'] = $poster[0]['syozokuKikanRyaku'];
             $html['publication'] = $poster[0]['publication'];
             return $html;
+            
         }else{
             header("Location:/movie/");
             exit();
         }
+        
     }
 
     /********************

@@ -2,11 +2,10 @@
     <body  >
 	<div class="w90" style="margin:auto;">
         <div id="pg-main">
-            <h2 id="pg-title">令和2年度　化学系学協会東北大会<br />プレゼンテーション動画一覧日程</h2>
+            <h2 id="pg-title">{$smarty.const.D_TITLE}</h2>
         </div>
         <h3 class="pd20" >プレゼンテーション動画一覧</h3>
         <div  class="text-right" >
-            <a href="/movie/recipe/" class="btn btn-info" >領収書出力</a>
             <a href="/movie/logout" class="btn btn-warning" >ログアウト</a>
             
         </div>
@@ -14,6 +13,7 @@
             <div class="box-body explain_text active" id="tab_1_text">
                 {$html.data.explain.session_text|nl2br}
             </div>
+
             <div class="box-body explain_text" id="tab_2_text">
                 {$html.data.explain.poster_text|nl2br}
             </div>
@@ -24,13 +24,76 @@
 
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab_1" data-toggle="tab" class="explainlink">セッション</a></li>
+                <li class="active"><a href="#tab_1" data-toggle="tab" class="explainlink">セクション</a></li>
                 <li><a href="#tab_2" data-toggle="tab" class="explainlink" id="tab2">ポスター発表</a></li>
-                {if $smarty.session.movies.judge eq "on"}
-                    <li><a href="#tab_3" data-toggle="tab" class="explainlink">審査員専用</a></li>
-                {/if}
 
             </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <table class="table table-bordered ">
+                        <tr>
+                            <th class="bg-olive f16" style="width:100px;">時間</th>
+                            <th class="text-center bg-olive f16">9月7日</th>
+                            <th class="text-center bg-olive f16">9月8日</th>
+                            <th class="text-center bg-olive f16">9月9日</th>
+                        </tr>
+                        {for $foo=9 to 20}
+                        <tr>
+                            <td style="height:120px;">{$foo}:00</td>
+                            <td class="position-relative" >
+                                {assign var=d value=7}
+                                {if $html.data.array_times.$d.$foo}
+                                {assign var=data value=$html.data.array_times.$d.$foo}
+                                    {foreach from=$data key=k item=v}
+                                    <div class="position-absolute" style="top:{$v.top}px;left:0;">
+                                        <a href="/movie/session#date{$k}" class="btn btn-primary w-100 f11" style="height:{$v.height}px;" target=_blank >
+                                            {$v.time}<br />
+                                            {if $v.endainame}
+                                                {$v.endainame}
+                                            {else}
+                                                {$v.sub}
+                                            {/if}
+                                        </a>
+                                    </div>
+                                    {/foreach}
+                                {/if}
+                            </td>
+                            <td class="position-relative">
+                                {assign var=d value=8}
+                                {if $html.data.array_times.$d.$foo}
+                                {assign var=data value=$html.data.array_times.$d.$foo}
+                                    {foreach from=$data key=k item=v}
+                                    <div class="position-absolute" style="top:{$v.top}px;left:0;">
+                                        <a href="/movie/session#date{$k}" class="btn btn-primary w-100 f11" style="height:{$v.height}px;" target=_blank >
+                                            {$v.time}<br />
+                                            {if $v.endainame}
+                                                {$v.endainame}
+                                            {else}
+                                                {$v.sub}
+                                            {/if}
+                                        </a>
+                                    </div>
+                                    {/foreach}
+                                {/if}
+                            </td>
+                            <td class="position-relative">
+                                {assign var=d value=9}
+
+
+                            </td>
+                        </tr>
+                        {/for}
+                    </table>
+                </div>
+                <div class="tab-pane " id="tab_2">
+                    aaaa1
+                    
+                </div>
+            </div>
+
+<script >
+/*
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
                     <table class="table table-bordered f11">
@@ -180,6 +243,9 @@
                     </table>
                 </div><!-- /.tab-pane -->
             </div><!-- /.tab-content -->
+*/
+        </script>
+
         </div>
 	</div>
     <!-- add new calendar event modal -->

@@ -157,7 +157,7 @@ class method extends Auth{
 				LEFT JOIN syozoku_tyosya as st ON ke.id = st.eid AND st.status=1
 			where 
 				ke.status = 1 AND
-				ke.publication LIKE 'P%'  
+				ke.publication LIKE '%%'  
 		";
 		if($_REQUEST[ 'publication' ]){
 			$sql .= " AND ke.publication LIKE '%".$_REQUEST[ 'publication' ]."%'";
@@ -403,8 +403,8 @@ class method extends Auth{
 		foreach($data as $key=>$val){
 		    $k = ":".$key;
 		    if(strlen($val) < 1 ) $val = "";
-		 //   $r->bindValue($k,$val,PDO::PARAM_STR);
-			$vals .= ",'".$val."'";
+		    $r->bindValue($k,$val,PDO::PARAM_STR);
+		//	$vals .= ",'".$val."'";
 		}
 
 		$flg = $r->execute();

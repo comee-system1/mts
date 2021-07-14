@@ -410,3 +410,14 @@ ul li.active a.explainlink{
 	background-color:#FfF !important;
 	color:#000;
 }
+
+
+.position-relative{
+	position:relative;
+}
+.position-absolute{
+	position:absolute;
+	width:100%;
+	z-index:100;
+}
+.w-100{width:100%;}

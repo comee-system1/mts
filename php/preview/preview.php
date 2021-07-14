@@ -75,6 +75,7 @@ class preview{
 					$set['session'] = $value;
 					$set['zoom']=$zoom[$key]['am'][$k];
 					$set['regist_ts'] = date("Y-m-d H:i:s");
+
 					$this->db->setUserData($table,$set);
 				}
 				foreach($values['pm'] as $k=>$value){
