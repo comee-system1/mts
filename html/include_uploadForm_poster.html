@@ -1,0 +1,14 @@
+<div class="form-group">
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.40.name}</h4>
+	<input type="file" id="exampleInputFile_poster" name="files_poster" class="w40">
+	{if $html.data.edit.fileUpdate_poster_ext}
+		{assign var="chk" value="" }
+		{if $smarty.request.deleteFile}
+			{assign var="chk" value="CHECKED"}
+		{/if}
+		<input type="checkbox" name="deleteFile_poster" value="on" {$chk}>{$html.data.endaiform.eform.40.name_text1}<br />
+		<a href="/poster/{$html.data.edit.fileUpdate_poster_ext}" target=_blank>{$html.data.endaiform.eform.40.name_text2}</a>
+		<input type="hidden" name="fileUpdate_poster_ext" value="{$html.data.edit.fileUpdate_poster_ext}" />
+		<input type="hidden" name="fileUpdate_poster_ts" value="{$html.data.edit.fileUpdate_poster_ts}" />
+	{/if}
+</div>

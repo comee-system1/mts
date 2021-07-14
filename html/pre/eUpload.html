@@ -1,0 +1,82 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.endaiform.eform.33.name}</h3>
+	<div class="w800" style="margin:auto;">
+	<hr size=1 />
+	{$html.data.endaiform.eform.33.explaintext}
+	<hr size=1 />
+	{foreach from=$html.data.errmsg item="val" key="key" name="loop"}
+		{if $smarty.foreach.loop.first}
+			<div class="alert alert-danger alert-dismissable">
+			<i class="fa fa-ban"></i>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<b>Alert!</b>
+		{/if}
+				<p>{$val}</p>
+		{if $smarty.foreach.loop.last}
+			</div>
+		{/if}
+	{/foreach}
+	<form action="" method="POST" name="form1" enctype="multipart/form-data">
+
+
+		{if $html.data.endaiform.eform.39.name}
+		{include file='../include_uploadForm_flash.html'}
+		
+		<button class="btn btn-success" type="submit" name="regist_flash" id="regist_flash" value="on"  >{$html.data.endaiform.eform.39.name_text4}</button>
+		
+
+		<br />
+		<br />
+		<br />
+		{/if}
+		{if $html.data.endaiform.eform.40.name}
+		{include file='../include_uploadForm_poster.html'}
+	
+		<button class="btn btn-warning" type="submit" name="regist_poster" id="regist_poster" value="on"  >{$html.data.endaiform.eform.40.name_text4}</button>
+		
+
+		<br />
+		<br />
+		<br />
+		{/if}
+
+		{if $html.data.endaiform.eform.34.name}
+		{include file='../include_uploadForm.html'}
+		{/if}
+
+		<button class="btn btn-primary" type="button"  onClick="bk();" >{$html.data.endaiform.eform.34.name_text3}</button>
+		<button class="btn btn-primary" type="submit" name="regist" id="regist" value="on"  >{$html.data.endaiform.eform.34.name_text4}</button>
+
+		<input type="hidden" name="num" value="{$smarty.request.num}">
+		<input type="hidden" name="password" value="{$smarty.request.password}">
+
+
+		<br />
+		<br />
+		<br />
+
+	</form>
+
+
+
+
+	</div>
+	</div>
+
+<script type="text/javascript" >
+<!--
+	function bk(){
+		location.href="/pre/abstructlg/"
+	}
+-->
+</script>
+
+    <!-- add new calendar event modal -->
+	{include file='../inc_footer.html'}
+
+

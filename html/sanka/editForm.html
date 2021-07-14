@@ -1,0 +1,810 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        参加者登録フォーム編集
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">参加者登録フォーム編集</li>
+                    </ol>
+                </section>
+
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+								
+                                <div class="box-header">
+                                    <h3 class="box-title">参加者登録フォーム編集</h3>
+                                </div><!-- /.box-header -->
+									<ul id="formMenu">
+										<li class="mn" id="m-1">入力ページ</li>
+										<li class="mn" id="m-2">確認ページ</li>
+										<li class="mn" id="m-3">完了ページ</li>
+										<li class="mn" id="m-4">参加申込用編集ページ</li>
+									</ul>
+
+                                <div class="box-body" >
+									<form action="" method="POST" >
+										<div id="menu1">
+											<div class="box-header">
+												<h3 class="box-title">入力ページ</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[3]" value="on" >
+												<input type="text" name="name[3]" value="{$html.data.sankaFormer.3.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[23]" value="on" >
+												<input type="text" name="name[23]" value="{$html.data.sankaFormer.23.name}" class="form-control w100"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[23]" value="{$html.data.sankaFormer.23.name_text1}" class="form-control w100"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text2[23]" value="{$html.data.sankaFormer.23.name_text2}" class="form-control w100"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text3[23]" value="{$html.data.sankaFormer.23.name_text3}" class="form-control w100"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明文</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[21]" value="on" >
+												<textarea  name="explain[21]" id="textareas" class="h200"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.sankaFormer.21.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >説明文下部</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[22]" value="on" >
+												<textarea  name="explain[22]" id="textareas2" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.sankaFormer.22.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >1</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[4]" value="on" >
+												名前：
+												<input type="text" name="name[4]" value="{$html.data.sankaFormer.4.name}" class="form-control w200">
+												{if $html.data.sankaFormer.4.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[4]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.4.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[4]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[4]" value="{$html.data.sankaFormer.4.name_text1}" class="form-control w200">
+												入力例2:<input type="text" name="name_text2[4]" value="{$html.data.sankaFormer.4.name_text2}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[4]" value="{$html.data.sankaFormer.4.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[4]" value="{$html.data.sankaFormer.4.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >2</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[5]" value="on" >
+												名前：
+												<input type="text" name="name[5]" value="{$html.data.sankaFormer.5.name}" class="form-control w200">
+												{if $html.data.sankaFormer.5.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[5]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.5.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[5]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[5]" value="{$html.data.sankaFormer.5.name_text1}" class="form-control w200">
+												入力例2:<input type="text" name="name_text2[5]" value="{$html.data.sankaFormer.5.name_text2}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[5]" value="{$html.data.sankaFormer.5.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[5]" value="{$html.data.sankaFormer.5.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >3</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[6]" value="on" >
+												名前：
+												<input type="text" name="name[6]" value="{$html.data.sankaFormer.6.name}" class="form-control w200">
+												{if $html.data.sankaFormer.6.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[6]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.6.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[6]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[6]" value="{$html.data.sankaFormer.6.name_text1}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[6]" value="{$html.data.sankaFormer.6.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[6]" value="{$html.data.sankaFormer.6.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+											<p class="f18" >4</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[7]" value="on" >
+												名前：
+												<input type="text" name="name[7]" value="{$html.data.sankaFormer.7.name}" class="form-control w200">
+												{if $html.data.sankaFormer.7.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[7]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.7.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[7]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[7]" value="{$html.data.sankaFormer.7.name_text1}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[7]" value="{$html.data.sankaFormer.7.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[7]" value="{$html.data.sankaFormer.7.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											
+											<p class="f18" >5</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[8]" value="on" >
+												名前：
+												<input type="text" name="name[8]" value="{$html.data.sankaFormer.8.name}" class="form-control w200">
+												{if $html.data.sankaFormer.8.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[8]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.8.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[8]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[8]" value="{$html.data.sankaFormer.8.name_text1}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[8]" value="{$html.data.sankaFormer.8.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[8]" value="{$html.data.sankaFormer.8.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >6</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[9]" value="on" >
+												名前：
+												<input type="text" name="name[9]" value="{$html.data.sankaFormer.9.name}" class="form-control w200">
+												{if $html.data.sankaFormer.9.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[9]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.9.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[9]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[9]" value="{$html.data.sankaFormer.9.name_text1}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[9]" value="{$html.data.sankaFormer.9.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[9]" value="{$html.data.sankaFormer.9.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											
+											
+											<p class="f18" >7</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[10]" value="on" >
+												名前：
+												<input type="text" name="name[10]" value="{$html.data.sankaFormer.10.name}" class="form-control w200">
+												{if $html.data.sankaFormer.10.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[10]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.10.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[10]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力チェック1:<input type="text" name="name_text1[10]" value="{$html.data.sankaFormer.10.name_text1}" class="form-control w200">
+												入力チェック2:<input type="text" name="name_text2[10]" value="{$html.data.sankaFormer.10.name_text2}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[10]" value="{$html.data.sankaFormer.10.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[10]" value="{$html.data.sankaFormer.10.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >8</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[11]" value="on" >
+												名前：
+												<input type="text" name="name[11]" value="{$html.data.sankaFormer.11.name}" class="form-control w200">
+												{if $html.data.sankaFormer.11.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[11]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.11.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[11]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[11]" value="{$html.data.sankaFormer.11.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[11]" value="{$html.data.sankaFormer.11.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[11]" value="{$html.data.sankaFormer.11.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >9</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[12]" value="on" >
+												名前：
+												<input type="text" name="name[12]" value="{$html.data.sankaFormer.12.name}" class="form-control w200">
+												{if $html.data.sankaFormer.12.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[12]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.12.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[12]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[12]" value="{$html.data.sankaFormer.12.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[12]" value="{$html.data.sankaFormer.12.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[12]" value="{$html.data.sankaFormer.12.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+											<p class="f18" >10</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[13]" value="on" >
+												名前：
+												<input type="text" name="name[13]" value="{$html.data.sankaFormer.13.name}" class="form-control w200">
+												{if $html.data.sankaFormer.13.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[13]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.13.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[13]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[13]" value="{$html.data.sankaFormer.13.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[13]" value="{$html.data.sankaFormer.13.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[13]" value="{$html.data.sankaFormer.13.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >11</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[14]" value="on" >
+												名前：
+												<input type="text" name="name[14]" value="{$html.data.sankaFormer.14.name}" class="form-control w200">
+												{if $html.data.sankaFormer.14.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[14]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.14.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[14]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[14]" value="{$html.data.sankaFormer.14.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[14]" value="{$html.data.sankaFormer.14.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[14]" value="{$html.data.sankaFormer.14.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >12</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[15]" value="on" >
+												名前：
+												<input type="text" name="name[15]" value="{$html.data.sankaFormer.15.name}" class="form-control w200">
+												{if $html.data.sankaFormer.15.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[15]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.15.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[15]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[15]" value="{$html.data.sankaFormer.15.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[15]" value="{$html.data.sankaFormer.15.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[15]" value="{$html.data.sankaFormer.15.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >13【12との相違チェックが入っています。】</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[16]" value="on" >
+												名前：
+												<input type="text" name="name[16]" value="{$html.data.sankaFormer.16.name}" class="form-control w200">
+												{if $html.data.sankaFormer.16.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[16]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.16.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[16]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[16]" value="{$html.data.sankaFormer.16.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[16]" value="{$html.data.sankaFormer.16.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[16]" value="{$html.data.sankaFormer.16.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+
+
+											<p class="f18" >14</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[17]" value="on" >
+												名前：
+												<input type="text" name="name[17]" value="{$html.data.sankaFormer.17.name}" class="form-control w200">
+												{if $html.data.sankaFormer.17.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[17]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.17.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[17]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[17]" value="{$html.data.sankaFormer.17.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[17]" value="{$html.data.sankaFormer.17.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[17]" value="{$html.data.sankaFormer.17.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<p class="f18" >15</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[27]" value="on" >
+												名前：
+												<input type="text" name="name[27]" value="{$html.data.sankaFormer.27.name}" class="form-control w200">
+												
+												{if $html.data.sankaFormer.27.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[27]" value="on"  {$chk} >必須チェック</label></p>
+												
+
+												{if $html.data.sankaFormer.27.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[27]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left" >
+												必須文字:<input type="text" name="indispensible_text[27]" value="{$html.data.sankaFormer.27.indispensible_text}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[27]" value="{$html.data.sankaFormer.27.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[27]" value="{$html.data.sankaFormer.27.indispensible_text}" class="form-control w200">
+											</div>
+											
+											<br clear=all />
+											
+											説明:<input type="text" name="explain[27]" value="{$html.data.sankaFormer.27.explaintext}" class="form-control ">
+											{foreach from=$html.data.sankaselect item=val key=key}
+												
+												<div class="col-xs-3 mt5" >
+													{$val.id}
+													<input type="hidden" name="sankaSelectid[{$val.id}]" value="{$val.id}" />
+													<input type="text" name="sankaSelectText[{$val.id}]" value="{$val.text}" class="form-control" />
+													<label>
+														{assign var="chk" value="" }
+														{if $val.status eq 1}
+															{assign var="chk" value="checked"}
+														{/if}
+														<input type="checkbox" name="sankaSelectStatus[{$val.id}]" value="1" {$chk} />利用する
+														</label>
+												</div>
+											{/foreach}
+											<br clear=all />
+											<input type="hidden" name="ordername[28]" value="on" >
+											<div class="left" >
+												<input type="text" name="name[28]" value="{$html.data.sankaFormer.28.name}" class="form-control w200">
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[28]" value="{$html.data.sankaFormer.28.name_text1}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<hr />
+											<p class="f18" >16</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[29]" value="on" >
+												名前：
+												<input type="text" name="name[29]" value="{$html.data.sankaFormer.29.name}" class="form-control w200">
+												
+												{if $html.data.sankaFormer.29.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[29]" value="on"  {$chk} >必須チェック</label></p>
+												
+
+												{if $html.data.sankaFormer.29.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[29]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left" >
+												必須文字:<input type="text" name="indispensible_text[29]" value="{$html.data.sankaFormer.29.indispensible_text}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[29]" value="{$html.data.sankaFormer.29.errmsg}" class="form-control w300">
+												
+											</div>
+											
+											<br clear=all />
+											
+											説明:<input type="text" name="explain[29]" value="{$html.data.sankaFormer.29.explaintext}" class="form-control ">
+											{foreach from=$html.data.syozokuSankaselect item=val key=key name="loop"}
+												{if $smarty.foreach.loop.last}
+												<br clear=all />
+												{/if}
+												<div class="col-xs-4 mt5" >
+													{$val.id}
+													<input type="hidden" name="syozokuSankaSelectid[{$val.id}]" value="{$val.id}" />
+													<input type="text" name="syozokuSankaSelectText[{$val.id}]" value="{$val.name}" class="form-control" />
+													<label>
+														{assign var="chk" value="" }
+														{if $val.status eq 1}
+															{assign var="chk" value="checked"}
+														{/if}
+														<input type="checkbox" name="syozokuSankaSelectStatus[{$val.id}]" value="1" {$chk} />利用する
+														</label>
+												</div>
+											{/foreach}
+											
+											
+
+											<br clear=all />
+											<hr />
+											<p class="f18" >17</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[18]" value="on" >
+												名前：
+												<input type="text" name="name[18]" value="{$html.data.sankaFormer.18.name}" class="form-control w200">
+												{if $html.data.sankaFormer.18.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[18]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.18.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[18]" value="on"  {$chk} >利用チェック</label></p>
+											</div>
+											<div class="left ml20" >
+										    	入力例1:<input type="text" name="name_text1[18]" value="{$html.data.sankaFormer.18.name_text1}" class="form-control w200">
+												入力例2:<input type="text" name="name_text2[18]" value="{$html.data.sankaFormer.18.name_text2}" class="form-control w200">
+												入力例3:<input type="text" name="name_text3[18]" value="{$html.data.sankaFormer.18.name_text3}" class="form-control w200">
+												入力例4:<input type="text" name="name_text4[18]" value="{$html.data.sankaFormer.18.name_text4}" class="form-control w200">
+											</div>
+											<div class="left ml20" >
+												<div class="left">
+													参加費1:<input type="text" name="money[1]" value="{$html.data.sankamoney.1.money}" class="form-control w100">
+												</div>
+												
+												<div class="left">
+													表記1:<input type="text" name="money_text[1]" value="{$html.data.sankamoney.1.money_text}" class="form-control w30" >
+												</div>
+												<div class="left">
+													懇親会費　一般・教育:<input type="text" name="money[5]" value="{$html.data.sankamoney.5.money}" class="form-control w100">
+												</div>
+												<br clear=all />
+												<div class="left">
+													参加費2:<input type="text" name="money[2]" value="{$html.data.sankamoney.2.money}" class="form-control w100">
+												</div>
+												<div class="left">
+													表記2:<input type="text" name="money_text[2]" value="{$html.data.sankamoney.2.money_text}" class="form-control w30" >
+												</div>
+
+												<div class="left">
+													懇親会費　学生:<input type="text" name="money[6]" value="{$html.data.sankamoney.6.money}" class="form-control w100">
+												</div>
+												
+												<br clear=all />
+												<div class="left">
+													参加費3:<input type="text" name="money[3]" value="{$html.data.sankamoney.3.money}" class="form-control w100">
+												</div>
+	{*
+												<div class="left">
+													懇親会費3:<input type="text" name="money[7]" value="{$html.data.sankamoney.7.money}" class="form-control w100">
+												</div>
+	*}
+												<div class="left">
+													表記3:<input type="text" name="money_text[3]" value="{$html.data.sankamoney.3.money_text}" class="form-control w30" >
+												</div>
+												<br clear=all />
+												<div class="left">
+													参加費4:<input type="text" name="money[4]" value="{$html.data.sankamoney.4.money}" class="form-control w100">
+												</div>
+
+												<div class="left">
+													表記4:<input type="text" name="money_text[4]" value="{$html.data.sankamoney.4.money_text}" class="form-control w30" >
+												</div>
+												<br clear=all />
+										    	エラーメッセージ:<input type="text" name="errmsg[18]" value="{$html.data.sankaFormer.18.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[18]" value="{$html.data.sankaFormer.18.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<input type="text" name="money_text[9]" value="{$html.data.sankamoney.9.money_text}" class="form-control w300">
+											</div>
+											<div class="left ml20" >
+												<input type="text" name="note_text[9]" value="{$html.data.sankamoney.9.note_text}" class="form-control w300">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<input type="text" name="money_text[10]" value="{$html.data.sankamoney.10.money_text}" class="form-control w300">
+											</div>
+											<div class="left ml20" >
+												<input type="text" name="note_text[10]" value="{$html.data.sankamoney.10.note_text}" class="form-control w30">
+											</div>
+											<br clear=all />
+											<p class="f18" >18</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[20]" value="on" >
+												名前：
+												<input type="text" name="name[20]" value="{$html.data.sankaFormer.20.name}" class="form-control w200">
+	{*
+												{if $html.data.sankaFormer.20.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[20]" value="on"  {$chk} >必須チェック</label></p>
+												{if $html.data.sankaFormer.20.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[20]" value="on"  {$chk} >利用チェック</label></p>
+	*}
+												<input type="hidden" name="status[20]" value="on"  >
+											</div>
+											<div class="left ml20" >
+										    	入力例:<input type="text" name="name_text1[20]" value="{$html.data.sankaFormer.20.name_text1}" class="form-control w200">
+												
+											</div>
+											<div class="left ml20" >
+										    	エラーメッセージ:<input type="text" name="errmsg[20]" value="{$html.data.sankaFormer.20.errmsg}" class="form-control w300">
+												必須文字:<input type="text" name="indispensible_text[20]" value="{$html.data.sankaFormer.20.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+										</div><!--menu1-->
+										<div id="menu2">
+											<div class="box-header">
+												<h3 class="box-title">確認ページ</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >説明文</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[24]" value="on" >
+												<textarea  name="explain[24]" id="textareas3" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.sankaFormer.24.explaintext}</textarea>
+											</div>
+										</div><!--menu2-->
+										<br clear=all />
+										<div id="menu3">
+											<div class="box-header">
+												<h3 class="box-title">完了ページ</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[25]" value="on" >
+												<input type="text" name="name[25]" value="{$html.data.sankaFormer.25.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<input type="text" name="name_text1[25]" value="{$html.data.sankaFormer.25.name_text1}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<input type="text" name="name_text2[25]" value="{$html.data.sankaFormer.25.name_text2}" class="form-control w300"  >
+											</div>
+											<div class="left" style="color:#ccc;">
+												参加受付番号が入ります。
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<input type="text" name="name_text3[25]" value="{$html.data.sankaFormer.25.name_text3}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="text" name="name_text4[25]" value="{$html.data.sankaFormer.25.name_text4}" class="form-control w100"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text5[25]" value="{$html.data.sankaFormer.25.name_text5}" class="form-control w100"  >
+											</div>
+										</div><!--menu3-->
+										<br clear=all />
+										<div id="menu4">
+											<div class="box-header">
+												<h3 class="box-title">参加申込用編集ページ</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[26]" value="on" >
+												<input type="text" name="name[26]" value="{$html.data.sankaFormer.26.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												<textarea  name="explain[26]" id="textareas4" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.sankaFormer.26.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="text" name="errmsg[26]" value="{$html.data.sankaFormer.26.errmsg}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >表題</p>
+											<div class="left" >
+												<input type="text" name="name_text1[26]" value="{$html.data.sankaFormer.26.name_text1}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text2[26]" value="{$html.data.sankaFormer.26.name_text2}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="text" name="name_text3[26]" value="{$html.data.sankaFormer.26.name_text3}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text4[26]" value="{$html.data.sankaFormer.26.name_text4}" class="form-control w200"  >
+											</div>
+										</div><!--menu4-->
+										<br clear=all />
+										<div class="box-footer pd20">
+												<button class="btn btn-primary" type="submit" name="regist" id="regist" value="on">登録する</button>
+
+										</div>
+
+
+										
+
+									</form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+
+		{include file='../inc_footer.html'}
+
+

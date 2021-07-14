@@ -1,0 +1,27 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.endaiform.eform.35.name}</h3>
+
+	<div class="w800" style="margin:auto;">
+	<hr size=1 />
+	<p>
+		{$html.data.endaiform.eform.35.name_text1}<br />
+		{$html.data.endaiform.eform.35.name_text2}{$html.data.code}
+	</p>
+
+	<hr size=1 />
+	<div align=center>
+
+		<input type="button" class="btn btn-primary " onClick="location.href='{$smarty.const.D_URL_HOME}pre/'"  value="{$html.data.endaiform.eform.35.name_text3}" />
+	</div>
+
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_footer.html'}
+
+

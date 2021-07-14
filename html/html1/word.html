@@ -1,0 +1,94 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='../inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        ワードファイル作成
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">ワードファイル作成</li>
+                    </ol>
+                </section>
+				<section class="content-header">
+					<div class="row">
+						<div class="col-md-6">
+							<!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">ワード出力(ポスター編成用)</h3>
+                                </div><!-- /.box-header -->
+								<div class="box-body">
+								{foreach from=$html.data.array_happyo key=key item=val}
+									<div class="form-group">
+									<p>
+										<a href="./happyo{$key}" class="btn btn-block btn-social btn-dropbox"  >
+                                        <i class="fa fa-dropbox"></i> {$val.name}
+                                    	</a>
+									</p>
+									</div>
+								{/foreach}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">ワード出力(予稿原稿用・日本語)</h3>
+                                </div><!-- /.box-header -->
+								<div class="box-body">
+								{foreach from=$html.data.array_happyo key=key item=val}
+									<div class="form-group">
+									<p>
+										<a href="./yoko{$key}?flg=jp" class="btn btn-block btn-social btn-dropbox"  >
+                                        <i class="fa fa-dropbox"></i> {$val.name}
+                                    	</a>
+									</p>
+									</div>
+								{/foreach}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">ワード出力(予稿原稿用・英語)</h3>
+                                </div><!-- /.box-header -->
+								<div class="box-body">
+								{foreach from=$html.data.array_happyo key=key item=val}
+									<div class="form-group">
+									<p>
+										<a href="./yoko{$key}?flg=en" class="btn btn-block btn-social btn-dropbox"  >
+                                        <i class="fa fa-dropbox"></i> {$val.name}
+                                    	</a>
+									</p>
+									</div>
+								{/foreach}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+               <!-- Main content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

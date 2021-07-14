@@ -1,0 +1,41 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.sankaform.sform.25.name}</h3>
+
+	<div class="w800" style="margin:auto;">
+	<hr size=1 />
+	<p>
+		{$html.data.sankaform.sform.25.name_text1}<br />
+		{$html.data.sankaform.sform.25.name_text2}{$html.data.scode}
+	</p>
+	<p>
+		{$html.data.sankaform.sform.25.name_text3}
+	</p>
+	<hr size=1 />
+	<div align=center>
+		{assign var="dis" value=""}
+		{if $html.data.disabled}
+			{assign var="dis" value="disabled"}
+		{/if}
+		<button class="btn btn-primary" type="button"  id="finbacks" >{$html.data.sankaform.sform.25.name_text4}</button>
+		<input type="button" class="btn btn-primary {$dis}" id="regist"  value="{$html.data.sankaform.sform.25.name_text5}" />
+	</div>
+
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	<script type="text/javascript">
+	$(function(){
+		$("#finbacks").click(function(){
+			location.href="/p_form/";
+		});
+	});
+	</script>
+	{include file='../inc_footer.html'}
+
+

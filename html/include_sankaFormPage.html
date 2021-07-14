@@ -1,0 +1,167 @@
+
+<div id="editTextBox" >
+	<div class="pg-pd5" >
+		<textarea  name="textareas" id="textareas" class="h300"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >aaa</textarea>
+	</div>
+	<input type="button" value="登録" id="regist" />
+	<input type="button" value="閉じる" id="close" />
+	<input type="hidden" value="" id="areaid" />
+</div>
+{*onのときは公開ページ*}
+{if $html.display eq "on"}
+	{assign var="eclass" value=""}
+	{assign var="edisabled" value=""}
+{else}
+	{assign var="eclass" value="edits simple"}
+	{assign var="edisabled" value="disabled"}
+{/if}
+
+{if $html.manage.mousikomi_status eq 1} {assign var="disd" value="disabled" } {/if}
+
+<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title"><span id="sanka1" class="{$eclass}"></span></h2>
+	</div>
+	<div class="pg-box">
+		<p class="pg-f26"><span id="sanka2" class="{$eclass}"></span></p>
+	</div>
+	<div class="pg-form pg-mg5" >
+		<p class="pg-center"><span id="sanka3" class="{$eclass}"></span></p>
+	</div>
+	<div class="pg-mg5" >
+		<div class="pg-left pg-w350" id="leftHeight">
+			<div class="pg-box1 bgblue ">
+				<p class="pg-f20 pg-fcolor pg-center pg-pd5" ><span id="sanka43" class="{$eclass}"></span></p>
+			</div>
+			<div class="pg-box1 pg-pd10">
+				<p class="pg-pd10" >
+					<span id="sanka4" class="{$eclass}"></span>
+				</p>
+				<p class="pg-center">
+					{if $html.display eq "on"}
+
+						<button class="btn btn-primary btn-lg {$edisabled}" {$disd} ><span id="sanka44" class="{$eclass}" ></span></button>
+					{else}
+						<div class="btn btn-primary btn-lg" style="margin-left:30px;"><span id="sanka44" class="{$eclass}"></span></div>
+					{/if}
+				</p>
+				<p class="pg-center" style="margin-top:5px;">
+					{if $html.display eq "on"}
+{*
+					<input type="button" class="btn btn-primary btn-lg {$edisabled}" id="editlg"  value="編集はコチラ" />
+*}
+						<button class="btn btn-primary btn-lg {$edisabled}" id="editlg" {$disd} ><span id="sanka45" class="{$eclass}"></span></button>
+					{else}
+						<div class="btn btn-primary btn-lg" style="margin-left:30px;"><span id="sanka45" class="{$eclass}"></span></div>
+					{/if}
+				</p>
+			</div>
+
+
+			<div class="pg-box1 bgblue pg-mgt20">
+				<p class="pg-f20 pg-fcolor pg-center pg-pd5" ><span id="sanka46" class="{$eclass}"></span></p>
+			</div>
+			<div class="pg-box1 pg-pd5">
+				<p class="pg-pd10" >
+					<span id="sanka5" class="{$eclass}"></span>
+				</p>
+
+			</div>
+
+
+		</div>
+		<div class="pg-left w600 pg-mgl20">
+			<div class=" pg-mgl40" id="rightHeight">
+				<h4 class="pg-titles pg-f20"><span id="sanka6" class="{$eclass}"></span></h4>
+				<p class="mh100"><span id="sanka7" class="{$eclass}"></span></p>
+			</div>
+			<div class="pg-mgl40">
+				<h4 class="pg-titles pg-f20"><span id="sanka8" class="{$eclass}"></span></h4>
+				<p class="mh100"><span id="sanka9" class="{$eclass}"></span>
+				</p>
+			</div>
+
+			<div class="pg-mgl40">
+				<p><span id="sanka10" class="{$eclass}"></span>
+				</p>
+				<table class="pgTable" >
+					<tr>
+						<th class="w50 pg-center">&nbsp;</th>
+						<th class="pg-center" ><span id="sanka47" class="{$eclass}"></span></th>
+						<th class="pg-center"><span id="sanka48" class="{$eclass}"></span></th>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka11" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka12" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka13" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka14" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka15" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka16" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka17" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka18" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka19" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka20" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka21" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka22" class="{$eclass}"></span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="pg-mgl40 pg-mgt20">
+				<p>
+					<span id="sanka23" class="{$eclass}"></span>
+				</p>
+				<table class="pgTable" >
+					<tr>
+						<th class="pg-center"><span id="sanka24" class="{$eclass}"></span></th>
+						<td colspan=2 ><span id="sanka25" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center" ><span id="sanka26" class="{$eclass}"></span></th>
+						<td colspan=2 ><span id="sanka27" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka28" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka29" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka30" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka31" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka32" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka33" class="{$eclass}"></span></td>
+					</tr>
+					<tr>
+						<th class="pg-center"><span id="sanka34" class="{$eclass}"></span></th>
+						<td class="pg-center"><span id="sanka35" class="{$eclass}"></span></td>
+						<td class="pg-center"><span id="sanka36" class="{$eclass}"></span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="pg-mgl40 pg-mgt20">
+				<h4 class="pg-titles pg-f20"><span id="sanka37" class="{$eclass}"></span></h4>
+				<p class="mh100 pg-mg5">
+					<span id="sanka38" class="{$eclass}"></span>
+				</p>
+			</div>
+			<div class="pg-mgl40 pg-mgt20">
+				<h4 class="pg-titles pg-f20"><span id="sanka39" class="{$eclass}"></span></h4>
+				<p class="mh100 pg-mg5">
+					<span id="sanka40" class="{$eclass}"></span>
+				</p>
+			</div>
+			<div class=" pg-mgl40 pg-mgt20">
+				<h4 class="pg-titles pg-f20"><span id="sanka41" class="{$eclass}"></span></h4>
+				<p class="mh100 pg-mg5">
+					<span id="sanka42" class="{$eclass}"></span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+

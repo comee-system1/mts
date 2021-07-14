@@ -1,0 +1,700 @@
+<table class="inputTable">
+	<tr>
+    <th >{$html.data.endaiform.eform.2.name}</th>
+	<td>
+	{if $html.data.edit.snum}
+		{assign var="sid" value=$html.data.edit.snum}
+	{/if}
+	{if $smarty.request.sid}
+		{assign var="sid" value=$smarty.request.sid}
+	{/if}
+
+	{if $html.four}
+		{assign var="read" value="readonly"}
+	{/if}
+    <div class="disp">
+		{if $html.display eq "on"}
+			R <input  type="hidden" name="sid" id="sid" value="{$html.data.num}">{$html.data.num}{$smarty.const.D_SANKA_CODE}
+		{else}
+			R <input class="form-control w200 disp" type="text" name="sid" id="sid" value="{$sid}"  placeholder="例)0001" {$read}>{$smarty.const.D_SANKA_CODE}
+		{/if}
+	</div>
+	</td>
+	</tr>
+</table>
+
+<table class="inputTable">
+	{if $html.data.sankaform.sform.4.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.4.name}</th>
+		<td><span id="name"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.5.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.5.name}</th>
+		<td><span id="kana"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.6.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.6.name}</th>
+		<td><span id="daigaku"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.7.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.7.name}</th>
+		<td><span id="gakubu"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.8.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.8.name}</th>
+		<td><span id="kenkyu"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.9.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.9.name}</th>
+		<td><span id="post"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.10.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.10.name}</th>
+		<td><span id="address_type"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.11.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.11.name}</th>
+		<td><span id="address"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.12.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.12.name}</th>
+		<td><span id="tel"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.13.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.13.name}</th>
+		<td><span id="naisen"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.14.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.14.name}</th>
+		<td><span id="fax"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.15.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.15.name}</th>
+		<td><span id="mail"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.17.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.17.name}</th>
+		<td><span id="password" style="display:none;"></span>
+		<!--
+                                            <input type="password"  value="" id="passwordtxt" class="bgclear" />-->
+                                            <br />
+                                            <input type="button" class="passwordchange2" value="表示" />
+                                    </td>
+		</tr>
+	{/if}
+
+</table>
+{if $html.data.endaiform.eform.6.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.6.name}
+		<span class="text-red f11">{$html.data.endaiform.eform.6.indispensible_text}</span>
+	</h4>
+	<div class="form-group">
+
+		<p>{$html.data.endaiform.eform.6.explaintext}</p>
+
+    <div class="checkbox">
+
+				{foreach from=$html.data.array_syozoku item="val" key="key" name="loop" }
+						{assign var="chk" value=""}
+						{if $smarty.request.syozoku}
+							{if "on" eq $smarty.request.syozoku.$key}
+								{assign var="chk" value="checked=checked"}
+							{/if}
+						{else}
+							{if $html.data.edit.syozoku.$key}
+								{assign var="chk" value="checked=checked"}
+							{/if}
+						{/if}
+						{if $val.status eq 1}
+						<div class="left" style="width:250px;">
+							<label>
+								<p class="disp mg5 "><input type="checkbox" name="syozoku[{$key}]"  class="simple gray" id="syozoku_{$key}" value="on"  {$chk}  /></p><p class="disp mdl mg5">{$val.name}</p>
+							</label></td>
+						</div>
+						{/if}
+						{if $smarty.foreach.loop.index > 8}
+							{break}
+						{/if}
+				{/foreach}
+				<br clear=all />
+				<br clear=all />
+				{foreach from=$html.data.array_syozoku item="val" key="key" name="loop" }
+				{if $smarty.foreach.loop.index >9 }
+					{if $val.status eq 1}
+					<div class="dbl w200" style="vertical-align:top;" >
+						{assign var="chk" value=""}
+						{if $smarty.request.syozoku}
+							{if "on" eq $smarty.request.syozoku.$key}
+								{assign var="chk" value="checked=checked"}
+							{/if}
+						{else}
+							{if $html.data.edit.syozoku.$key}
+								{assign var="chk" value="checked=checked"}
+							{/if}
+						{/if}
+
+						<label>
+							<p class="disp mg5"><input type="checkbox" name="syozoku[{$key}]"  class="simple mg5" id="syozoku-{$key}" value="on" {$chk} /></p><p class="disp mdl mg5">{$val.name}</p>
+						</label>
+					</div>
+					<div class="dbl" >
+						{assign var="vals" value=""}
+						{if $key == 11 && $html.data.edit.other}
+							{assign var="vals" value=$html.data.edit.other}
+						{/if}
+						{if $key == 12 && $html.data.edit.nyukai}
+							{assign var="vals" value=$html.data.edit.nyukai}
+						{/if}
+						{if $smarty.request.text}
+							{if $smarty.request.text.$key}
+								{assign var="vals" value=$smarty.request.text.$key}
+							{/if}
+						{/if}
+
+						<input type="text" name="text[{$key}]" value="{$vals}" class="form-control input-sm w300" id="txt-{$key}" disabled   >
+					</div>
+					{/if}
+					<br clear=all />
+				{/if}
+				{/foreach}
+	    </div>
+	</div>
+{/if}
+{*発表形式*}
+{if $html.data.endaiform.eform.7.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.7.name}<span class="text-red f11">{$html.data.endaiform.eform.7.indispensible_text}</span></h4>
+	<div class="form-group">
+		<p>{$html.data.endaiform.eform.7.explaintext}</p>
+	    <div class="radio">
+			<table>
+				<tr>
+					{assign var="chk" value=""}
+					{if "1" eq $html.data.edit.happyo AND !$smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "1" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					
+					{if $html.data.array_happyo.1.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5">
+									<input type="radio" name="happyo" class="happyo simple" value="1" {$chk} />
+								</p>
+								<p class="disp mdl mg5">{$html.data.array_happyo.1.name}</p>
+							</label>
+						</td>
+					{/if}
+					{assign var="chk" value=""}
+					{if "2" eq $html.data.edit.happyo AND !$smarty.request.happyo }
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "2" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if $html.data.array_happyo.2.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5"><input type="radio" name="happyo" class="happyo simple" value="2" {$chk} /></p><p class="disp mdl mg5">{$html.data.array_happyo.2.name}</p>
+							</label>
+						</td>
+					{/if}
+					{assign var="chk" value=""}
+					{if "3" eq $html.data.edit.happyo AND !$smarty.request.happyo }
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "3" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if $html.data.array_happyo.3.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5"><input type="radio" name="happyo" class="happyo simple" value="3" {$chk} /></p><p class="disp mdl mg5">{$html.data.array_happyo.3.name}</p>
+							</label>
+						</td>
+					{/if}
+					{assign var="chk" value=""}
+					{if "4" eq $html.data.edit.happyo AND !$smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "4" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if $html.data.array_happyo.4.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5"><input type="radio" name="happyo" class="happyo simple" value="4" {$chk} /></p><p class="disp mdl mg5">{$html.data.array_happyo.4.name}</p>
+							</label>
+						</td>
+					{/if}
+					{assign var="chk" value=""}
+					{if "5" eq $html.data.edit.happyo AND !$smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "5" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if $html.data.array_happyo.5.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5"><input type="radio" name="happyo" class="happyo simple" value="5" {$chk} /></p><p class="disp mdl mg5">{$html.data.array_happyo.5.name}</p>
+							</label>
+						</td>
+					{/if}
+					{assign var="chk" value=""}
+					{if "6" eq $html.data.edit.happyo AND !$smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if "6" eq $smarty.request.happyo}
+						{assign var="chk" value="checked=checked"}
+					{/if}
+					{if $html.data.array_happyo.6.status eq 1}
+		            	<td nowrap class="pdb5" >
+							<label>
+								<p class="disp mg5"><input type="radio" name="happyo" class="happyo simple" value="6" {$chk} /></p><p class="disp mdl mg5">{$html.data.array_happyo.6.name}</p>
+							</label>
+						</td>
+					{/if}
+				</tr>
+			</table>
+	    </div>
+	</div>
+{/if}
+
+{*招待*}
+{if $html.data.endaiform.eform.37.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.37.name}<span class="text-red f11">{$html.data.endaiform.eform.37.indispensible_text}</span></h4>
+	<div class="form-group">
+		<p>{$html.data.endaiform.eform.37.explaintext}</p>
+	    {foreach $html.data.array_syotai item="val" key="key" name="loop" }
+			{if $smarty.foreach.loop.first}
+				<select name="syoutai" id="syoutai"  class="form-control w80" disabled >
+				<option value="-">-</option>
+			{/if}
+				{assign var="sel" value=""}
+				{if $smarty.request.syoutai}
+					{if $key eq $smarty.request.syoutai}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $key eq $html.data.edit.syoutai}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				{if $val.status eq 1}
+				<option value="{$key}" {$sel} >{$val.name}</option>
+				{/if}
+			{if $smarty.foreach.loop.last}
+				</select>
+			{/if}
+		{/foreach}
+	</div>
+{/if}
+
+
+{*コロキウム*}
+{if $html.data.endaiform.eform.38.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.38.name}<span class="text-red f11">{$html.data.endaiform.eform.38.indispensible_text}</span></h4>
+	<div class="form-group">
+		<p>{$html.data.endaiform.eform.38.explaintext}</p>
+	    {foreach $html.data.array_korokiumu item="val" key="key" name="loop" }
+			{if $smarty.foreach.loop.first}
+				<select name="korokiumu" id="korokiumu"  class="form-control w80" disabled >
+					<option value="-">-</option>
+			{/if}
+				{assign var="sel" value=""}
+				{if $smarty.request.korokiumu}
+					{if $key eq $smarty.request.korokiumu}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $key eq $html.data.edit.korokiumu}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				{if $val.status eq 1}
+				<option value="{$key}" {$sel} >{$val.name}</option>
+				{/if}
+			{if $smarty.foreach.loop.last}
+				</select>
+			{/if}
+		{/foreach}
+	</div>
+{/if}
+
+
+{*一般公演口頭の分類*}
+{if $html.data.endaiform.eform.36.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.36.name}<span class="text-red f11">{$html.data.endaiform.eform.36.indispensible_text}</span></h4>
+	<div class="form-group">
+		<p>{$html.data.endaiform.eform.36.explaintext}</p>
+	    {foreach $html.data.array_ippanKouenkouto item="val" key="key" name="loop" }
+			{if $smarty.foreach.loop.first}
+				<select name="ippanKouenkouto" id="ippanKouenkouto"  class="form-control w80" disabled >
+					<option value="-">-</option>
+			{/if}
+				{assign var="sel" value=""}
+				{if $smarty.request.ippanKouenkouto}
+					{if $key eq $smarty.request.ippanKouenkouto}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $key eq $html.data.edit.ippanKouenkouto}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				{if $val.status eq 1}
+				<option value="{$key}" {$sel} >{$val.name}</option>
+				{/if}
+			{if $smarty.foreach.loop.last}
+				</select>
+			{/if}
+		{/foreach}
+	</div>
+{/if}
+{if $html.data.endaiform.eform.8.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.8.name}<span class="text-red f11">{$html.data.endaiform.eform.8.indispensible_text}</span></h4>
+	<div class="form-group">
+		<p>{$html.data.endaiform.eform.8.explaintext}</p>
+	    {foreach $html.data.array_ippanKouenposter item="val" key="key" name="loop" }
+			{if $smarty.foreach.loop.first}
+				<select name="ippanKouenposter" id="ippanKouenposter"  class="form-control w80" disabled >
+					<option value="-">-</option>
+			{/if}
+				{assign var="sel" value=""}
+				{if $smarty.request.ippanKouenposter}
+					{if $key eq $smarty.request.ippanKouenposter}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $key eq $html.data.edit.ippanKouenposter}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				{if $val.status eq 1}
+				<option value="{$key}" {$sel} >{$val.name}</option>
+				{/if}
+			{if $smarty.foreach.loop.last}
+				</select>
+			{/if}
+		{/foreach}
+		<div class="checkbox">
+			{assign var="chk" value=""}
+			{if $html.data.edit.studentPoster}
+				{assign var="chk" value="checked=checked"}
+			{/if}
+			{if $smarty.request.studentPoster}
+				{assign var="chk" value="checked=checked"}
+			{/if}
+
+
+			<label>
+					<p><input type="checkbox" name="studentPoster" value="on" {$chk} id="studentPoster" class="simple" ></p>
+					<p style="margin:3px;">{$html.data.endaiform.eform.8.name_text1}</p>
+			</label>
+		</div>
+	</div>
+{/if}
+{if $html.data.endaiform.eform.10.status eq 1}
+<h4 class="bb pdb5" >{$html.data.endaiform.eform.10.name}<span class="text-red f11">{$html.data.endaiform.eform.10.indispensible_text}</span></h4>
+	{if $html.data.edit.endainame}
+		{assign var="endainame" value=$html.data.edit.endainame}
+	{/if}
+	{if $smarty.request.endainame}
+		{assign var="endainame" value=$smarty.request.endainame}
+	{/if}
+	<textarea cols="50" name="endainame" id="endainame" class="w80" oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$endainame}</textarea>
+	{$html.data.endaiform.eform.10.explaintext}
+{/if}
+{if $html.data.endaiform.eform.11.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.11.name}<span class="text-red f11">{$html.data.endaiform.eform.11.indispensible_text}</span></h4>
+	<p class="disp" >{$html.data.endaiform.eform.11.name_text1}</p>
+	<p class="disp" >
+		<select name="syozoku_count" id="syozoku_count" class="pd5 w10">
+			{section name="loop" start=1 loop=16 step=1}
+				{assign var="sel" value=""}
+				{if $smarty.request.syozoku_count}
+					{if $smarty.section.loop.index eq $smarty.request.syozoku_count}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $smarty.section.loop.index eq $html.data.edit.syozoku_count}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				<option value="{$smarty.section.loop.index}" {$sel}>{$smarty.section.loop.index}</option>
+			{/section}
+		</select>
+	</p>
+	{$html.data.endaiform.eform.11.explaintext}
+	<table class="inputtable">
+		<tr>
+			<th class="w20" >{$html.data.endaiform.eform.12.name}</th>
+			<th>{$html.data.endaiform.eform.12.name_text1}</th>
+			<th>{$html.data.endaiform.eform.12.name_text2}</th>
+			<th>{$html.data.endaiform.eform.12.name_text3}</th>
+
+		</tr>
+		<tbody id="syozokuTable"></tbody>
+	</table>
+{/if}
+
+{if $html.data.endaiform.eform.14.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.14.name}<span class="text-red f11">{$html.data.endaiform.eform.14.indispensible_text}</span></h4>
+	<p class="disp" >{$html.data.endaiform.eform.14.name_text1}</p>
+	<p class="disp" >
+		<select name="tyosya_count" id="tyosya_count" class="pd5 w10">
+			{section name="loop" start=1 loop=16 step=1}
+				{assign var="sel" value=""}
+				{if $smarty.request.tyosya_count}
+					{if $smarty.request.tyosya_count eq $smarty.section.loop.index}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{else}
+					{if $html.data.edit.tyosya_count eq $smarty.section.loop.index}
+						{assign var="sel" value="SELECTED"}
+					{/if}
+				{/if}
+				<option value="{$smarty.section.loop.index}" {$sel}>{$smarty.section.loop.index}</option>
+			{/section}
+		</select>
+	</p>
+	{$html.data.endaiform.eform.14.explaintext}
+	<table class="inputtable">
+		<tr>
+			<th class="w20" >{$html.data.endaiform.eform.15.name}</th>
+			<th nowrap>受賞時連絡先<br />(指導教員)</th>
+			<th>{$html.data.endaiform.eform.15.name_text1}</th>
+			<th>{$html.data.endaiform.eform.15.name_text2}</th>
+			<th>{$html.data.endaiform.eform.15.name_text3}</th>
+
+		</tr>
+		<tbody id="tyosyaTable"></tbody>
+	</table>
+	
+	{assign var="teacherhidden" value=$html.data.edit.teacher }
+	{if $smarty.request.teacher}
+		{assign var="teacherhidden" value=$smarty.request.teacher }
+	{else}
+		
+	{/if}
+	<input type="hidden" id="teacherhidden" value="{$teacherhidden}" />
+{/if}
+{if $html.data.endaiform.eform.17.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.17.name}<span class="text-red f11">{$html.data.endaiform.eform.17.indispensible_text}</span></h4>
+	<p class="disp w100" >{$html.data.endaiform.eform.17.name_text1}</p>
+	<p class="disp" >
+		<select name="pc" class="w300 pd5" >
+		{foreach from=$html.data.array_pc key="key" item="val"}
+			{assign var="sel" value=""}
+			{if $smarty.request.pc}
+				{if $smarty.request.pc eq $key}
+					{assign var="sel" value="SELECTED"}
+				{/if}
+			{elseif $key == 5}
+				{assign var="sel" value="SELECTED"}
+			{elseif $key == $html.data.edit.pc}
+				{assign var="sel" value="SELECTED"}
+			{/if}
+
+			<option value="{$key}" {$sel}>{$val.name}</option>
+		{/foreach}
+		</select>
+	</p>
+	<p class="disp w100" >{$html.data.endaiform.eform.17.name_text2}</p>
+	{if $html.data.edit.otheros}
+		{assign var="otheros" value=$html.data.edit.otheros}
+	{/if}
+	{if $smarty.request.otheros}
+		{assign var="otheros" value=$smarty.request.otheros}
+	{/if}
+	<p class="disp"><input type="text" name="otheros" class="pd5 w300" value="{$otheros}"></p>
+{/if}
+{if $html.data.endaiform.eform.18.status eq 1}
+	<div class="form-group">
+	    <h4 class="bb pdb5" >{$html.data.endaiform.eform.18.name}</h4>
+		{if $smarty.request.bikou}
+			{assign var="bikou" value=$smarty.request.bikou }
+		{elseif $html.data.edit.bikou}
+			{assign var="bikou" value=$html.data.edit.bikou}
+		{/if}
+	    <textarea class="form-control w400" rows="3" name="bikou" placeholder="{$html.data.endaiform.eform.18.name_text1}">{$bikou}</textarea>
+	</div>
+{/if}
+{if $html.display eq "on"}
+
+{else}
+	{include file='./include_uploadForm.html'}
+	{include file='./include_uploadForm_flash.html'}
+	{include file='./include_uploadForm_poster.html'}
+	<div class="form-group">
+	    <h4 class="bb pdb5" >事務局用</h4>
+		{if $smarty.request.publication}
+			{assign var="publication" value=$smarty.request.publication }
+		{elseif $html.data.edit.publication}
+			{assign var="publication" value=$html.data.edit.publication}
+		{/if}
+
+		<p class="disp w100" >発表番号</p>
+		<p class="disp" ><input type="text" name="publication" class="pd5 w300" value="{$publication}"></p>
+		<br clear=all />
+			<p class="disp w100" >採択結果</p>
+			<p class="disp" >
+				{foreach $html.data.array_saitaku item="val" key="key" name="loop" }
+					{if $smarty.foreach.loop.first}
+						<select name="vote" id="vote"  class="form-control w20" >
+						<option value="" >---</option>
+					{/if}
+						{assign var="sel" value=""}
+						{if $smarty.request.vote}
+							{if $key eq $smarty.request.vote}
+								{assign var="sel" value="SELECTED"}
+							{/if}
+						{else}
+							{if $key eq $html.data.edit.vote}
+								{assign var="sel" value="SELECTED"}
+							{/if}
+						{/if}
+						<option value="{$key}" {$sel} >{$val}</option>
+					{if $smarty.foreach.loop.last}
+						</select>
+					{/if}
+				{/foreach}
+			</p>
+			<p class="disp" style="margin-top:5px;">
+				{if $smarty.request.vote_text}
+					{assign var="vote_text" value=$smarty.request.vote_text }
+				{elseif $html.data.edit.vote_text}
+					{assign var="vote_text" value=$html.data.edit.vote_text}
+				{/if}
+				<textarea class="form-control w600" rows="3" name="vote_text" placeholder="Enter ...">{$vote_text}</textarea>
+			</p>
+			<input type="checkbox" name="mail1" value="on">講演内容メール　
+			<input type="checkbox" name="mail2" value="on">予稿原稿メール
+
+	</div>
+{/if}
+
+<div class="box-footer pd20">
+	{if $html.display eq "on"}
+		<button class="btn btn-primary" type="button" name="back" id="backpre"  >{$html.data.endaiform.eform.19.name_text1}</button>
+		<input type="button" id="conform" value="{$html.data.endaiform.eform.19.name_text2}" class="btn btn-primary" >
+		<input type="hidden" id="conf" name="conf" value="on" >
+		<input type="hidden" id="num" name="num" value="{$smarty.request.num}" >
+		<input type="hidden" id="password" name="password" value="{$smarty.request.password}" >
+		{*編集用eid*}
+		<input type="hidden" id="eid" name="eid" value="{$html.data.edit.eid}">
+	{else}
+		<button class="btn btn-primary disabled" type="submit" name="regist" id="regist" value="on"  >登録する</button>
+	{/if}
+</div>
+{*リクエストされた、所属データをhiddenに保存*}
+{if $smarty.request.syozoku_count}
+	{assign var="scount" value=$smarty.request.syozoku_count+1 }
+{else}
+	{assign var="scount" value=$html.data.edit.syozoku_count+1 }
+{/if}
+{section start=1 loop=$scount step=1 name="loop"}
+	{assign var="key" value=$smarty.section.loop.index}
+	{if $smarty.request.syozokuKikanD.$key }
+		{assign var="syozokuKikanD" value=$smarty.request.syozokuKikanD.$key }
+	{else}
+		{assign var="syozokuKikanD" value=$html.data.edit.tyosyadata.$key.syozokuKikanD }
+	{/if}
+	<input type="hidden"  id="hd_syozokuKikanD{$key}" value="{$syozokuKikanD}" >
+	{if $smarty.request.syozokuKikanG.$key }
+		{assign var="syozokuKikanG" value=$smarty.request.syozokuKikanG.$key }
+	{else}
+		{assign var="syozokuKikanG" value=$html.data.edit.tyosyadata.$key.syozokuKikanG }
+	{/if}
+	<input type="hidden"  id="hd_syozokuKikanG{$key}" value="{$syozokuKikanG}" >
+	{if $smarty.request.syozokuKikanRyaku.$key }
+		{assign var="syozokuKikanRyaku" value=$smarty.request.syozokuKikanRyaku.$key }
+	{else}
+		{assign var="syozokuKikanRyaku" value=$html.data.edit.tyosyadata.$key.syozokuKikanRyaku }
+	{/if}
+	<input type="hidden"  id="hd_syozokuKikanRyaku{$key}" value="{$syozokuKikanRyaku}" >
+	{if $smarty.request.syozokuKikanDEng.$key }
+		{assign var="syozokuKikanDEng" value=$smarty.request.syozokuKikanDEng.$key }
+	{else}
+		{assign var="syozokuKikanDEng" value=$html.data.edit.tyosyadata.$key.syozokuKikanDEng }
+	{/if}
+	<input type="hidden"  id="hd_syozokuKikanDEng{$key}" value="{$syozokuKikanDEng}" >
+	{if $smarty.request.syozokuKikanGEng.$key }
+		{assign var="syozokuKikanGEng" value=$smarty.request.syozokuKikanGEng.$key }
+	{else}
+		{assign var="syozokuKikanGEng" value=$html.data.edit.tyosyadata.$key.syozokuKikanGEng }
+	{/if}
+	<input type="hidden"  id="hd_syozokuKikanGEng{$key}" value="{$syozokuKikanGEng}" >
+{/section}
+{*リクエストされた、著者名をhiddenに保存*}
+{if $smarty.request.tyosya}
+	{assign var="tyosya" value=$smarty.request.tyosya }
+{else}
+	{assign var="tyosya" value=$html.data.edit.tyosya }
+{/if}
+<input type="hidden"  id="hd_tyosya" value="{$tyosya}" >
+{if $smarty.request.tyosya_count}
+	{assign var="tycount" value=$smarty.request.tyosya_count+1 }
+{else}
+	{assign var="tycount" value=$html.data.edit.tyosya_count+1 }
+{/if}
+{section start=1 loop=$tycount step=1 name="loop"}
+	{assign var="key" value=$smarty.section.loop.index}
+	{if $smarty.request.tyosya_name1.$key }
+		{assign var="tyosya_name1" value=$smarty.request.tyosya_name1.$key }
+	{else}
+		{assign var="tyosya_name1" value=$html.data.edit.tyosyadataName.$key.tyosya_name1 }
+	{/if}
+	<input type="hidden"  id="hd_tyosya_name1_{$key}" value="{$tyosya_name1}" >
+	{if $smarty.request.tyosya_name2.$key }
+		{assign var="tyosya_name2" value=$smarty.request.tyosya_name2.$key }
+	{else}
+		{assign var="tyosya_name2" value=$html.data.edit.tyosyadataName.$key.tyosya_name2 }
+	{/if}
+	<input type="hidden"  id="hd_tyosya_name2_{$key}" value="{$tyosya_name2}" >
+	{if $smarty.request.tyosya_name1Eng.$key }
+		{assign var="tyosya_name1Eng" value=$smarty.request.tyosya_name1Eng.$key }
+	{else}
+		{assign var="tyosya_name1Eng" value=$html.data.edit.tyosyadataName.$key.tyosya_name1Eng }
+	{/if}
+	<input type="hidden"  id="hd_tyosya_name1Eng_{$key}" value="{$tyosya_name1Eng}" >
+	{if $smarty.request.tyosya_name2Eng.$key }
+		{assign var="tyosya_name2Eng" value=$smarty.request.tyosya_name2Eng.$key }
+	{else}
+		{assign var="tyosya_name2Eng" value=$html.data.edit.tyosyadataName.$key.tyosya_name2Eng }
+	{/if}
+	<input type="hidden"  id="hd_tyosya_name2Eng_{$key}" value="{$tyosya_name2Eng}" >
+	{if $smarty.request.tyosya_syozoku.$key }
+		{assign var="tyosya_syozoku" value=$smarty.request.tyosya_syozoku.$key }
+	{else}
+		{assign var="tyosya_syozoku" value=$html.data.edit.tyosyadataName.$key.tyosya_syozoku }
+	{/if}
+	<input type="hidden"  id="hd_tyosya_syozoku_{$key}" value="{$tyosya_syozoku}" >
+{/section}

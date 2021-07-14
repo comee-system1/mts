@@ -1,0 +1,193 @@
+#pg-title{
+	border-bottom:2px solid #000000;
+	padding:5px;
+	padding-bottom:10px;
+}
+.pg-mgt20{
+	margin-top:20px;
+}
+.pg-mg5{
+	margin:5px;
+}
+.pg-pd5{
+	padding:5px;
+}
+.pg-pd10{
+	padding:10px;
+}
+.pg-pd20{
+	padding:20px;
+}
+.pg-f20{
+	font-size:20px;
+}
+.pg-f26{
+	font-size:26px;
+}
+
+.pg-w30{
+	width:30%;
+}
+.pg-w35{
+	width:35%;
+}
+.pg-w40{
+	width:40%;
+}
+.pg-w60{
+	width:60%;
+}
+.pg-w75{
+	max-width:75%;
+}
+.pg-w80{
+	width:80%;
+}
+.pg-w350{
+	width:250px;
+}
+
+.pg-w700{
+	width:700px;
+}
+
+.pg-mgl20{
+	margin-left:20px;
+}
+.pg-mgl40{
+	margin-left:40px;
+}
+
+.pg-left{
+	float:left;
+}
+.bgblue{
+	background-color:#4169e1;
+
+	height:40px;
+}
+.pg-fcolor{
+	color:#FFFFFF;
+}
+
+.pg-form{
+	width:100%;
+}
+p span ol{
+	margin:5px;
+	padding:5px;
+}
+p span ul{
+	margin:5px;
+	padding:5px;
+}
+.pg-box{
+	border:1px solid #808080;
+	text-align:center;
+	height:60px;
+	vertical-align:middle;
+	width:100%;
+	margin:0px auto;
+	padding:10px;
+	display:block;
+	-moz-border-radius: 20px;    /* Firefox */
+	-webkit-border-radius: 20px; /* Safari,Chrome */
+	border-radius: 20px;         /* CSS3 */
+}
+.pg-box1{
+	border:1px solid #ccc;
+	vertical-align:middle;
+	display:block;
+	display: inline-block;
+	width:100%;
+}
+
+.pg-center{
+	text-align:center;
+}
+
+.afCler:after{
+	clear:both;
+}
+
+.pg-titles{
+	color:#4682b4;
+	background-image:url("/img/sicon.gif");
+	background-repeat:no-repeat;
+	height:40px;
+	padding:5px;
+	padding-left:40px;
+	margin:5px;
+	border-bottom:1px solid #000000;
+}
+
+.mh100{
+	min-height:100px;
+	
+}
+.pgTable{
+	width: 100%;
+	border-collapse: collapse;
+}
+.pgTable th{
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	color: #333;
+	background-color: #eee;
+	border: 1px solid #b9b9b9;
+}
+.pgTable th.w50{
+	width:50%;
+}
+.pgTable td{
+	padding: 6px;
+	background-color: #fff;
+	border: 1px solid #b9b9b9;
+}
+.pgTable th.pg-center,
+.pgTable td.pg-center{
+	text-align:center;
+}
+
+.pg-right{
+	text-align:right;
+}
+
+span.simple{
+	width:auto !important;
+	height:auto !important;
+	border:none;
+	display:inline-block;
+	padding:0;
+	margin:0;
+}
+div.pos{
+	position:absolute;
+	padding:0;
+	margin:0;
+}
+
+div#editTextBox{
+	border:3px solid #000000;
+	width:630px;
+	padding:10px;
+	position:absolute;
+	display:none;
+	background-color:#ffffff;
+	z-index:10;
+}
+.h300{
+	height:300px;
+}
+textarea#textareas{
+	width:600px !important;
+}
+span.edits:hover{
+	background-color:#DDFFFF;
+}
+
+p{
+	margin:0;
+	padding:0;
+}

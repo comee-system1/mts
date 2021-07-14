@@ -1,0 +1,119 @@
+<div id="editTextBox" >
+	<div class="pg-pd5" >
+		<textarea  name="textareas" id="textareas" class="h300"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >aaa</textarea>
+	</div>
+	<input type="button" value="登録" id="regist" />
+	<input type="button" value="閉じる" id="close" />
+	<input type="hidden" value="" id="areaid" />
+</div>
+
+<div class="w80" style="margin:auto;">
+	<div id="pg-main">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<h2 id="pg-title"><span id="endai1" class="{$cl}"></span></h2>
+	</div>
+	<div class="pg-box">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<p class="pg-f26"><span id="endai2" class="{$cl}"></span></p>
+	</div>
+	<div class="pg-pd20">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<p><span id="endai3" class="{$cl}"></span>
+		</p>
+	</div>
+
+	<div class="pg-pd20">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<h4 class="pg-titles pg-f20"><span id="endai4" class="{$cl}"></span></h4>
+		<p class="mh100 pg-pd20">
+			{if $html.display eq "on"}
+				{assign var="cl" value=""}
+			{else}
+				{assign var="cl" value="edits simple"}
+			{/if}
+			<span id="endai5" class="{$cl}"></span>
+		</p>
+		<div class="pg-right">
+			{if $html.display eq "on" && $html.data.use.happyou_status eq "0"}
+				<a href="{$smarty.const.D_URLS}pre/endailg/" class="buttonlink" ><span id="endai11" class="{$cl}"></span></a>
+			{else}
+				<a href="javascript:void(0);" class="buttonlink"><span id="endai11" class="{$cl}"></span></a>
+			{/if}
+		</div>
+	</div>
+
+	<div class="pg-pd20">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<h4 class="pg-titles pg-f20"><span id="endai6" class="{$cl}"></span></h4>
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<p class="mh100 pg-pd20"><span id="endai7" class="{$cl}"></span>
+		</p>
+		<div class="pg-right">
+			{if $html.display eq "on" && $html.data.use.conf_status eq "0" }
+				<a href="{$smarty.const.D_URLS}pre/editlg/" class="buttonlink"><span id="endai12" class="{$cl}"></span></a>
+			{else}
+				<a href="javascript:void(0);" class="buttonlink"><span id="endai12" class="{$cl}"></span></a>
+			{/if}
+		</div>
+	</div>
+
+	<div class="pg-pd20">
+		{if $html.display eq "on"}
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<h4 class="pg-titles pg-f20"><span id="endai8" class="{$cl}"></span></h4>
+		<p class="mh100 pg-pd20">
+			{if $html.display eq "on"}
+				{assign var="cl" value=""}
+			{else}
+				{assign var="cl" value="edits simple"}
+			{/if}
+			<span id="endai9" class="{$cl}"></span>
+		</p>
+		<div class="pg-right">
+			{if $html.display eq "on" && $html.data.use.yousi_status eq "0" }
+				<a href="{$smarty.const.D_URLS}pre/abstructlg/" class="buttonlink"><span id="endai13" class="{$cl}"></span></a>
+			{else}
+				<a href="javascript:void(0);" class="buttonlink"><span id="endai13" class="{$cl}"></span></a>
+			{/if}
+		</div>
+	</div>
+
+	<div class="pg-pd20">
+		{if $html.display eq "on" }
+			{assign var="cl" value=""}
+		{else}
+			{assign var="cl" value="edits simple"}
+		{/if}
+		<p class="mh100 pg-pd20"><span id="endai10" class="{$cl}"></span>
+		</p>
+
+	</div>
+
+</div>

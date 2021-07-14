@@ -1,0 +1,145 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue" style="overflow-y: hidden;">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        参加者一覧
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">参加者一覧</li>
+                    </ol>
+                </section>
+				<div id="menubox">
+					<ul id="ulmenu">
+						<li><a href="" id="ehref" >編集</a></li>
+						<li><a href="" id="dhref">削除</a></li>
+					</ul>
+				</div>
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-3500">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">参加者一覧(<span id="max"></span>)</h3>
+								<div id="pager" style="margin:3px;"></div>
+                                </div><!-- /.box-header -->
+{*
+								<div id="dragbox">○</div>
+*}
+                                <div class="box-body table-responsive" >
+{*
+									<div style="text-align:left;" class="scrolls">
+										<a href="javascript:void(0);" id="lefts" ><img src="/img/lefts.gif" width=30 ></a>
+										<a href="javascript:void(0);" id="rights"><img src="/img/rights.gif" width=30 ></a>
+                                    </div>
+*}
+
+									<div >
+									<table id="example2" class="table2 table-bordered table-hover " >
+										<thead style="display:block;">
+                                            <tr>
+												<th class="w150"  rowspan=2 nowrap>詳細</th>
+                                                <th nowrap>参加受付番号</th>
+                                                <th nowrap>参加登録者</th>
+                                                <th nowrap>参加登録者かな</th>
+                                                <th  nowrap>所属機関</th>
+                                                <th  nowrap>郵便番号</th>
+                                                <th  nowrap>連絡先</th>
+                                                <th  nowrap>住所</th>
+                                                <th  nowrap>電話番号</th>
+                                                <th  nowrap>内線番号</th>
+                                                <th  nowrap>FAX番号</th>
+                                                <th  nowrap class="w300" >メールアドレス</th>
+                                                <th  nowrap>パスワード</th>
+                                                <th  nowrap>参加種別</th>
+                                                <th  nowrap>懇親会参加</th>
+                                                <th  nowrap>費用(懇親会)</th>
+                                                <th  nowrap >支払</th>
+                                                <th  rowspan=2 nowrap>更新日</th>
+                                                <th   nowrap style="width:400px;">備考</th>
+
+                                                <th  nowrap rowspan=2>講演受付番号</th>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" value="" id="code"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="name"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="kana"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="daigaku"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="post"  class="form-control input-sm search"></th>
+                                                <th>
+													<select name="address_type" id="address_type"  class="search form-control search">
+													<option value="">-</option>
+													{foreach from=$html.data.array_address item="val" key="key"}
+														<option value="{$key}">{$val}</option>
+													{/foreach}
+													</select>
+												</th>
+                                                <th><input type="text" value="" id="address"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="tel"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="naisen"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="fax"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="mail"  class="form-control input-sm search"></th>
+                                                <th><input type="text" value="" id="password"  class="form-control input-sm search"></th>
+                                                <th>
+													<select name="join_type" id="join_type"  class="search form-control search">
+													<option value="">-</option>
+													{foreach from=$html.data.jointype item="val" key="key"}
+														<option value="{$key}">{$val}</option>
+													{/foreach}
+													</select>
+												</th>
+                                                <th>
+													<select name="konshinkai" id="konshinkai" class="search form-control">
+													<option value="">-</option>
+													{foreach from=$html.data.konshin item="val" key="key"}
+														<option value="{$key}">{$val}</option>
+													{/foreach}
+													</select>
+												</th>
+                                                <th><input type="text" value="" id="total"  class="form-control input-sm search"></th>
+                                                <th>
+													<select name="sanka_pay_status" id="sanka_pay_status"  class="search form-control">
+													<option value="">-</option>
+													{foreach from=$html.data.psts item="val" key="key"}
+														<option value="{$key}">{$val}</option>
+													{/foreach}
+													</select>
+												</th>
+
+                                                <th style="width:400px;"><input type="text" value="" id="bikou"  class="form-control input-sm search"></th>
+
+                                            </tr>
+										</thead>
+
+                                        	<tbody id="tables" style="display:block;overflow-y:scroll;height:500px;" ></tbody>
+
+                                    </table>
+									</div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

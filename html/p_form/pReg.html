@@ -1,0 +1,46 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.sankaform.sform.3.name}</h3>
+	<div style="text-align:right;">
+		<button onclick="window.print()" class="btn btn-primary" >{$html.data.sankaform.sform.23.name}</button>
+	</div>
+	<div class="w800" style="margin:auto;">
+	<hr size=1 />
+	<p>{$html.data.sankaform.sform.21.explaintext}
+	</p>
+	<hr size=1 />
+	{foreach from=$html.data.errmsg item="val" key="key" name="loop"}
+		{if $smarty.foreach.loop.first}
+			<div class="alert alert-danger alert-dismissable">
+			<i class="fa fa-ban"></i>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<b>Alert!</b>
+		{/if}
+				<p>{$val}</p>
+		{if $smarty.foreach.loop.last}
+			</div>
+		{/if}
+	{/foreach}
+	<form action="" method="POST" name="form1">
+
+		{include file='../include_sankaForm.html'}
+
+	</form>
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	<script type="text/javascript">
+	$(function() {
+	  $(document).on("keypress", "input:not(.btn)", function(event) {
+	    return event.which !== 13;
+	  });
+	});
+	</script>
+	{include file='../inc_footer.html'}
+
+

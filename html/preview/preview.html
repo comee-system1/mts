@@ -1,0 +1,147 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='../inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        プレゼンテーション動画登録画面
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">プレゼンテーション動画登録画面</li>
+                    </ol>
+                </section>
+
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">プレゼンテーション動画登録画面</h3>
+                                </div><!-- /.box-header -->
+                                <form action="/preview/preview/set/" method="POST" >
+                                    <div class="box-body table-responsive">
+                                        <input type="submit" name="regist"  id="movie_regist" value="登録" class="btn btn-primary" />
+                                    </div>
+                                    {if $html.data.errormsg }
+                                        <div class="alert alert-danger alert-dismissable">
+                                            {$html.data.errormsg}
+                                        </div>
+                                    {/if}
+                                    {if $html.data.message }
+                                        <div class="alert alert-success alert-dismissable">
+                                            {$html.data.message}
+                                        </div>
+                                    {/if}
+
+                                    <div class="box-body table-responsive">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>日付指定</p>
+                                                <select name="date" class="form-control" >
+                                                    <option value="-">-</option>
+                                                {foreach from=$html.data.array_movie_date item=value key=key}
+                                                    {assign var="sel" value="" }
+                                                    {if $smarty.request.d eq $key}
+                                                        {assign var="sel" value="SELECTED"}
+                                                    {/if}
+                                                    <option value="{$key}" {$sel} >{$value}</option>
+                                                {/foreach}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        {foreach from=$html.data.array_movie key=key item=value}
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td class="w10" >{$value}</td>
+                                                            <td class="w45">
+                                                                {for $loop=1 to 3}
+                                                                    {assign var="value" value=""}
+                                                                    {if $html.data.session.$key.am.$loop}
+                                                                        {assign var="value" value=$html.data.session.$key.am.$loop}
+                                                                    {/if}
+                                                                    {if $smarty.request.session.$key.am.$loop}
+                                                                        {assign var="value" value=$smarty.request.session.$key.am.$loop}
+                                                                    {/if}
+                                                                    午前 {$loop}.
+                                                                    <textarea name="session[{$key}][am][{$loop}]" class="form-control" placeholder="セッション名" rows=2 >{$value}</textarea>
+                                                                {/for}
+                                                                <br />
+                                                                {for $loop=1 to 3}
+                                                                    {assign var="value" value=""}
+                                                                    {if $html.data.session.$key.pm.$loop}
+                                                                        {assign var="value" value=$html.data.session.$key.pm.$loop}
+                                                                    {/if}
+
+                                                                    {if $smarty.request.session.$key.pm.$loop}
+                                                                        {assign var="value" value=$smarty.request.session.$key.pm.$loop}
+                                                                    {/if}
+                                                                    午後 {$loop}.
+                                                                    <textarea name="session[{$key}][pm][{$loop}]" class="form-control" placeholder="セッション名" >{$value}</textarea>
+                                                                {/for}
+                                                            </td>
+                                                            <td class="w45">
+                                                                {if $key neq 99}
+                                                                {for $loop=1 to 3}
+                                                                    {assign var="value" value=""}
+                                                                    {if $html.data.zoom.$key.am.$loop}
+                                                                        {assign var="value" value=$html.data.zoom.$key.am.$loop}
+                                                                    {/if}
+
+                                                                    {if $smarty.request.zoom.$key.am.$loop}
+                                                                        {assign var="value" value=$smarty.request.zoom.$key.am.$loop}
+                                                                    {/if}
+                                                                    &nbsp;
+                                                                    <textarea name="zoom[{$key}][am][{$loop}]" class="form-control" placeholder="zoom用URL" >{$value}</textarea>
+                                                                {/for}
+                                                                <br />
+
+                                                                {for $loop=1 to 3}
+                                                                    {assign var="value" value=""}
+                                                                    {if $html.data.zoom.$key.pm.$loop}
+                                                                        {assign var="value" value=$html.data.zoom.$key.pm.$loop}
+                                                                    {/if}
+
+                                                                    {if $smarty.request.zoom.$key.pm.$loop}
+                                                                        {assign var="value" value=$smarty.request.zoom.$key.pm.$loop}
+                                                                    {/if}
+                                                                    &nbsp;
+                                                                    <textarea name="zoom[{$key}][pm][{$loop}]" class="form-control" placeholder="zoom用URL" >{$value}</textarea>
+                                                                {/for}
+                                                                {/if}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        {/foreach}
+                                    </div><!-- /.box-body -->
+                                </form>
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

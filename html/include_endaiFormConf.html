@@ -1,0 +1,426 @@
+<table class="inputTable">
+	<tr>
+    <th >{$html.data.endaiform.eform.2.name}</th>
+	<td>
+	{if $html.data.edit.snum}
+		{assign var="sid" value=$html.data.edit.snum}
+	{/if}
+	{if $smarty.request.sid}
+		{assign var="sid" value=$smarty.request.sid}
+	{/if}
+
+	{if $html.four}
+		{assign var="read" value="readonly"}
+	{/if}
+    <div class="disp">
+		{if $html.display eq "on"}
+			R <input  type="hidden" name="sid" id="sid" value="{$html.data.num}">{$html.data.num}{$smarty.const.D_SANKA_CODE}
+		{else}
+			R <input class="form-control w200 disp" type="text" name="sid" id="sid" value="{$sid}"  placeholder="例)0001" {$read}>{$smarty.const.D_SANKA_CODE}
+		{/if}
+	</div>
+	</td>
+	</tr>
+</table>
+
+<table class="inputTable">
+	{if $html.data.sankaform.sform.4.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.4.name}</th>
+		<td><span id="name"></span></td>
+		</tr>
+	{/if}
+
+	{if $html.data.sankaform.sform.5.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.5.name}</th>
+		<td><span id="kana"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.6.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.6.name}</th>
+		<td><span id="daigaku"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.7.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.7.name}</th>
+		<td><span id="gakubu"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.8.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.8.name}</th>
+		<td><span id="kenkyu"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.9.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.9.name}</th>
+		<td><span id="post"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.10.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.10.name}</th>
+		<td><span id="address_type"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.11.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.11.name}</th>
+		<td><span id="address"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.12.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.12.name}</th>
+		<td><span id="tel"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.13.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.13.name}</th>
+		<td><span id="naisen"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.14.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.14.name}</th>
+		<td><span id="fax"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.15.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.15.name}</th>
+		<td><span id="mail"></span></td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.17.status eq 1}
+		<tr>
+		<th >{$html.data.sankaform.sform.17.name}</th>
+		<td><span id="password" style="display:none;"></span>
+		<!--
+                                            <input type="password"  value="" id="passwordtxt" class="bgclear" />
+                                            -->
+                                            <br />
+                                            <input type="button" class="passwordchange2" value="表示" />
+                                    </td>
+		</tr>
+	{/if}
+
+</table>
+
+{if $html.data.endaiform.eform.6.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.6.name}</h4>
+	<div class="form-group">
+	    <div class="checkbox">
+			<table>
+				<tr>
+				{foreach from=$html.data.array_syozoku item="val" key="key" name="loop" }
+						{assign var="chk" value=""}
+						{if $smarty.request.syozoku}
+							{if "on" eq $smarty.request.syozoku.$key}
+								<td class="pdb5">
+									<p class="disp mg5 "><input type="hidden" name="syozoku[{$key}]"  id="syozoku_{$key}" value="on"  />{$val.name}</p>
+
+								</td>
+							{/if}
+						{/if}
+						{if $smarty.foreach.loop.index > 8 } {break} {/if}
+				{/foreach}
+				</tr>
+				{foreach from=$html.data.array_syozoku item="val" key="key" name="loop" }
+				{if $smarty.foreach.loop.index >9 }
+				<tr>
+	            	<td colspan=6 style="padding-top:10px;">
+						<div class="dbl w200" style="vertical-align:top;" >
+							{assign var="chk" value=""}
+							{if $smarty.request.syozoku}
+								{if "on" eq $smarty.request.syozoku.$key}
+									<p class="disp mg5"><input type="hidden" name="syozoku[{$key}]"  value="on" />{$val.name}</p>
+								{/if}
+							{/if}
+							{assign var="vals" value=""}
+							{if $key == 11 && $html.data.edit.other}
+								{assign var="vals" value=$html.data.edit.other}
+							{/if}
+							{if $key == 12 && $html.data.edit.nyukai}
+								{assign var="vals" value=$html.data.edit.nyukai}
+							{/if}
+							{if $smarty.request.text}
+								{if $smarty.request.text.$key}
+									{assign var="vals" value=$smarty.request.text.$key}
+								{/if}
+							{/if}
+
+							<input type="hidden" name="text[{$key}]" value="{$vals}"   >{$vals}
+						</div>
+					</td>
+				</tr>
+				{/if}
+				{/foreach}
+			</table>
+	    </div>
+	</div>
+{/if}
+
+
+
+
+{if $html.data.endaiform.eform.7.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.7.name}</h4>
+	<div class="form-group">
+	    <div class="radio">
+			<table>
+				<tr>
+					{if "1" eq $smarty.request.happyo}
+	            	<td nowrap  >
+						<input type="hidden" name="happyo"  value="1"  />{$html.data.array_happyo.1.name}
+					</td>
+					{/if}
+					{if "2" eq $smarty.request.happyo}
+	            	<td nowrap  >
+						<input type="hidden" name="happyo" value="2"  />{$html.data.array_happyo.2.name}
+					</td>
+					{/if}
+					{if "3" eq $smarty.request.happyo}
+	            	<td nowrap  >
+						<input type="hidden" name="happyo"  value="3"  />{$html.data.array_happyo.3.name}
+					</td>
+					{/if}
+<!----------------------------------------------------------------------------------------------
+					{if "4" eq $smarty.request.happyo}
+	            	<td nowrap >
+						<input type="hidden" name="happyo"  value="4"  />{$html.data.array_happyo.4.name}
+
+						{foreach $html.data.array_ippanKouenkouto item="val" key="key" name="loop" }
+
+							{if $smarty.request.ippanKouenkouto eq $key}
+								{$val}<input type="hidden" name="ippanKouenkouto" value="{$key}">
+							{/if}
+						{/foreach}
+					</td>
+					{/if}
+!------------------------------------------------------------------------------------------------------->
+					{if "4" eq $smarty.request.happyo}
+
+					<td nowrap>
+						<input type="hidden" name="happyo"  value="4"  />{$html.data.array_happyo.4.name}
+					</td>
+					{/if}
+
+
+
+					{if "5" eq $smarty.request.happyo}
+
+	            	<td nowrap>
+						<input type="hidden" name="happyo"  value="5"  />{$html.data.array_happyo.5.name}
+					</td>
+					{/if}
+
+
+					{if "6" eq $smarty.request.happyo}
+	            	<td nowrap >
+						<input type="hidden" name="happyo" value="6"  />{$html.data.array_happyo.6.name}
+					</td>
+					{/if}
+				</tr>
+			</table>
+	    </div>
+	</div>
+{/if}
+
+
+
+{*招待*}
+{if $html.data.endaiform.eform.37.status eq 1 && $smarty.request.syoutai}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.37.name}</h4>
+	<div class="form-group">
+		<input type="hidden" name="syoutai" value="{$smarty.request.syoutai}" />
+		{assign var="request_syoutai" value=$smarty.request.syoutai}
+		{assign var="array_syotai" value=$html.data.array_syotai}
+		{$array_syotai.$request_syoutai.name}
+	</div>
+{/if}
+
+{*コロキウム*}
+{if $html.data.endaiform.eform.38.status eq 1 && $smarty.request.korokiumu}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.38.name}</h4>
+	<div class="form-group">
+		<input type="hidden" name="korokiumu" value="{$smarty.request.korokiumu}" />
+		{assign var="request_korokiumu" value=$smarty.request.korokiumu}
+		{assign var="array_korokiumu" value=$html.data.array_korokiumu}
+		{$array_korokiumu.$request_korokiumu.name}
+
+	    
+	</div>
+{/if}
+
+
+{*一般公演口頭の分類*}
+{if $html.data.endaiform.eform.36.status eq 1 && $smarty.request.ippanKouenkouto}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.36.name}</h4>
+	<div class="form-group">
+		{assign var="val" value=$smarty.request.ippanKouenkouto }
+		<input type="hidden" name="ippanKouenkouto" value="{$val}" >
+		{$html.data.array_ippanKouenkouto.$val.name}
+
+		<div class="checkbox">
+			{if $smarty.request.studentPoster}
+				<input type="hidden" name="studentPoster" value="on"  > {$html.data.endaiform.eform.36.name_text1}
+			{/if}
+		</div>
+	</div>
+{/if}
+
+
+
+
+{if $html.data.endaiform.eform.8.status eq 1 && $smarty.request.ippanKouenposter}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.8.name}</h4>
+	<div class="form-group">
+		{assign var="val" value=$smarty.request.ippanKouenposter }
+		<input type="hidden" name="ippanKouenposter" value="{$val}" >
+		{$html.data.array_ippanKouenposter.$val.name}
+
+		<div class="checkbox">
+			{if $smarty.request.studentPoster}
+				<input type="hidden" name="studentPoster" value="on"  > {$html.data.endaiform.eform.8.name_text1}
+			{/if}
+		</div>
+	</div>
+{/if}
+{if $html.data.endaiform.eform.10.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.10.name}</h4>
+	{assign var="endainame" value=$smarty.request.endainame}
+	<input type="hidden" name="endainame" value="{$endainame}" >{$endainame}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.11.name}</h4>
+	<p class="disp" >{$html.data.endaiform.eform.11.name_text1}:</p>
+	<p class="disp" >
+		{$smarty.request.syozoku_count}
+		<input type="hidden" name="syozoku_count" value="{$smarty.request.syozoku_count}" >
+	</p>
+	{$html.data.endaiform.eform.11.explaintext}
+	<table class="inputtable">
+		<tr>
+			<th class="w20" >{$html.data.endaiform.eform.12.name}</th>
+			<th>{$html.data.endaiform.eform.12.name_text1}</th>
+			<th>{$html.data.endaiform.eform.12.name_text2}</th>
+			<th>{$html.data.endaiform.eform.12.name_text3}</th>
+		</tr>
+		{section start=1 loop=$smarty.request.syozoku_count+1 step=1 name="loop"}
+		<tr>
+			{assign var="key" value=$smarty.section.loop.index}
+			<td>{$key}</td>
+			<td>
+				{assign var="syozokuKikanD" value=$smarty.request.syozokuKikanD.$key }
+				<input type="hidden"  id="hd_syozokuKikanD{$key}" name="syozokuKikanD[{$key}]"  value="{$syozokuKikanD}" >{$syozokuKikanD}
+				{assign var="syozokuKikanG" value=$smarty.request.syozokuKikanG.$key }
+				<input type="hidden"  id="hd_syozokuKikanG{$key}" name="syozokuKikanG[{$key}]" value="{$syozokuKikanG}" >{$syozokuKikanG}
+			</td>
+			<td>
+				{assign var="syozokuKikanRyaku" value=$smarty.request.syozokuKikanRyaku.$key }
+				<input type="hidden"  id="hd_syozokuKikanRyaku{$key}" name="syozokuKikanRyaku[{$key}]"  value="{$syozokuKikanRyaku}" >{$syozokuKikanRyaku}
+			</td>
+			<td>
+				{assign var="syozokuKikanDEng" value=$smarty.request.syozokuKikanDEng.$key }
+				<input type="hidden"  id="hd_syozokuKikanDEng{$key}" name="syozokuKikanDEng[{$key}]"  value="{$syozokuKikanDEng}" >{$syozokuKikanDEng}
+				{assign var="syozokuKikanGEng" value=$smarty.request.syozokuKikanGEng.$key }
+				<input type="hidden"  id="hd_syozokuKikanGEng{$key}" name="syozokuKikanGEng[{$key}]"  value="{$syozokuKikanGEng}" >{$syozokuKikanGEng}
+			</td>
+		</tr>
+		{/section}
+	</table>
+{/if}
+{if $html.data.endaiform.eform.14.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.14.name}</h4>
+	<p class="disp" >{$html.data.endaiform.eform.14.name_text1}:</p>
+	<p class="disp" >{$smarty.request.tyosya_count}
+	<input type="hidden" name="tyosya_count" value="{$smarty.request.tyosya_count}" >
+	</p>
+	{$html.data.endaiform.eform.14.explaintext}
+	{assign var="tyosya" value=$smarty.request.tyosya }
+	<input type="hidden"  id="hd_tyosya" value="{$tyosya}" >
+	<table class="inputtable">
+		<tr>
+			<th class="w20" >{$html.data.endaiform.eform.15.name}</th>
+			<th nowrap>受賞時連絡先<br />(指導教員)</th>
+			<th>{$html.data.endaiform.eform.15.name_text1}</th>
+			<th>{$html.data.endaiform.eform.15.name_text2}</th>
+			<th>{$html.data.endaiform.eform.15.name_text3}</th>
+		</tr>
+		{assign var="tycount" value=$smarty.request.tyosya_count+1 }
+		{section start=1 loop=$tycount step=1 name="loop"}
+			{assign var="key" value=$smarty.section.loop.index}
+			{assign var="on" value=""}
+			{if $tyosya eq $key}
+				{assign var="on" value="○"}
+				<input type="hidden"  id="hd_tyosya" name="tyosya" value="{$key}" >
+			{/if}
+			<tr>
+				<td align="center">
+					{$on}
+				</td>
+				<td>
+					{if $smarty.request.teacher eq $key}
+						<input type="hidden" name="teacher" value="{$smarty.request.teacher}" />〇
+					{else}
+
+					{/if}
+				</td>
+				<td>
+					{assign var="tyosya_name1" value=$smarty.request.tyosya_name1.$key }
+					<input type="hidden"  id="hd_tyosya_name1_{$key}" name="tyosya_name1[{$key}]"  value="{$tyosya_name1}" >{$tyosya_name1}
+					{assign var="tyosya_name2" value=$smarty.request.tyosya_name2.$key }
+					<input type="hidden"  id="hd_tyosya_name2_{$key}" name="tyosya_name2[{$key}]"  value="{$tyosya_name2}" >{$tyosya_name2}
+				</td>
+				<td>
+					{assign var="tyosya_name1Eng" value=$smarty.request.tyosya_name1Eng.$key }
+					<input type="hidden"  id="hd_tyosya_name1Eng_{$key}" name="tyosya_name1Eng[{$key}]" value="{$tyosya_name1Eng}" >{$tyosya_name1Eng}
+					{assign var="tyosya_name2Eng" value=$smarty.request.tyosya_name2Eng.$key }
+					<input type="hidden"  id="hd_tyosya_name2Eng_{$key}" name="tyosya_name2Eng[{$key}]" value="{$tyosya_name2Eng}" >{$tyosya_name2Eng}
+				</td>
+				<td>
+					{assign var="tyosya_syozoku" value=$smarty.request.tyosya_syozoku.$key }
+					<input type="hidden"  id="hd_tyosya_syozoku_{$key}" name="tyosya_syozoku[{$key}]"  value="{$tyosya_syozoku}" >{$tyosya_syozoku}
+				</td>
+			</tr>
+		{/section}
+	</table>
+{/if}
+{if $html.data.endaiform.eform.17.status eq 1}
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.17.name}</h4>
+	<p class="disp w100" >{$html.data.endaiform.eform.17.name_text1} </p>
+	<p class="disp pdl20" >
+		{assign var="val" value=$smarty.request.pc }
+		<input type="hidden" name="pc" value="{$val.name}" >{$html.data.array_pc.$val.name}
+	</p>　
+	<p class="disp w100" >{$html.data.endaiform.eform.17.name_text2}</p>
+	{if $smarty.request.otheros}
+		{assign var="otheros" value=$smarty.request.otheros}
+	{/if}
+	<p class="disp"><input type="hidden" name="otheros" class="pd5 w300" value="{$otheros}">{$otheros}</p>
+{/if}
+
+{if $html.data.endaiform.eform.18.status eq 1}
+	<div class="form-group">
+	    <h4 class="bb pdb5" >{$html.data.endaiform.eform.18.name}</h4>
+		{if $smarty.request.bikou}
+			{assign var="bikou" value=$smarty.request.bikou }
+
+		{/if}
+		{$bikou|nl2br}
+		<input type="hidden" name="bikou" value="{$bikou}" >
+	</div>
+{/if}
+<div class="box-footer pd20">
+	<input class="btn btn-primary" type="submit" name="back2" id="back2" value="{$html.data.endaiform.eform.19.name_text1}">
+	<input type="submit" id="regist" value="{$html.data.endaiform.eform.19.name_text3}" class="btn btn-primary" >
+	<input type="hidden" id="regist" name="regist" value="on" >
+	<input type="hidden" id="num" name="num" value="{$smarty.request.num}" >
+	<input type="hidden" id="password" name="password" value="{$smarty.request.password}" >
+	{*編集用eid*}
+	<input type="hidden" id="eid" name="eid" value="{$html.data.edit.eid}">
+</div>

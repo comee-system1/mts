@@ -1,0 +1,1008 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        講演登録フォーム編集
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">講演登録フォーム編集</li>
+                    </ol>
+                </section>
+
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">講演登録フォーム編集</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body" >
+									<ul id="formMenu">
+										<li class="mn" id="m-1">ログインページ</li>
+										<li class="mn" id="m-2">講演申込ページ</li>
+										<li class="mn" id="m-3">確認画面</li>
+										<li class="mn" id="m-4">完了画面</li>
+										<li class="mn" id="m-5">発表申込編集</li>
+										<li class="mn" id="m-6">要旨原稿登録</li>
+									</ul>
+									<form action="" method="POST" >
+										<div id="menu1">
+											<div class="box-header">
+												<h3 class="box-title">ログインページ</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[1]" value="on" >
+												<input type="text" name="name[1]" value="{$html.data.endaiform.1.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[1]" id="textareas" class="h200"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.1.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >参加受付番号</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[2]" value="on" >
+												<input type="text" name="name[2]" value="{$html.data.endaiform.2.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[2]" value="{$html.data.endaiform.2.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >パスワード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[3]" value="on" >
+												<input type="text" name="name[3]" value="{$html.data.endaiform.3.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[3]" value="{$html.data.endaiform.3.name_text1}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[4]" value="on" >
+												<input type="text" name="name[4]" value="{$html.data.endaiform.4.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[4]" value="{$html.data.endaiform.4.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[1]" value="on" >
+												<input type="text" name="errmsg[1]" value="{$html.data.endaiform.1.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+										</div><!--menu1-->
+										<div id="menu2">
+											<div class="box-header">
+			                                    <h3 class="box-title">講演申込フォーム</h3>
+			                                </div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[5]" value="on" >
+												<input type="text" name="name[5]" value="{$html.data.endaiform.5.name}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >印刷ボタン</p>
+											<div class="left" >
+												<input type="text" name="name_text1[5]" value="{$html.data.endaiform.5.name_text1}" class="form-control w100" >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[5]" id="textareas2" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.5.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<br clear=all />
+											<p class="f18" >講演者の所属学協会</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[6]" value="on" >
+												<input type="text" name="name[6]" value="{$html.data.endaiform.6.name}" class="form-control w300" >
+												{if $html.data.endaiform.6.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[6]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.6.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[6]" value="on"  {$chk} >利用チェック</label></p>
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[6]" value="{$html.data.endaiform.6.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											説明
+											<input type="text" name="explain[6]" value="{$html.data.endaiform.6.explaintext}" class="form-control w600" >
+											<br clear=all />
+											エラーメッセージ
+											<input type="text" name="errmsg[6]" value="{$html.data.endaiform.6.errmsg}" class="form-control w600" >
+											<br clear=all />
+											{foreach from=$html.data.array_syozoku item="val" key="key"}
+												<div class="left" style="margin-bottom:10px;">
+													<input type="text" name="syozoku_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+													{assign var="chk" value=""}
+													{if $val.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{/if}
+													<label><input type="checkbox" name="syozoku_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+												</div>
+											{/foreach}
+											<br clear=all />
+											<p class="f18" >発表形式</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[7]" value="on" >
+												<input type="text" name="name[7]" value="{$html.data.endaiform.7.name}" class="form-control w300" >
+												{if $html.data.endaiform.7.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[7]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.7.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[7]" value="on"  {$chk} >利用チェック</label></p>
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[7]" value="{$html.data.endaiform.7.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											説明
+											<input type="text" name="explain[7]" value="{$html.data.endaiform.7.explaintext}" class="form-control w600" >
+											<br clear=all />
+											エラーメッセージ
+											<input type="text" name="errmsg[7]" value="{$html.data.endaiform.7.errmsg}" class="form-control w600" >
+											<br clear=all />
+											
+											
+											{foreach from=$html.data.array_happyo item="val" key="key"}
+												<div class="left" style="margin-bottom:10px;">
+													<input type="text" name="happyo_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+													{assign var="chk" value=""}
+													{if $val.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{/if}
+													<label><input type="checkbox" name="happyo_mst[{$key}][status]" value="1" id="id_{$key}" {$chk} 
+													
+													onclick="check_box(this,'ippan')"
+													
+													/>利用する</label>
+													
+													
+												</div>
+											{/foreach}
+											<br clear=all />
+
+
+											<div class="box box-primary pd5 ht500">
+												<p class="f18" >招待・依頼講演の分類</p>
+												※発表形式の1項目目が有効になった際に利用
+												<br clear=all />
+												<div class="left" >
+													名前：
+													<input type="hidden" name="ordername[37]" value="on" >
+													<input type="text" name="name[37]" value="{$html.data.endaiform.37.name}" class="form-control w300" >
+													
+													{if $html.data.endaiform.37.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="status[37]" value="on"  {$chk} >利用チェック</label></p>
+												
+													{if $html.data.endaiform.37.indispensible eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="indispensible[37]" value="on"  {$chk} >必須チェック</label></p>
+												
+
+												</div>
+												<div class="left" >
+													必須文字:
+													<input type="text" name="indispensible_text[37]" value="{$html.data.endaiform.37.indispensible_text}" class="form-control w200">
+												</div>
+												<br clear=all />
+												説明
+												<input type="text" name="explain[37]" value="{$html.data.endaiform.37.explaintext}" class="form-control w600" >
+												<br clear=all />
+												エラーメッセージ
+												<input type="text" name="errmsg[37]" value="{$html.data.endaiform.37.errmsg}" class="form-control w600" >
+												<br clear=all />
+												{foreach from=$html.data.syotai_mst item="val" key="key"}
+													<div class="left" style="margin-bottom:10px;">
+														<input type="text" name="syotai_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+														{assign var="chk" value=""}
+														{if $val.status eq 1}
+															{assign var="chk" value="CHECKED" }
+														{/if}
+														<label><input type="checkbox" name="syotai_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+													</div>
+												{/foreach}
+											</div>
+											<br clear=all />
+
+
+
+
+											<div class="box box-primary pd5 ht500">
+												<p class="f18" >コロキウムの分類</p>
+												※発表形式の3項目目が有効になった際に利用
+												<br clear=all />
+												<div class="left" >
+													名前：
+													<input type="hidden" name="ordername[38]" value="on" >
+													<input type="text" name="name[38]" value="{$html.data.endaiform.38.name}" class="form-control w300" >
+													
+													{if $html.data.endaiform.38.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="status[38]" value="on"  {$chk} >利用チェック</label></p>
+
+													{if $html.data.endaiform.38.indispensible eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="indispensible[38]" value="on"  {$chk} >必須チェック</label></p>
+
+												</div>
+												<div class="left" >
+													必須文字:
+													<input type="text" name="indispensible_text[38]" value="{$html.data.endaiform.38.indispensible_text}" class="form-control w200">
+												</div>
+												<br clear=all />
+												説明
+												<input type="text" name="explain[38]" value="{$html.data.endaiform.38.explaintext}" class="form-control w600" >
+												<br clear=all />
+												エラーメッセージ
+												<input type="text" name="errmsg[38]" value="{$html.data.endaiform.38.errmsg}" class="form-control w600" >
+												<br clear=all />
+												{foreach from=$html.data.korokiumu_mst item="val" key="key"}
+													<div class="left" style="margin-bottom:10px;">
+														<input type="text" name="korokiumu_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+														{assign var="chk" value=""}
+														{if $val.status eq 1}
+															{assign var="chk" value="CHECKED" }
+														{/if}
+														<label><input type="checkbox" name="korokiumu_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+													</div>
+												{/foreach}
+											</div>
+											<br clear=all />
+
+
+
+
+
+											<div class="box box-primary pd5 ht500">
+												<p class="f18" >一般講演口頭の分類</p>
+												※発表形式の4項目目が有効になった際に利用
+												<br clear=all />
+												<div class="left" >
+													名前：
+													<input type="hidden" name="ordername[36]" value="on" >
+													<input type="text" name="name[36]" value="{$html.data.endaiform.36.name}" class="form-control w300" >
+													
+													{if $html.data.endaiform.36.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="status[36]" value="on"  {$chk} >利用チェック</label></p>
+
+													{if $html.data.endaiform.36.indispensible eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="indispensible[36]" value="on"  {$chk} >必須チェック</label></p>
+
+												</div>
+												<div class="left" >
+													必須文字:
+													<input type="text" name="indispensible_text[36]" value="{$html.data.endaiform.36.indispensible_text}" class="form-control w200">
+												</div>
+												<br clear=all />
+												説明
+												<input type="text" name="explain[36]" value="{$html.data.endaiform.36.explaintext}" class="form-control w600" >
+												<br clear=all />
+												エラーメッセージ
+												<input type="text" name="errmsg[36]" value="{$html.data.endaiform.36.errmsg}" class="form-control w600" >
+												<br clear=all />
+												{foreach from=$html.data.array_ippanKouenkouto item="val" key="key"}
+													<div class="left" style="margin-bottom:10px;">
+														<input type="text" name="ippanKouenkouto_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+														{assign var="chk" value=""}
+														{if $val.status eq 1}
+															{assign var="chk" value="CHECKED" }
+														{/if}
+														<label><input type="checkbox" name="ippanKouenkouto_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+													</div>
+												{/foreach}
+											</div>
+											<br clear=all />
+
+
+
+
+											<div class="box box-primary pd5 ht500">
+												<p class="f18" >一般講演ポスターの分類</p>
+												※発表形式の5項目目が有効になった際に利用
+												<br clear=all />
+												<div class="left" >
+													名前：
+													<input type="hidden" name="ordername[8]" value="on" >
+													<input type="text" name="name[8]" value="{$html.data.endaiform.8.name}" class="form-control w300" >
+													
+													{if $html.data.endaiform.8.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="status[8]" value="on"  {$chk} >利用チェック</label></p>
+													{if $html.data.endaiform.8.indispensible eq 1}
+														{assign var="chk" value="CHECKED" }
+													{else}
+														{assign var="chk" value="" }
+													{/if}
+													<p><label><input type="checkbox" name="indispensible[8]" value="on"  {$chk} >必須チェック</label></p>
+												</div>
+												<div class="left" >
+													必須文字:
+													<input type="text" name="indispensible_text[8]" value="{$html.data.endaiform.8.indispensible_text}" class="form-control w200">
+												</div>
+												<br clear=all />
+												説明
+												<input type="text" name="explain[8]" value="{$html.data.endaiform.8.explaintext}" class="form-control w600" >
+												<br clear=all />
+												エラーメッセージ
+												<input type="text" name="errmsg[8]" value="{$html.data.endaiform.8.errmsg}" class="form-control w600" >
+												<br clear=all />
+												{foreach from=$html.data.array_ippanKouenposter item="val" key="key"}
+													<div class="left" style="margin-bottom:10px;">
+														<input type="text" name="ippanKouenposter_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+														{assign var="chk" value=""}
+														{if $val.status eq 1}
+															{assign var="chk" value="CHECKED" }
+														{/if}
+														<label><input type="checkbox" name="ippanKouenposter_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+													</div>
+												{/foreach}
+											</div>
+											<br clear=all />
+
+
+
+
+
+
+
+
+											学生ポスター賞審査希望
+											<input type="text" name="name_text1[8]" value="{$html.data.endaiform.8.name_text1}" class="form-control w600" >
+											<br clear=all />
+											<p class="f18" >演題名</p>
+											<div class="left" >
+												タイトル
+												<input type="hidden" name="ordername[10]" value="on" >
+												<input type="text" name="name[10]" value="{$html.data.endaiform.10.name}" class="form-control w300"  >
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[10]" value="{$html.data.endaiform.10.indispensible_text}" class="form-control w200">
+											</div>
+											
+											<br clear=all />
+											<div class="left" >
+												{if $html.data.endaiform.10.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[10]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.10.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[10]" value="on"  {$chk} >利用チェック</label></p>
+												
+											</div>
+											<br clear=all />
+											<div class="left" >
+												エラーメッセージ
+												<input type="text" name="errmsg[10]" value="{$html.data.endaiform.10.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[10]" id="textareas3" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.10.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<br clear=all />
+											<p class="f18" >著者の所属期間</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[11]" value="on" >
+												<input type="text" name="name[11]" value="{$html.data.endaiform.11.name}" class="form-control w300" >
+												{if $html.data.endaiform.11.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[11]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.11.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[11]" value="on"  {$chk} >利用チェック</label></p>
+												
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[11]" value="{$html.data.endaiform.11.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												所属期間の総数
+												<input type="text" name="name_text1[11]" value="{$html.data.endaiform.11.name_text1}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[11]" id="textareas4" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.11.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<br clear=all />
+											<input type="hidden" name="ordername[12]" value="on" >
+											<table class="inputtable">
+												<tbody>
+												<tr>
+													<th class="w20">
+														<input type="text" name="name[12]" value="{$html.data.endaiform.12.name}" class="form-control w100">
+													</th>
+													<th><input type="text" name="name_text1[12]" value="{$html.data.endaiform.12.name_text1}" class="form-control w200"></th>
+													<th><input type="text" name="name_text2[12]" value="{$html.data.endaiform.12.name_text2}" class="form-control w200"></th>
+													<th><input type="text" name="name_text3[12]" value="{$html.data.endaiform.12.name_text3}" class="form-control w200"></th>
+
+												</tr>
+												<tr>
+													<td>1<input type="hidden" name="ordername[13]" value="on" ></td>
+													<td>
+														<input type="text" name="name[13]" value="{$html.data.endaiform.13.name}" class="form-control w200">
+														<input type="text" name="name_text1[13]" value="{$html.data.endaiform.13.name_text1}" class="form-control w200">
+													</td>
+													<td>
+														<input type="text" name="name_text2[13]" value="{$html.data.endaiform.13.name_text2}" class="form-control w200">
+													</td>
+													<td>
+														<input type="text" name="name_text3[13]" value="{$html.data.endaiform.13.name_text3}" class="form-control w200">
+														<input type="text" name="name_text4[13]" value="{$html.data.endaiform.13.name_text4}" class="form-control w200">
+													</td>
+												</tr>
+												<tr>
+													<td>エラーメッセージ<input type="hidden" name="ordername[23]" value="on" ></td>
+													<td>
+														<input type="text" name="name_text1[23]" value="{$html.data.endaiform.23.name_text1}" class="form-control w200">
+														<input type="text" name="name_text2[23]" value="{$html.data.endaiform.23.name_text2}" class="form-control w200">
+													</td>
+													<td>
+														<input type="text" name="name_text3[23]" value="{$html.data.endaiform.23.name_text3}" class="form-control w200">
+													</td>
+													<td>
+														<input type="text" name="name_text4[23]" value="{$html.data.endaiform.23.name_text4}" class="form-control w200">
+														<input type="text" name="name_text5[23]" value="{$html.data.endaiform.23.name_text5}" class="form-control w200">
+													</td>
+												</tr>
+											</table>
+											<br clear=all />
+											<br clear=all />
+											<p class="f18" >著者名</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[14]" value="on" >
+												<input type="text" name="name[14]" value="{$html.data.endaiform.14.name}" class="form-control w300" >
+												{if $html.data.endaiform.14.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[14]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.14.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[14]" value="on"  {$chk} >利用チェック</label></p>
+												
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[14]" value="{$html.data.endaiform.14.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												著者の総数
+												<input type="text" name="name_text1[14]" value="{$html.data.endaiform.14.name_text1}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[14]" id="textareas5" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.14.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<br clear=all />
+											<input type="hidden" name="ordername[15]" value="on" >
+											<table class="inputtable">
+												<tbody><tr>
+													<th class="w20">
+														<input type="text" name="name[15]" value="{$html.data.endaiform.15.name}" class="form-control w100">
+													</th>
+													<th><input type="text" name="name_text1[15]" value="{$html.data.endaiform.15.name_text1}" class="form-control w200"></th>
+													<th><input type="text" name="name_text2[15]" value="{$html.data.endaiform.15.name_text2}" class="form-control w200"></th>
+													<th><input type="text" name="name_text3[15]" value="{$html.data.endaiform.15.name_text3}" class="form-control w200"></th>
+
+												</tr>
+												<tr>
+													<td>1<input type="hidden" name="ordername[16]" value="on" ></td>
+													<td>
+														<input type="text" name="name[16]" value="{$html.data.endaiform.16.name}" class="form-control w100 left" >
+														<input type="text" name="name_text1[16]" value="{$html.data.endaiform.16.name_text1}" class="form-control w100 left" >
+													</td>
+													<td>
+														<input type="text" name="name_text2[16]" value="{$html.data.endaiform.16.name_text2}" class="form-control w100 left">
+														<input type="text" name="name_text3[16]" value="{$html.data.endaiform.16.name_text3}" class="form-control w100 left">
+													</td>
+													<td>
+														<input type="text" name="name_text4[16]" value="{$html.data.endaiform.16.name_text4}" class="form-control w200">
+													</td>
+												</tr>
+
+												<tr>
+													<td>エラーメッセージ<input type="hidden" name="ordername[24]" value="on" ></td>
+													<td>
+														<input type="text" name="name[24]" value="{$html.data.endaiform.24.name}" class="form-control w100 left" >
+														<input type="text" name="name_text1[24]" value="{$html.data.endaiform.24.name_text1}" class="form-control w100 left" >
+													</td>
+													<td>
+														<input type="text" name="name_text2[24]" value="{$html.data.endaiform.24.name_text2}" class="form-control w100 left">
+														<input type="text" name="name_text3[24]" value="{$html.data.endaiform.24.name_text3}" class="form-control w100 left">
+													</td>
+													<td>
+														<input type="text" name="name_text4[24]" value="{$html.data.endaiform.24.name_text4}" class="form-control w200">
+													</td>
+												</tr>
+
+											</table>
+
+											<br clear=all />
+											<br clear=all />
+											<p class="f18" >PC情報</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[17]" value="on" >
+												<input type="text" name="name[17]" value="{$html.data.endaiform.17.name}" class="form-control w300" >
+												{if $html.data.endaiform.17.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[17]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.17.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[17]" value="on"  {$chk} >利用チェック</label></p>
+												
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[17]" value="{$html.data.endaiform.17.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												PC:
+												<input type="text" name="name_text1[17]" value="{$html.data.endaiform.17.name_text1}" class="form-control w200">
+											</div>
+											<div class="left" >
+												その他OS:
+												<input type="text" name="name_text2[17]" value="{$html.data.endaiform.17.name_text2}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<br clear=all />
+											{foreach from=$html.data.array_pc item="val" key="key"}
+												<div class="left" style="margin-bottom:10px;">
+													<input type="text" name="pc_mst[{$key}][name]]" value="{$val.name}" class="form-control w200" />
+													{assign var="chk" value=""}
+													{if $val.status eq 1}
+														{assign var="chk" value="CHECKED" }
+													{/if}
+													<label><input type="checkbox" name="pc_mst[{$key}][status]" value="1" {$chk} />利用する</label>
+												</div>
+											{/foreach}
+											<br clear=all />
+											<br clear=all />
+											<p class="f18" >備考</p>
+											<div class="left" >
+												名前：
+												<input type="hidden" name="ordername[18]" value="on" >
+												<input type="text" name="name[18]" value="{$html.data.endaiform.18.name}" class="form-control w300" >
+												{if $html.data.endaiform.18.indispensible eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="indispensible[18]" value="on"  {$chk} >必須チェック</label></p>
+												
+												{if $html.data.endaiform.18.status eq 1}
+													{assign var="chk" value="CHECKED" }
+												{else}
+													{assign var="chk" value="" }
+												{/if}
+												<p><label><input type="checkbox" name="status[18]" value="on"  {$chk} >利用チェック</label></p>
+												
+												
+											</div>
+											<div class="left" >
+												必須文字:
+												<input type="text" name="indispensible_text[18]" value="{$html.data.endaiform.18.indispensible_text}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<div class="left" >
+												入力例:
+												<input type="text" name="name_text1[18]" value="{$html.data.endaiform.18.name_text1}" class="form-control w200">
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン</p>
+											<input type="hidden" name="ordername[19]" value="on" >
+											<div class="left" >
+												<input type="text" name="name_text1[19]" value="{$html.data.endaiform.19.name_text1}" class="form-control w100">
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text2[19]" value="{$html.data.endaiform.19.name_text2}" class="form-control w100">
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text3[19]" value="{$html.data.endaiform.19.name_text3}" class="form-control w100">
+											</div>
+											<br clear=all />
+										</div><!--menu2-->
+										<div id="menu3">
+											<div class="box-header">
+			                                    <h3 class="box-title">確認画面</h3>
+			                                </div><!-- /.box-header -->
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[21]" value="on" >
+												<textarea  name="explain[21]" id="textareas6" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.21.explaintext}</textarea>
+											</div>
+											<br clear=all />
+										</div><!--menu3-->
+										<div id="menu4">
+											<div class="box-header">
+			                                    <h3 class="box-title">完了画面</h3>
+			                                </div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[22]" value="on" >
+												<input type="text" name="name[22]" value="{$html.data.endaiform.22.name}" class="form-control w300">
+												<input type="text" name="name_text1[22]" value="{$html.data.endaiform.22.name_text1}" class="form-control w300">
+												<input type="text" name="name_text2[22]" value="{$html.data.endaiform.22.name_text2}" class="form-control w100">
+													
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン</p>
+											<div class="left" >
+												<input type="text" name="name_text3[22]" value="{$html.data.endaiform.22.name_text3}" class="form-control w100">
+											</div>
+										</div>
+										<div id="menu5">
+											<div class="box-header">
+												<h3 class="box-title">発表申込編集フォーム</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[25]" value="on" >
+												<input type="text" name="name[25]" value="{$html.data.endaiform.25.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[25]" id="textareas7" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.25.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >発表受付番号</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[26]" value="on" >
+												<input type="text" name="name[26]" value="{$html.data.endaiform.26.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[26]" value="{$html.data.endaiform.26.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >パスワード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[27]" value="on" >
+												<input type="text" name="name[27]" value="{$html.data.endaiform.27.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[27]" value="{$html.data.endaiform.27.name_text1}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[28]" value="on" >
+												<input type="text" name="name[28]" value="{$html.data.endaiform.28.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[28]" value="{$html.data.endaiform.28.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[25]" value="on" >
+												<input type="text" name="errmsg[25]" value="{$html.data.endaiform.25.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+										</div><!--menu5-->
+
+										<div id="menu6">
+											<div class="box-header">
+												<h3 class="box-title">要旨原稿登録ログイン</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[29]" value="on" >
+												<input type="text" name="name[29]" value="{$html.data.endaiform.29.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[29]" id="textareas8" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.29.explaintext}</textarea>
+											</div>
+											<br clear=all />
+											<p class="f18" >発表受付番号</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[30]" value="on" >
+												<input type="text" name="name[30]" value="{$html.data.endaiform.30.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[30]" value="{$html.data.endaiform.30.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >パスワード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[31]" value="on" >
+												<input type="text" name="name[31]" value="{$html.data.endaiform.31.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[31]" value="{$html.data.endaiform.31.name_text1}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[32]" value="on" >
+												<input type="text" name="name[32]" value="{$html.data.endaiform.32.name}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												<input type="text" name="name_text1[32]" value="{$html.data.endaiform.32.name_text1}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="text" name="errmsg[29]" value="{$html.data.endaiform.29.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<hr size=1 />
+											<div class="box-header">
+												<h3 class="box-title">要旨原稿登録フォーム</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[33]" value="on" >
+												<input type="text" name="name[33]" value="{$html.data.endaiform.33.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >説明</p>
+											<div class="left" >
+												<textarea  name="explain[33]" id="textareas9" class="h200 w600"  oncopy="return false" onpaste="return false" oncontextmenu="return false" >{$html.data.endaiform.33.explaintext}</textarea>
+											</div>
+
+											<br clear=all />
+											<hr size=1 />
+											<br clear=all />
+											<p class="f18" >フラッシュ発表用PPTファイルアップロード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[39]" value="on" >
+												<input type="text" name="name[39]" value="{$html.data.endaiform.39.name}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											
+											<div class="left" >
+												添付ファイル削除
+												<input type="text" name="name_text1[39]" value="{$html.data.endaiform.39.name_text1}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録ファイルリンク
+												<input type="text" name="name_text2[39]" value="{$html.data.endaiform.39.name_text2}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												登録発表ページ
+												<input type="text" name="name_text3[39]" value="{$html.data.endaiform.39.name_text3}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録する
+												<input type="text" name="name_text4[39]" value="{$html.data.endaiform.39.name_text4}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="text" name="errmsg[39]" value="{$html.data.endaiform.39.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<hr size=1 />
+
+											<br clear=all />
+											<hr size=1 />
+											<br clear=all />
+											<p class="f18" >ポスターデータ(PDF)ファイルアップロード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[40]" value="on" >
+												<input type="text" name="name[40]" value="{$html.data.endaiform.40.name}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											
+											<div class="left" >
+												添付ファイル削除
+												<input type="text" name="name_text1[40]" value="{$html.data.endaiform.40.name_text1}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録ファイルリンク
+												<input type="text" name="name_text2[40]" value="{$html.data.endaiform.40.name_text2}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												登録発表ページ
+												<input type="text" name="name_text3[40]" value="{$html.data.endaiform.40.name_text3}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録する
+												<input type="text" name="name_text4[40]" value="{$html.data.endaiform.40.name_text4}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="text" name="errmsg[40]" value="{$html.data.endaiform.40.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<hr size=1 />
+											
+
+
+
+
+											<br clear=all />
+											<p class="f18" >予稿現行登録ファイルアップロード</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[34]" value="on" >
+												<input type="text" name="name[34]" value="{$html.data.endaiform.34.name}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											
+											<div class="left" >
+												添付ファイル削除
+												<input type="text" name="name_text1[34]" value="{$html.data.endaiform.34.name_text1}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録ファイルリンク
+												<input type="text" name="name_text2[34]" value="{$html.data.endaiform.34.name_text2}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >ボタン名</p>
+											<div class="left" >
+												登録発表ページ
+												<input type="text" name="name_text3[34]" value="{$html.data.endaiform.34.name_text3}" class="form-control w200"  >
+											</div>
+											<div class="left" >
+												登録する
+												<input type="text" name="name_text4[34]" value="{$html.data.endaiform.34.name_text4}" class="form-control w200"  >
+											</div>
+											<br clear=all />
+											<p class="f18" >エラーメッセージ</p>
+											<div class="left" >
+												<input type="text" name="errmsg[33]" value="{$html.data.endaiform.33.errmsg}" class="form-control w600"  >
+											</div>
+											<br clear=all />
+											<hr size=1 />
+											<div class="box-header">
+												<h3 class="box-title">要旨原稿登録フォーム完了画面</h3>
+											</div><!-- /.box-header -->
+											<p class="f18" >タイトル</p>
+											<div class="left" >
+												<input type="hidden" name="ordername[35]" value="on" >
+												<input type="text" name="name[35]" value="{$html.data.endaiform.35.name}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												発表申込ファイルアップロード完了しました。
+												<input type="text" name="name_text1[35]" value="{$html.data.endaiform.35.name_text1}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												発表申込番号：
+												<input type="text" name="name_text2[35]" value="{$html.data.endaiform.35.name_text2}" class="form-control w300"  >
+											</div>
+											<br clear=all />
+											<div class="left" >
+												ボタン
+												<input type="text" name="name_text3[35]" value="{$html.data.endaiform.35.name_text3}" class="form-control w300"  >
+											</div>
+										</div><!--menu6-->
+
+										<br clear=all />
+										<br clear=all />
+										<div class="box-footer pd20 ">
+												<button class="btn btn-primary" type="submit" name="regist" id="regist" value="on">登録する</button>
+
+										</div>
+									</form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+
+		{include file='../inc_footer.html'}
+
+

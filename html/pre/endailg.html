@@ -1,0 +1,54 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.endaiform.eform.1.name}</h3>
+	<div class="w800" style="margin:auto;">
+	{foreach from=$html.data.errmsg item="val" key="key" name="loop"}
+		{if $smarty.foreach.loop.first}
+			<div class="alert alert-danger alert-dismissable">
+			<i class="fa fa-ban"></i>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<b>Alert!</b>
+		{/if}
+				<p>{$val}</p>
+		{if $smarty.foreach.loop.last}
+			</div>
+		{/if}
+	{/foreach}
+	<form action="" method="POST" name="form1">
+		<div class="w600" style="margin:auto;">
+			<hr size=1 >
+				<p>{$html.data.endaiform.eform.1.explaintext}</p>
+			<hr size=1>
+			<div class="form-group">
+				<label class="iblock" >{$html.data.endaiform.eform.2.name}</label>
+				<p class="dbl">R</p>
+				<p class="dbl"><input type="text" name="num" id="scode" class="w100 pd5" value="" placeholder="{$html.data.endaiform.eform.2.name_text1}" style="border:1px solid #ccc;"></p>
+				<p class="dbl">{$smarty.const.D_SANKA_CODE}</p>
+			</div>
+			<div class="form-group">
+				<label>{$html.data.endaiform.eform.3.name}</label><br clear="all" />
+                                <div class="col-lg-7">
+				<input class="form-control " type="password" name="password" value="" placeholder="{$html.data.endaiform.eform.3.name_text1}" id="password">
+                                </div>
+                                <div class="col-lg-4">
+                                                                        <input type="button" class=" passwordchange  " value="表示"/>
+                                </div>
+			</div><br clear="all" /><br clear="all" />
+			<div class="form-group">
+				<button class="btn btn-primary" type="button" id="backpre" >{$html.data.endaiform.eform.4.name}</button>
+				<input type="submit" class="btn btn-primary {$dis}" name="login"  value="{$html.data.endaiform.eform.4.name_text1}" />
+				<input type="hidden" id="open" value="on" />
+			</div>
+		</div>
+	</form>
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

@@ -1,0 +1,59 @@
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+							{if $html.mainImg}<img src="{$smarty.const.D_LOGO_URL}{$html.id}">
+							{/if}
+                        </div>
+                        <div class="pull-left info">
+                            <p>管理者</p>
+                        </div>
+                    </div>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="/">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/sanka/cus/">
+                                <i class="fa fa-edit"></i> <span>参加者一覧</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/sanka/reg/">
+                                <i class="fa fa-gear"></i> <span>参加者登録</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/sanka/mail/">
+                                <i class="fa fa-envelope-o"></i>
+                                <span>メール内容編集</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/sanka/csv/">
+                                <i class="fa  fa-level-down"></i>
+                                <span>CSVダウンロード</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/sanka/hist/">
+                                <i class="fa  fa-copy"></i>
+                                <span>変更履歴</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/sanka/editForm/">
+                                <i class="fa  fa-copy"></i>
+                                <span>参加者登録フォーム編集</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </section>
+                <!-- /.sidebar -->

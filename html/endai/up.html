@@ -1,0 +1,81 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue"  oncontextmenu='return false' >
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        講演番号アップロード
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">講演番号アップロード</li>
+                    </ol>
+                </section>
+
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">講演番号アップロード</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body" >
+									{foreach from=$html.data.errmsg item="val" key="key" name="loop"}
+										{if $smarty.foreach.loop.first}
+											<div class="alert alert-danger alert-dismissable">
+											<i class="fa fa-ban"></i>
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+											<b>Alert!</b>
+										{/if}
+												<p>{$val}</p>
+										{if $smarty.foreach.loop.last}
+											</div>
+										{/if}
+									{/foreach}
+									{foreach from=$html.data.success item="val" key="key" name="loop"}
+										{if $smarty.foreach.loop.first}
+											<div class="alert alert-success alert-dismissable">
+											<i class="fa fa-ban"></i>
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+											<b>Success!</b>
+										{/if}
+												<p>{$val}</p>
+										{if $smarty.foreach.loop.last}
+											</div>
+										{/if}
+									{/foreach}
+									<form action="" method="POST" enctype="multipart/form-data">
+										<h4 class="bb pdb5" >講演番号アップロード</h4>
+										<div class="form-group">
+											<label for="exampleInputFile">アップロードファイル</label>
+                                            <input type="file" id="exampleInputFile" name="files" class="w40">
+										</div>
+										<button type="submit" class="btn btn-primary" name="upload" value="on">ファイルアップロード</button>
+										<button type="submit" class="btn btn-success" name="template" value="on">テンプレート</button>
+									</form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

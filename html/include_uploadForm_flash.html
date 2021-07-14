@@ -1,0 +1,14 @@
+<div class="form-group">
+	<h4 class="bb pdb5" >{$html.data.endaiform.eform.39.name}</h4>
+	<input type="file" id="exampleInputFile_flash" name="files_flash" class="w40">
+	{if $html.data.edit.fileUpdate_flash_ext}
+		{assign var="chk" value="" }
+		{if $smarty.request.deleteFile}
+			{assign var="chk" value="CHECKED"}
+		{/if}
+		<input type="checkbox" name="deleteFile_flash" value="on" {$chk}>{$html.data.endaiform.eform.39.name_text1}<br />
+		<a href="/flash/{$html.data.edit.fileUpdate_flash_ext}" target=_blank>{$html.data.endaiform.eform.39.name_text2}</a>
+		<input type="hidden" name="fileUpdate_flash_ext" value="{$html.data.edit.fileUpdate_flash_ext}" /> 
+		<input type="hidden" name="fileUpdate_flash_ts" value="{$html.data.edit.fileUpdate_flash_ts}" /> 
+	{/if}
+</div>

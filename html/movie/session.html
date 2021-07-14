@@ -1,0 +1,87 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w90" style="margin:auto;">
+	    <div id="pg-main">
+            <h2 id="pg-title">令和2年度　化学系学協会東北大会<br />プレゼンテーション動画一覧日程</h2>
+        </div>
+        <div  style="margin:auto;">
+       
+        <form action="" method="POST" name="form1">
+            <div class="text-right">
+                <input type="button" value="閉じる" class="btn btn-danger" onclick=" window.open('about:blank','_self').close();" />
+            </div>
+            <div style="margin:auto;margin-top:25px;">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        {$html.data.explain|nl2br}
+                    </div>
+    
+                </div>
+                {assign var="al" value='0'}
+                
+                {foreach from=$html.data.list item="value" key="keys"}
+                <br />
+                <table class="table table-bordered mt5">
+                    <tr >
+                        <th colspan=3 class="bgGreen">{$keys}日</th>
+                    </tr>
+                    {foreach from=$value item="val" key="k"}
+                    
+                    {if $al neq $val.alpha}
+                    <tr>
+                        {assign var="alpha" value=$val.alpha}
+                        <td colspan=3 class="noborder" id="key-{$keys}-{$alpha}会場">
+                            <div class="col-lg-6 col-xs-6 ">
+                                <h3 class="box-title">{$alpha}会場</h3>
+                            </div>
+                            
+                            <div class="col-lg-6 col-xs-6 text-right">
+                                
+                                {assign var="zooms" value=$html.data.zoom.$keys }
+                                
+                                {assign var="zoom" value=$zooms.$alpha.url }
+
+                                {assign var="url" value=$zooms.$alpha.session }
+                                {foreach from=$zoom key=key item=zValue}
+                                    {if $zValue}
+                                        <a class="btn btn-app  ht90 w100" href="{$zValue}" target=_blank >
+                                            <i class="fa fa-play"></i> {$url.$key|nl2br}
+                                        </a>
+                                        
+                                    {/if}
+                                {/foreach}
+                            </div>
+                            
+
+                        </td>
+                    </tr>
+                    {/if}
+                    <tr>
+                        <td>{$val.publication}</td>
+                        <td>
+                            {if $val.zatyo_name}
+                            {$val.zatyo_name}({$val.zatyo_group})<br />
+                            {/if}
+                            {$val.endainame}
+                            <div>
+                                {$val.tyosya_name}
+                                ({$val.syozokuKikanRyaku})
+                            </div>
+                        </td>
+                        <td><a href="/pdf/{$val.fileUpdate_ext}" class="btn btn-success" target=_blank >予稿原稿</a></td>
+                    </tr>
+                    {assign var="al" value=$val.alpha}
+                    {/foreach}
+                </table>
+                {/foreach}
+                
+
+            </div>
+        </form>
+        </div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

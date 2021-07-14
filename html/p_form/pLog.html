@@ -1,0 +1,57 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.title}</h2>
+	</div>
+	<h3 class="pd20" >{$html.data.sankaform.sform.26.name}</h3>
+	{foreach from=$html.data.errmsg item="val" key="key" name="loop"}
+		{if $smarty.foreach.loop.first}
+			<div class="alert alert-danger alert-dismissable">
+			<i class="fa fa-ban"></i>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<b>Alert!</b>
+		{/if}
+				<p>{$val}</p>
+		{if $smarty.foreach.loop.last}
+			</div>
+		{/if}
+	{/foreach}
+	<div class="w600 pg-mgl40" style="margin:auto;">
+	<hr size=1 />
+	<p>{$html.data.sankaform.sform.26.explaintext}</p>
+	<hr size=1 />
+
+	<form action="" method="POST" name="form1">
+		<div class="f22" >
+			<div class="iblock pdb5" >
+				<p class="dbl w200">{$html.data.sankaform.sform.26.name_text1}</p>
+				<p class="dbl">R<input type="text" name="num" id="scode" class="w20" value="" >{$smarty.const.D_SANKA_CODE}</p>
+			</div>
+
+			<div class="iblock" >
+				<p class="dbl w200">{$html.data.sankaform.sform.26.name_text2}</p>
+				<p class="dbl">
+                                                                            <input type="password" name="password" id="password" class="w60" value="" >
+                                                                            <input type="button" class=" passwordchange  " value="表示"/>
+                                                                        </p>
+			</div>
+		</div>
+		<div class="iblock pd20 pg-center" >
+			<input class="btn btn-primary"  type="button" id="backform" value="{$html.data.sankaform.sform.26.name_text3}" />
+			<input class="btn btn-primary"  type="button" id="login" value="{$html.data.sankaform.sform.26.name_text4}" />
+			<input type="hidden" id="err" name="err"  value="" />
+		</div>
+	</form>
+	{*ログイン成功用*}
+	<form action="/p_form/pReg/" method="POST" name="form2">
+		<input type="hidden" name="sid" value="" id="sid">
+		
+	</form>
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

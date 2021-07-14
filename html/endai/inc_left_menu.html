@@ -1,0 +1,82 @@
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+							{if $html.mainImg}<img src="{$smarty.const.D_LOGO_URL}{$html.id}">
+							{/if}
+                        </div>
+                        <div class="pull-left info">
+                            <p>管理者</p>
+                        </div>
+                    </div>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="/">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{$smarty.const.D_URL}endai/cus/">
+                                <i class="fa fa-edit"></i> <span>演題一覧</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{$smarty.const.D_URL}endai/reg/">
+                                <i class="fa fa-gear"></i> <span>演題登録</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/mail/">
+                                <i class="fa fa-envelope-o"></i>
+                                <span>メール内容編集</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/csv/">
+                                <i class="fa  fa-level-down"></i>
+                                <span>CSVダウンロード</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/pdfDown/">
+                                <i class="fa  fa-hdd-o"></i>
+                                <span>PDFダウンロード</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/pdfDownflash/">
+                                <i class="fa  fa-hdd-o"></i>
+                                <span>フラッシュ発表用PPT</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/pdfDownposter/">
+                                <i class="fa  fa-hdd-o"></i>
+                                <span>ポスターデータPDF</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/up/">
+                                <i class="fa  fa-level-up"></i>
+                                <span>講演番号アップロード</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/hist/">
+                                <i class="fa  fa-copy"></i>
+                                <span>変更履歴</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{$smarty.const.D_URL}endai/editForm/">
+                                <i class="fa  fa-wrench"></i>
+                                <span>発表申込フォーム修正</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->

@@ -1,0 +1,294 @@
+<table class="inputTable">
+	{if $html.data.sankaform.sform.4.status eq 1}
+		<tr>
+	    <th >{$html.data.sankaform.sform.4.name}<p class="text-red">{$html.data.sankaform.sform.4.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.name1}
+			{assign var="name1" value=$smarty.request.name1}
+		{elseif $html.data.sanka.name1}
+			{assign var="name1" value=$html.data.sanka.name1}
+		{/if}
+		{if $smarty.request.name2}
+			{assign var="name2" value=$smarty.request.name2}
+		{elseif $html.data.sanka.name2}
+			{assign var="name2" value=$html.data.sanka.name2}
+		{/if}
+	    <div class="disp ml20"><input class="form-control w30 disp" type="text" name="name1" id="name1" value="{$name1}"  placeholder="{$html.data.sankaform.sform.4.name_text1}"></div>
+	    <div class="disp ml20"><input class="form-control w30 disp" type="text" name="name2" id="name2" value="{$name2}" placeholder="{$html.data.sankaform.sform.4.name_text2}"></div>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.5.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.5.name}<p class="text-red">{$html.data.sankaform.sform.5.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.kana1}
+			{assign var="kana1" value=$smarty.request.kana1}
+		{elseif $html.data.sanka.kana1}
+			{assign var="kana1" value=$html.data.sanka.kana1}
+		{/if}
+		{if $smarty.request.kana2}
+			{assign var="kana2" value=$smarty.request.kana2}
+		{elseif $html.data.sanka.kana2}
+			{assign var="kana2" value=$html.data.sanka.kana2}
+		{/if}
+	    <p class="disp ml20"><input class="form-control w30 disp" type="text" name="kana1" id="kana1" value="{$kana1}" placeholder="{$html.data.sankaform.sform.5.name_text1}"></p>
+	    <p class="disp ml20"><input class="form-control w30 disp" type="text" name="kana2" id="kana2" value="{$kana2}" placeholder="{$html.data.sankaform.sform.5.name_text2}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.6.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.6.name}<p class="text-red">{$html.data.sankaform.sform.6.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.daigaku}
+			{assign var="daigaku" value=$smarty.request.daigaku}
+		{elseif $html.data.sanka.daigaku}
+			{assign var="daigaku" value=$html.data.sanka.daigaku}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="daigaku" id="daigaku" value="{$daigaku}"  placeholder="{$html.data.sankaform.sform.6.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.7.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.7.name}<p class="text-red">{$html.data.sankaform.sform.7.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.gakubu}
+			{assign var="gakubu" value=$smarty.request.gakubu}
+		{elseif $html.data.sanka.gakubu}
+			{assign var="gakubu" value=$html.data.sanka.gakubu}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="gakubu" id="gakubu"  value="{$gakubu}" placeholder="{$html.data.sankaform.sform.7.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.8.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.8.name}<p class="text-red">{$html.data.sankaform.sform.8.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.kenkyu}
+			{assign var="kenkyu" value=$smarty.request.kenkyu}
+		{elseif $html.data.sanka.kenkyu}
+			{assign var="kenkyu" value=$html.data.sanka.kenkyu}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="kenkyu" id="kenkyu" value="{$kenkyu}" placeholder="{$html.data.sankaform.sform.8.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+
+	{if $html.data.sankaform.sform.10.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.10.name}<p class="text-red">{$html.data.sankaform.sform.10.indispensible_text}</p></th>
+		<td>
+		{foreach from=$html.data.address_type key="key" item="val"}
+			{assign var="chk" value=""}
+			{if $smarty.request.address_type eq $key}
+				{assign var="chk" value="CHECKED"}
+			{elseif $html.data.sanka.address_type eq $key && !$smarty.request.address_type}
+				{assign var="chk" value="CHECKED"}
+			{/if}
+	        <p class="disp ml20 middle"><input type="radio" name="address_type" class="optionsRadios1 simple" value="{$key}" {$chk} ></p>
+			<p class="disp dbl middle">{$val}</p>
+		{/foreach}
+		</td>
+		</tr>
+	{/if}
+
+	{if $html.data.sankaform.sform.9.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.9.name}<p class="text-red">{$html.data.sankaform.sform.9.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.post}
+			{assign var="post" value=$smarty.request.post}
+		{elseif $html.data.sanka.post}
+			{assign var="post" value=$html.data.sanka.post}
+		{/if}
+	    <p class="disp ml20"><input class="form-control w30 disp" type="text" name="post" id="post" value="{$post}" placeholder="{$html.data.sankaform.sform.9.name_text1}" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"> </p>
+		</td>
+		</tr>
+	{/if}
+
+
+	{if $html.data.sankaform.sform.11.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.11.name}<p class="text-red">{$html.data.sankaform.sform.11.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.address}
+			{assign var="address" value=$smarty.request.address}
+		{elseif $html.data.sanka.address}
+			{assign var="address" value=$html.data.sanka.address}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="address" id="address" value="{$address}" placeholder="{$html.data.sankaform.sform.11.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.12.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.12.name}<p class="text-red">{$html.data.sankaform.sform.12.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.tel}
+			{assign var="tel" value=$smarty.request.tel}
+		{elseif $html.data.sanka.tel}
+			{assign var="tel" value=$html.data.sanka.tel}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="tel" id="tel" value="{$tel}" placeholder="{$html.data.sankaform.sform.12.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.13.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.13.name}<p class="text-red">{$html.data.sankaform.sform.13.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.naisen}
+			{assign var="naisen" value=$smarty.request.naisen}
+		{elseif $html.data.sanka.naisen}
+			{assign var="naisen" value=$html.data.sanka.naisen}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp w30" type="text" name="naisen" id="naisen" value="{$naisen}"  placeholder="{$html.data.sankaform.sform.13.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.14.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.14.name}<p class="text-red">{$html.data.sankaform.sform.14.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.fax}
+			{assign var="fax" value=$smarty.request.fax}
+		{elseif $html.data.sanka.fax}
+			{assign var="fax" value=$html.data.sanka.fax}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="fax" id="fax" value="{$fax}" placeholder="{$html.data.sankaform.sform.14.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.15.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.15.name}<p class="text-red">{$html.data.sankaform.sform.15.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.mail}
+			{assign var="mail" value=$smarty.request.mail}
+		{elseif $html.data.sanka.mail}
+			{assign var="mail" value=$html.data.sanka.mail}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="mail" id="mail" value="{$mail}" placeholder="{$html.data.sankaform.sform.15.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.16.status eq 1}
+		<tr>
+	    <th>{$html.data.sankaform.sform.16.name}<p class="text-red">{$html.data.sankaform.sform.16.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.mail2}
+			{assign var="mail2" value=$smarty.request.mail2}
+		{elseif $html.data.sanka.mail}
+			{assign var="mail2" value=$html.data.sanka.mail}
+		{/if}
+	    <p class="disp ml20"><input class="form-control disp" type="text" name="mail2" id="mail2" value="{$mail2}" placeholder="{$html.data.sankaform.sform.16.name_text1}"></p>
+		</td>
+		</tr>
+	{/if}
+	{if $html.data.sankaform.sform.17.status eq 1}
+		<tr>
+	    <th style="vertical-align:top;">{$html.data.sankaform.sform.17.name}<p class="text-red">{$html.data.sankaform.sform.17.indispensible_text}</p></th>
+		<td>
+		{if $smarty.request.password}
+			{assign var="password" value=$smarty.request.password}
+		{elseif $html.data.sanka.password}
+			{assign var="password" value=$html.data.sanka.password}
+		{/if}
+	    <p class="disp ml20" >
+                                        <div class="col-lg-8">
+                                            <input class="form-control disp" type="password" name="password" id="password" value="{$password}" placeholder="{$html.data.sankaform.sform.17.name_text1}">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="button" class=" passwordchange  " value="表示"/>
+                                        </div>
+		</p>
+		</td>
+		</tr>
+	{/if}
+</table>
+
+{if $html.data.sankaform.sform.18.status eq 1}
+	<h4 class="">{$html.data.sankaform.sform.18.name}<span class="text-red">{$html.data.sankaform.sform.18.indispensible_text}</span></h4>
+	{foreach from=$html.data.join_type item="val" key="key"}
+		{assign var="chk" value=""}
+		{if $smarty.request.join_type eq $key}
+			{assign var="chk" value="CHECKED"}
+		{elseif $html.data.sanka.join_type eq $key && !$smarty.request.join_type}
+			{assign var="chk" value="CHECKED"}
+		{/if}
+		<p class="disp ml20"><input type="radio" class="join_type simple" name="join_type" value="{$key}" id="join_type-{$key}" {$chk} ></p>
+		<p class="ml20 w40 dbl middle" >{$val}</p>
+		<p class="disp ml20 f18 middle"  >{$html.data.join_money.$key|number_format}{$html.moneyUnit.$key}</p>
+		<input type="hidden" id="join_type_mny-{$key}" value="{$html.data.join_money.$key}" >
+		<br />
+	{/foreach}
+
+	{assign var="chk" value=""}
+	{if $smarty.request.konshinkai }
+		{assign var="chk" value="CHECKED"}
+	{elseif $html.data.sanka.koushinkai}
+		{assign var="chk" value="CHECKED"}
+	{/if}
+	<p class="disp ml20"><input type="checkbox" class="kons simple" name="konshinkai" id="konshinkai"  value="1" {$chk} ></p>
+	<p class="ml20 w30 dbl">{$html.data.sankaform.sformmny.9.money_text}</p>
+	<p class="disp ml20"  class="konshinkai_money">
+			{$html.data.sankaform.sformmny.9.note_text}</p>
+	{foreach from=$html.data.konshinkai_money item="val" key="key"}
+		
+		<input type="hidden" id="konshinkai_money-{$key}" value="{$val}">
+	{/foreach}
+	<div>
+	<p class="ml20 w50 dbl f22">{$html.data.sankaform.sformmny.10.money_text}</p>
+	{assign var="all" value="0"}
+	{if $smarty.request.all}
+		{assign var="all" value=$smarty.request.all}
+	{elseif $html.data.sanka.total}
+		{assign var="all" value=$html.data.sanka.total}
+	{/if}
+	<p class="disp ml20 f26" id="total">{$all}</p>{$html.data.sankaform.sformmny.10.note_text}
+	<input type="hidden" name="all" id="all" value="{$all}"  >
+	</div>
+{/if}
+{*onのときは公開ページ*}
+{if $html.display eq "on"}
+	<hr size=1 />
+	<div class="form-group">
+		<p>{$html.data.sankaform.sform.22.explaintext}
+		</p>
+	</div>
+	<hr size=1 />
+{else}
+<input type="checkbox" name="mail_send" value="on" checked >　事務局にのみメールを送る
+
+<!--
+	<div class="form-group">
+	    <label>備考</label>
+		{if $smarty.request.bikou}
+			{assign var="bikou" value=$smarty.request.bikou }
+		{elseif $html.data.sanka.bikou}
+			{assign var="bikou" value=$html.data.sanka.bikou}
+		{/if}
+	    <textarea class="form-control w400" rows="3" name="bikou" placeholder="Enter ...">{$bikou}</textarea>
+	</div>
+-->
+{/if}
+
+<div class="box-footer pd20">
+	{if $html.display eq "on"}
+		<button class="btn btn-primary" type="button" name="back" id="backform" value="on">{$html.data.sankaform.sform.23.name_text1}</button>
+<!--
+		<button class="btn btn-primary" type="submit" name="conf" id="conf" value="on">次へ</button>
+-->
+		<input type="button" id="conform" value="{$html.data.sankaform.sform.23.name_text2}" class="btn btn-primary" >
+		<input type="hidden" id="conf" name="conf" value="" >
+	{else}
+		
+		<button class="btn btn-primary" type="submit" name="regist" id="regist" value="on">登録する</button>
+	{/if}
+
+</div>
+{assign var="sid" value=$html.data.sanka.id}
+<input type="hidden" name="sid" id="sid" value="{$sid}">

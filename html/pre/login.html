@@ -1,0 +1,27 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w900" style="margin:auto;">
+	<div id="pg-main">
+		<h2 id="pg-title">{$html.data.note}</h2>
+	</div>
+	<h3 class="pd20" >発表申込フォーム</h3>
+	<div class="w800" style="margin:auto;">
+	<form action="" method="POST" name="form1">
+		<div class="w400" style="margin:auto;">
+			<div class="form-group">
+				<label>参加受付番号</label>
+				<input class="form-control" type="text" name="num" value="" placeholder="例)0001">
+			</div>
+			<div class="form-group">
+				<label>パスワード</label>
+				<input class="form-control" type="text" name="password" value="" placeholder="パスワードを入力してください">
+			</div>
+		</div>
+	</form>
+	</div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

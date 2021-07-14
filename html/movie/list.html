@@ -1,0 +1,189 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w90" style="margin:auto;">
+        <div id="pg-main">
+            <h2 id="pg-title">令和2年度　化学系学協会東北大会<br />プレゼンテーション動画一覧日程</h2>
+        </div>
+        <h3 class="pd20" >プレゼンテーション動画一覧</h3>
+        <div  class="text-right" >
+            <a href="/movie/recipe/" class="btn btn-info" >領収書出力</a>
+            <a href="/movie/logout" class="btn btn-warning" >ログアウト</a>
+            
+        </div>
+        <div class="box mt5">
+            <div class="box-body explain_text active" id="tab_1_text">
+                {$html.data.explain.session_text|nl2br}
+            </div>
+            <div class="box-body explain_text" id="tab_2_text">
+                {$html.data.explain.poster_text|nl2br}
+            </div>
+            <div class="box-body explain_text" id="tab_3_text">
+                {$html.data.explain.judge_text|nl2br}
+            </div>
+        </div>
+
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab" class="explainlink">セッション</a></li>
+                <li><a href="#tab_2" data-toggle="tab" class="explainlink" id="tab2">ポスター発表</a></li>
+                {if $smarty.session.movies.judge eq "on"}
+                    <li><a href="#tab_3" data-toggle="tab" class="explainlink">審査員専用</a></li>
+                {/if}
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <table class="table table-bordered f11">
+                        <tr>
+                            <th class="bg-olive">&nbsp;</th>
+                            {foreach from=$html.data.array_movie item="value" key="key"}
+                            <th class="text-center bg-olive f16">{$value}</th>
+                            {/foreach}
+                        </tr>
+                        {foreach from=$html.data.array_movie_date item="values" key="keys"}
+                            {for $loop=1 to 2}
+                            {assign var="ampm" value=""}
+                            {if $loop eq 1}
+                                {assign var="time" value="午前"}
+                                {assign var="ampm" value="am"}
+                            {else}
+                                {assign var="time" value="午後"}
+                                {assign var="ampm" value="pm"}
+                            {/if}
+                            <tr>
+                                <th class="text-center">{$values}<br />{$time}</th>
+                                {assign var="day" value=$keys|date_format:"%d"}
+                                {foreach from=$html.data.array_movie item="value" key="key"}
+                                <td class="text-center ">
+                                    {for $cnt=1 to 3}
+                                        {if $html.data.list.$keys.$ampm.$cnt.$key.session }
+                                        <div class="row">
+                                            {assign var="id" value=$html.data.list.$keys.$ampm.$cnt.$key.id}
+                                            {assign var="alpha" value=$html.data.array_movie.$key}
+                                            {if $key eq 99}
+                                            {*ポスター発表のとき*}
+                                                <a href="#"  class="btn btn-primary mg5 posterTabClick w100 f11">
+                                                    {$html.data.list.$keys.$ampm.$cnt.$key.session|nl2br}
+                                                </a>
+                                            {else}
+                                                <a href="/movie/session/#key-{$day}-{$alpha}" target=_blank class="btn btn-primary mg5 w100 f11">
+                                                    {$html.data.list.$keys.$ampm.$cnt.$key.session|nl2br}
+                                                </a>
+                                            {/if}
+                                        </div>
+                                        {/if}
+                                    {/for}
+                                </td>
+                                {/foreach}
+                            </tr>
+                            {/for}
+                        {/foreach}
+                    </table>
+
+                </div><!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                    
+
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    ポスター分野 <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="" class="ippan" >-</a>
+                                    </li>
+                                    {foreach from=$html.data.array_ippanKouenposter item="values" key="key"}
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="{$key}" class="ippan" >{$values.name}</a>
+                                        </li>
+                                    {/foreach}
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active">
+                                <table class="table table-bordered f11">
+                                    <tr class="f16">
+                                        <th class="bg-olive " nowrap>発表番号</th>
+                                        <th class="bg-olive">演題名</th>
+                                        <th class="bg-olive w300" rowspan=2>機能</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-11">
+
+                                                <input type="text" class="form-control" id="publication_text" value="" placeholder="発表番号絞り込み" />
+                                            </div>
+                                            
+                                        </td>
+                                        <td>
+                                            <div class="col-md-11">
+                                                <input type="text" class="form-control" id="endai_text" value="" placeholder="演題名絞り込み" />
+
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tbody id="body"></tbody>
+                                    
+                                </table>
+
+                            </div><!-- /.tab-pane -->
+                            
+                        </div><!-- /.tab-content -->
+                    </div>
+                    
+                </div><!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_3">
+                    <table class="table table-bordered f11">
+                        <tr class="f16">
+                            <th class="bg-olive w150">発表番号</th>
+                            <th class="bg-olive">審査結果</th>
+                            <th class="bg-olive text-center">賞推薦</th>
+                            <th class="bg-olive">備考</th>
+                        </tr>
+
+                        {foreach from=$html.data.judgelist item="value" key="key"}
+                            <tr>
+                                <td class="valign">{$value.judge_publication}</td>
+                                <td class="valign w300">
+                                    {foreach from=$html.data.array_judge item="val" key="k"}
+                                        {assign var="act" value=""}
+                                        {if $value.result_select eq $val}
+                                            {assign var="act" value="act"}
+                                        {/if}
+                                        <div class="judge " >
+                                            <label class="{$act} label_judge judges-{$value.id}" id="jdg-{$value.id}-{$val}">{$val}</label>
+                                        </div>
+                                    {/foreach}
+
+                                </td>
+                                <td class="valign w100" >
+                                    {if $value.recomen eq "1"}
+                                        <button class="btn btn-default  recommen act" id="recommen-{$value.id}">推薦中</button>
+
+                                    {else}
+                                        <button class="btn btn-default  recommen" id="recommen-{$value.id}">推薦する</button>
+                                    {/if}
+                                </td>
+                                <td>
+                                    <textarea id="other-{$value.id}" class="form-control other" rows=4 >{$value.other}</textarea>
+                                </td>
+                            </tr>
+                        {/foreach}
+                        
+                        
+                    </table>
+                </div><!-- /.tab-pane -->
+            </div><!-- /.tab-content -->
+        </div>
+	</div>
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

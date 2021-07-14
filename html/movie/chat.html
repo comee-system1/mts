@@ -1,0 +1,56 @@
+{include file='../inc_sheader.html'}
+    <body  >
+	<div class="w90" style="margin:auto;">
+        <div id="pg-main">
+            <h2 id="pg-title">
+                <span id="pg-publication">{$html.data.publication}</span><br />
+                {$html.data.endainame}
+                <br />
+                ({$html.data.syozokuKikanRyaku})
+                {$html.data.tyosya_name}
+            </h2>
+        </div>
+        <div class="box">
+            <div class="box-body">
+                {$html.data.explain|nl2br}
+            </div>
+        </div>
+        <div class="col-md-8 ">
+            
+            <textarea name="chat" class="form-control" rows=5 placeholder="質問内容を入力してください" ></textarea>
+            <div class="text-right mt10">
+                <input type="button" name="send" value="送信" class="btn btn-primary" />
+            </div>
+            <ul class="timeline" id="timeline">
+
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div class="box box-danger">
+                
+                <div class="box-body">
+                    <div class="box-body" >
+                        <p class="lead" id="replay">-</p>
+                    </div>
+                    <textarea class="form-control" name="replay" rows=6 placeholder='返答内容を入力してください。'></textarea>
+                    <div class="text-right mt10">
+                        <input type="hidden" id="question_id" value="" />
+                        <input type="button" name="replay_send" id="replay_send" value="返答" class="btn btn-primary" />
+                    </div>
+                    <div id="replaylists">
+
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <input type="hidden" id="id" value="{$html.data.id}" />
+    <input type="hidden" id="code" value="{$html.data.code}" />
+    <!-- add new calendar event modal -->
+	{include file='../inc_sscript_js.html'}
+	{include file='../inc_footer.html'}
+
+

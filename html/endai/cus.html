@@ -1,0 +1,89 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue" style="overflow-y: hidden;">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        講演者一覧
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">講演者一覧</li>
+                    </ol>
+                </section>
+
+               <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-2000">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">講演者一覧(<span id="max"></span>)</h3>
+									<div id="pager" style="margin:3px;" ></div>
+                                </div><!-- /.box-header -->
+                                <div class="box-body table-responsive" >
+{*
+									<div style="text-align:left;" class="scrolls">
+										<a href="javascript:void(0);" id="lefts" ><img src="/img/lefts.gif" width=30 ></a>
+										<a href="javascript:void(0);" id="rights"><img src="/img/rights.gif" width=30 ></a>
+                                    </div>
+	*}
+									<table id="example2" class="table2 table-bordered table-hover">
+										<thead style="display:block;">
+                                        <tr>
+                                            <th   rowspan=2 nowrap>詳細</th>
+                                            <th nowrap>講演受付番号</th>
+                                            <th nowrap>講演者</th>
+                                            <th  nowrap >発表形式</th>
+                                            <th  nowrap rowspan=2 class="w100">英語FLAG</th>
+                                            <th   nowrap class="w300" >演題名</th>
+                                            <th  nowrap >発表番号</th>
+                                           <th  nowrap>ファイル更新日時</th>
+                                            <th  rowspan=2 nowrap class="w300">更新日</th>
+                                            <th  nowrap class="w300">参加者ID</th>
+                                        </tr>
+                                        <tr>
+                                            <th><input type="text" value="" id="code"  class="form-control input-sm search"></th>
+                                            <th><input type="text" value="" id="name"  class="form-control input-sm search"></th>
+                                             <th>
+												<select name="happyo" id="happyo"  class="search form-control search"> 
+												<option value="">-</option>
+												{foreach from=$html.data.array_happyo item="val" key="key"}
+													<option value="{$key}">{$val.name}</option>
+												{/foreach}
+												</select>
+											</th>
+                                           
+                                            <th><input type="text" value="" id="endainame"  class="form-control input-sm search"></th>
+                                            <th><input type="text" value="" id="publication"  class="form-control input-sm search"></th>
+                                            <th ><input type="text" value="" id="fileupdate"  class="form-control input-sm search"></th>
+                                            <th><input type="text" value="" id="scode"  class="form-control input-sm search"></th>
+                                        </tr>
+										</thead>
+                                    	<tbody id="tables" style="display:block;overflow-y:scroll;height:500px;"></tbody>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+
+
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

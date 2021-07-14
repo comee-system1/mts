@@ -1,0 +1,96 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='../inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        新規登録
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">新規登録</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+						<div class="col-xs-12">
+							<!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">新規登録</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form"  enctype="multipart/form-data" action="/prof/" method="POST">
+									{foreach from=$html.data.error item="val" key="key"}
+										<p class="text-red">{$val}</p>
+									{/foreach}
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">企業名<span class="text-red">[必須]</span></label>
+											{if $smarty.request.name}
+												{assign var="name" value=$smarty.request.name}
+											{else}
+												{assign var="name" value=$html.data.0.name}
+											{/if}
+                                            <input type="text" class="form-control" name="name" id="name"  placeholder="企業名を入力してください。" value="{$name}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">ID<span class="text-red">[必須]4文字以上8文字以下で入力してください。</span></label>
+											{if $smarty.request.login_id}
+												{assign var="login_id" value=$smarty.request.login_id}
+											{else}
+												{assign var="login_id" value=$html.data.0.login_id}
+											{/if}
+                                            <input type="text" class="form-control" name="login_id" id="login_id"  placeholder="ログインIDを入力してください。" value="{$login_id}" >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">パスワード<span class="text-red">[必須]4文字以上8文字以下で入力してください。</span></label>
+											{if $smarty.request.login_pw}
+												{assign var="login_pw" value=$smarty.request.login_pw}
+											{else}
+												{assign var="login_pw" value=$html.data.0.login_pw}
+											{/if}
+                                            <input type="text" class="form-control" name="login_pw" id="login_pw"  placeholder="ログインIDを入力してください。" value="{$login_pw}" >
+                                        </div>
+
+                                       
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">確認</button>
+                                    </div>
+									<input type="hidden" name="mod" value="profconf">
+                                </form>
+                            </div><!-- /.box -->
+						</div>
+                    </div><!-- /.row -->
+
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                       
+                    </div><!-- /.row (main row) -->
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+

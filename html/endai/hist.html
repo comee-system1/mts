@@ -1,0 +1,101 @@
+{include file='../inc_header.html'}
+    <body class="skin-blue">
+{include file='../inc_header2.html'}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+				{include file='./inc_left_menu.html'}
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        演題登録 変更履歴
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">演題登録 変更履歴</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+						<div class="col-xs-3200">
+							<!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">演題登録 変更履歴(<span id="max"></span>)</h3>
+									<div id="pager" style="padding:3px;"></div>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+								<div class="box-body" >
+                                <form role="form"  action="../hist/" method="POST">
+									▼参加登録変更履歴を確認したい参加者コード入力<br />
+									<b>P<input type="text" id="inputs" class="form-control w20 disp" name="num" value="{$smarty.request.num}" placeholder="例）0001" />{$smarty.const.D_SANKA_CODE}</b>
+{*
+									<button class="btn btn-primary" type="submit" name="search" id="search" value="on">検索する</button>
+*}
+                                </form>
+								<br />
+{*
+								<div style="text-align:left;" class="scrolls">
+									<a href="javascript:void(0);" id="lefts" ><img src="/img/lefts.gif" width=30 ></a>
+									<a href="javascript:void(0);" id="rights"><img src="/img/rights.gif" width=30 ></a>
+								</div>
+*}
+
+									<table id="example2" class="table2 table-bordered table-hover">
+										<thead style="display:block;">
+		                                <tr>
+		                                    <th  nowrap>更新日</th>
+		                                    <th nowrap>講演受付番号</th>
+		                                    <th nowrap>講演者の所属学協会</th>
+		                                    <th  nowrap>講演者の所属学協会<br />(その他)</th>
+		                                    <th  nowrap>講演者の所属学協会<br />(入会申請中)</th>
+		                                    <th  nowrap>発表形式</th>
+		                                    <th  nowrap>一般講演ポスター分類</th>
+		                                    <th  nowrap>演題名</th>
+		                                    <th  nowrap >著者の所属機関<br />(大学/勤務先)</th>
+		                                    <th  nowrap >著者の所属機関<br />(学部/部署)</th>
+		                                    <th  nowrap >著者の所属機関<br />(略名)</th>
+		                                    <th  nowrap >著者の所属機関/英<br />(大学/勤務先)</th>
+		                                    <th  nowrap >著者の所属機関/英<br />(学部/部署)</th>
+
+		                                    <th  nowrap >著者名<br />(姓名)</th>
+		                                    <th  nowrap >著者名/英<br />(姓名)</th>
+		                                    <th  nowrap >所属番号</th>
+		                                    <th  nowrap >PC情報</th>
+		                                    <th  nowrap >備考</th>
+		                                    <th  nowrap class="w300">ファイルアップロード時間</th>
+
+		                                </tr>
+										</head>
+										<tbody id="table" style="display:block;overflow-y:scroll;height:500px;" ></tbody>
+									</table>
+
+								</div>
+                            </div><!-- /.box -->
+						</div>
+                    </div><!-- /.row -->
+
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                       
+                    </div><!-- /.row (main row) -->
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+		{include file='../inc_script_js.html'}
+		{include file='../inc_footer.html'}
+
+
