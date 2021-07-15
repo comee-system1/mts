@@ -81,15 +81,30 @@
                             </div>
                         </td>
                         <td style="width:300px;" class="text-center">
-                            {if $val.pdf}
-                                <a href="/pdf/{$val.pdf}" class="btn btn-success" target=_blank >予稿原稿</a>
-                            {/if}
-                            {if $val.url}
-                                <a href="{$val.url}" class="btn btn-primary" target=_blank >動画プレゼン</a>
-                            {/if}
-                            {if $val.chat}
-                            <a href="/movie/chat/{$keys}/{$k}/{$val.publication}" class="btn btn-danger" target=_blank >チャット</a>
-                            {/if}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {if $val.pdf}
+                                        <a href="/pdf/{$val.pdf}" class="btn btn-success w-100" target=_blank >予稿原稿</a>
+                                    {/if}
+                                        </div>
+                                        <div class="col-md-6">
+                                    {if $val.url}
+                                        <a href="{$val.url}" class="btn btn-primary w-100 " target=_blank >zoom</a>
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="row mt-3" style="margin-top:10px;">
+                                <div class="col-md-6">
+                                    {if $val.chat}
+                                        <a href="/movie/chat/{$keys}/{$k}/{$val.publication}" class="btn btn-danger w-100" target=_blank >チャット</a>
+                                    {/if}
+                                        </div>
+                                        <div class="col-md-6">
+                                    {if $val.dl}
+                                        <a href="/movies/{$val.dl}" class="btn btn-warning w-100" target=_blank >動画DL</a>
+                                    {/if}
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     {assign var="al" value=$val.alpha}
