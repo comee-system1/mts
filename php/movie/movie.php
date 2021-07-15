@@ -167,7 +167,7 @@ class movie{
             'syozokuKikanRyaku'=>'九工大院工',
             'tyosya_name'=>'○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting',
             'fileUpdate_flash_ext'=>'sample1.mp4',
-            'fileUpdate_poster_ext'=>'PC112-P0227-CSJ-TOHOKU20-20200824152633.pdf',
+            'fileUpdate_poster_ext'=>'SamplePDF.pdf',
             'fileUpdate_ext'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
         ];
         //ポスターデータ
@@ -178,7 +178,7 @@ class movie{
             'syozokuKikanRyaku'=>'九工大院工2',
             'tyosya_name'=>'○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting',
             'fileUpdate_flash_ext'=>'sample1.mp4',
-            'fileUpdate_poster_ext'=>'PC112-P0227-CSJ-TOHOKU20-20200824152633.pdf',
+            'fileUpdate_poster_ext'=>'SamplePDF.pdf',
             'fileUpdate_ext'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
         ];
 
