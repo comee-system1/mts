@@ -370,9 +370,8 @@ class movie{
             $set[ 'publication' ] = $posterdata[ 'publication' ];
             $table = "kagaku_endai";
             //ポスター発表データ取得
-            if(empty($_SESSION[ 'movies' ][ 'endai_code' ])){
-                $_SESSION[ 'movies' ][ 'endai_code' ] = $id;       
-            }
+            $_SESSION[ 'movies' ][ 'endai_code' ] = $id;       
+            
             if(!$this->db->getPosterList($id)){
                 $this->db->setUserData($table,$set);
             }
@@ -381,7 +380,7 @@ class movie{
                 $set = [];
                 $set['note'] = $_REQUEST[ 'note' ];
                 $set[ 'kagaku_sanka_code' ] = $_SESSION[ 'movies' ][ 'code' ];
-                $set[ 'endai_code' ] = $_SESSION[ 'movies' ][ 'endai_code' ];;
+                $set[ 'endai_code' ] = $this->third;
                 $set[ 'regist_date' ] = date("Y-m-d H:i:s");
                 $set[ 'regist_ts' ] = date("Y-m-d H:i:s");
                 $table = "question";
