@@ -118,7 +118,7 @@ class movie{
             'url'=>'http://google.com',
             'pdf'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
             'dl'=>'sample.mp4',
-            'publication'=>'A0002',
+            'publication'=>'A0003',
             'chat'=>1,
             'top'=>30,
             'height'=>60
