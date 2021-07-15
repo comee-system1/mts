@@ -466,7 +466,7 @@ $.fn.setBody = function(){
         // 通信先ファイル名
         url: "/movie/list",
 		data:{
-         'ajax':'on',
+      'ajax':'on',
 		 'publication':_publication_text,
 		 'endai':_endai_text,
 		 'ippan':_ippan
@@ -483,11 +483,10 @@ $.fn.setBody = function(){
 				_html += "("+value.syozokuKikanRyaku+")";
 				_html += ""+value.tyosya_name+"</td>";
 				_html += "<td nowrap>";
-				//_html += "<a href='/flash/"+value.fileUpdate_flash_ext+"' target=_blank class='btn btn-primary'  >フラッシュ</a> ";
 				_html += "<a href='/movie/flash/"+value.fileUpdate_flash_ext+"' target=_blank class='btn btn-primary'  >フラッシュ</a> ";
 				_html += "<a href='/poster/"+value.fileUpdate_poster_ext+"' target=_blank class='btn btn-success'  >ポスター</a> ";
 				_html += "<a href='/pdf/"+value.fileUpdate_ext+"' target=_blank class='btn btn-info'  >予稿原稿</a> ";
-				_html += "<a href='/movie/chat/"+value.code+"' class='btn btn-danger' target=_blank >コメント</a>";
+				_html += "<a href='/movie/chat/poster/"+value.publication+"' class='btn btn-danger' target=_blank >コメント</a>";
 				_html += "</td>";
 				_html += "</tr>";
 				

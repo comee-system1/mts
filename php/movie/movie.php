@@ -144,8 +144,6 @@ class movie{
             'height'=>80
         ];
 
-
-
         $array_times_session = [];
         $n=0;
         foreach($array_times as $values){
@@ -160,6 +158,31 @@ class movie{
         $this->array_times = $array_times;
         $this->array_times_session = $array_times_session;
 
+
+        //ポスターデータ
+        $array_poster[] = [
+            'publication'=>'p0001',
+            'endainame'=>'ポスターサンプル',
+            'sub'=>'',
+            'syozokuKikanRyaku'=>'九工大院工',
+            'tyosya_name'=>'○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting',
+            'fileUpdate_flash_ext'=>'sample1.mp4',
+            'fileUpdate_poster_ext'=>'PC112-P0227-CSJ-TOHOKU20-20200824152633.pdf',
+            'fileUpdate_ext'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+        ];
+        //ポスターデータ
+        $array_poster[] = [
+            'publication'=>'p0002',
+            'endainame'=>'ポスターサンプル2',
+            'sub'=>'',
+            'syozokuKikanRyaku'=>'九工大院工2',
+            'tyosya_name'=>'○竹中 繁織 ・ 佐藤 しのぶ ・ Zou Tingting',
+            'fileUpdate_flash_ext'=>'sample1.mp4',
+            'fileUpdate_poster_ext'=>'PC112-P0227-CSJ-TOHOKU20-20200824152633.pdf',
+            'fileUpdate_ext'=>'7a79c35f7ce0704dec63be82440c8182.pdf',
+        ];
+
+        $this->array_poster = $array_poster;
     }
     
     public function index(){
@@ -215,7 +238,8 @@ class movie{
         if($_SESSION[ 'movies' ][ 'login' ] == "on"){
             if($_REQUEST[ 'ajax' ]){
                 //ポスター発表データ取得
-                $poster = $this->db->getPosterList();
+                //$poster = $this->db->getPosterList();
+                $poster = $this->array_poster;
                 header('Content-Type: application/json; charset=utf-8');
                 echo json_encode($poster);
                 exit();
@@ -358,10 +382,20 @@ class movie{
     public function chat(){
         if($_SESSION[ 'movies' ][ 'login' ] == "on"){
             
-            //チャット登録
-            $id = $this->five;
-            //取得データの保存を行う
-            $posterdata = $this->array_times_session[$this->third][$this->four];
+            //ポスターの時
+            if($this->third == "poster"){
+                $id = $this->four;
+                $list_station_cd= array_column($this->array_poster, 'publication');
+                $key = array_search($id, $list_station_cd);
+                $posterdata = $this->array_poster[$key];
+            }else{
+                //チャット登録
+                $id = $this->five;
+                //取得データの保存を行う
+                $posterdata = $this->array_times_session[$this->third][$this->four];
+            }
+            
+
             $set = [];
             $set[ 'code' ] = $posterdata[ 'publication' ];
             $set[ 'snum' ] = $posterdata[ 'publication' ];
@@ -371,7 +405,7 @@ class movie{
             $table = "kagaku_endai";
             //ポスター発表データ取得
             $_SESSION[ 'movies' ][ 'endai_code' ] = $id;       
-            
+
             if(!$this->db->getPosterList($id)){
                 $this->db->setUserData($table,$set);
             }
