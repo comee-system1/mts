@@ -613,7 +613,8 @@ class method extends Auth{
 
 		$r = $this->db->query($sql);
 		$rlt = $r -> fetch(PDO::FETCH_ASSOC);
-		$code[ 'code' ] = sprintf("R%04d%s",(int)$rlt['code']+1,D_SANKA_CODE);
+		//$code[ 'code' ] = sprintf("R%04d%s",(int)$rlt['code']+1,D_SANKA_CODE);
+		$code[ 'code' ] = sprintf("%04d",(int)$rlt['code']+1);
 		$code[ 'num'  ] = sprintf("%04d",(int)$rlt[ 'code' ]+1);
 		return $code;
 	}

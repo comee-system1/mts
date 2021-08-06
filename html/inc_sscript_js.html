@@ -474,20 +474,25 @@ $.fn.setBody = function(){
 		cache : false,
         // 通信が成功した時
         success: function(data) {
+					
 			var _html = "";
 			$("#body").html("");
 			$.each(data, function(key, value){
 				_html += "<tr>";
-				_html += "<td>"+value.publication+"</td>";
-				_html += "<td>"+$(this).h(value.endainame)+"<br />";
-				_html += "("+value.syozokuKikanRyaku+")";
-				_html += ""+value.tyosya_name+"</td>";
-				_html += "<td nowrap>";
-				_html += "<a href='/movies/flash/"+value.fileUpdate_flash_ext+"' target=_blank class='btn btn-primary'  >フラッシュ</a> ";
-				_html += "<a href='/poster/"+value.fileUpdate_poster_ext+"' target=_blank class='btn btn-success'  >ポスター</a> ";
-				_html += "<a href='/pdf/"+value.fileUpdate_ext+"' target=_blank class='btn btn-info'  >予稿原稿</a> ";
-				_html += "<a href='/movie/chat/poster/"+value.publication+"' class='btn btn-danger' target=_blank >コメント</a>";
-				_html += "</td>";
+				if(value[0]){
+					_html += "<td>"+value[0]+"</td>";
+					_html += "<td>"+value[1]+"<br />"+value[4]+"</td>";
+					_html += "<td nowrap>";
+					_html += "<a href='/movies/flash/"+value[5]+"' target=_blank class='btn btn-primary'  >フラッシュ</a> ";
+					_html += "<a href='/poster/"+value[6]+"' target=_blank class='btn btn-success'  >ポスター</a> ";
+					_html += "<a href='/pdf/"+value[7]+"' target=_blank class='btn btn-info'  >予稿原稿</a> ";
+					_html += "<a href='/movie/chat/poster/"+value[0]+"' class='btn btn-danger' target=_blank >コメント</a>";
+					_html += "</td>";
+					
+				}else{
+					_html += "<td colspan=3 class='bg-navy'>"+value[3]+"</td>";
+				}
+
 				_html += "</tr>";
 				
 			});

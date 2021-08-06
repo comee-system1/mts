@@ -63,9 +63,9 @@ class editForm{
 				$edit[ 'edit'  ][ 'status'             ] = ($_REQUEST[ 'status'              ][ $key ])?1:0;
 				$edit[ 'edit'  ][ 'indispensible'      ] = ($_REQUEST[ 'indispensible'       ][ $key ])?1:0;
 				$edit[ 'edit'  ][ 'indispensible_text' ] = ($_REQUEST[ 'indispensible_text'  ][ $key ])?$_REQUEST[ 'indispensible_text' ][ $key ]:"";
-				$edit[ 'edit'  ][ 'explaintext'        ] = $_REQUEST[ 'explain' ][ $key ];
-
+				$edit[ 'edit'  ][ 'explaintext'        ] = ($_REQUEST[ 'explain' ][ $key ])?$_REQUEST[ 'explain' ][ $key ]:"";
 				$this->db->editUserData($table,$edit);
+				
 			}
 			
 

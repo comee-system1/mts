@@ -31,60 +31,132 @@
 
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
-                    <table class="table table-bordered ">
-                        <tr>
-                            <th class="bg-olive f16" style="width:100px;">時間</th>
-                            <th class="text-center bg-olive f16">9月7日</th>
-                            <th class="text-center bg-olive f16">9月8日</th>
-                        </tr>
-                        {for $foo=9 to 20}
-                        <tr>
-                            <td style="height:120px;">{$foo}:00</td>
-                            <td class="position-relative" >
-                                {assign var=d value=7}
-                                {if $html.data.array_times.$d.$foo}
-                                {assign var=data value=$html.data.array_times.$d.$foo}
-                                    {foreach from=$data key=k item=v}
-                                    <div class="position-absolute" style="top:{$v.top}px;left:0;">
-                                        <a href="/movie/session#date{$k}" class="btn btn-primary w-100 f11" style="height:{$v.height}px;" target=_blank >
-                                            {$v.time}<br />
-                                            {if $v.endainame}
-                                                {$v.endainame}
-                                            {else}
-                                                {$v.sub}
-                                            {/if}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <table class="table table-bordered ">
+                                <tr>
+                                    <th class="bg-olive f16" style="width:100px;">時間</th>
+                                    <th class="text-center bg-olive f16">9月7日</th>
+                                    
+                                </tr>
+                                {for $foo=0 to 28}
+                                {assign var="code" value=$html.data.array_times.7.$foo.0}
+                                {if $code}
+                                <tr>
+                                    <td>{$html.data.array_times.7.$foo.2}</td>
+                                    <td class="text-center">
+                                    
+                                        {assign var="color" value=""}
+                                        {if $code|mb_strpos:'IL' === 0}
+                                            {assign var="color" value="success"}
+                                        {/if}
+                                        {if $code|mb_strpos:'OL' === 0}
+                                            {assign var="color" value="danger"}
+                                        {/if}
+
+
+                                        
+                                        {if $code|mb_strpos:'KL' === 0}
+                                            {assign var="color" value="info"}
+                                        {/if}
+                                        {if $color}
+                                        <a href="/movie/session#{$code}" class="btn btn-{$color} w-100" >
+                                        {$code}
+                                        <br />
+                                        {$html.data.array_times.7.$foo.1}
                                         </a>
-                                    </div>
-                                    {/foreach}
+                                        {else}{$code}{/if}
+                                    </td>
+                                </tr>
                                 {/if}
-                            </td>
-                            <td class="position-relative">
-                                {assign var=d value=8}
-                                {if $html.data.array_times.$d.$foo}
-                                {assign var=data value=$html.data.array_times.$d.$foo}
-                                    {foreach from=$data key=k item=v}
-                                    <div class="position-absolute" style="top:{$v.top}px;left:0;">
-                                        <a href="/movie/session#date{$k}" class="btn btn-primary w-100 f11" style="height:{$v.height}px;" target=_blank >
-                                            {$v.time}<br />
-                                            {if $v.endainame}
-                                                {$v.endainame}
-                                            {else}
-                                                {$v.sub}
-                                            {/if}
+                                {/for}
+
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <table class="table table-bordered ">
+                                <tr>
+                                    <th class="bg-olive f16" style="width:100px;">時間</th>
+                                    <th class="text-center bg-olive f16">9月8日</th>
+                                </tr>
+                                {for $foo=0 to 28}
+                                {assign var="code" value=$html.data.array_times.8.$foo.0}
+                                {if $code}
+                                <tr>
+                                    <td>{$html.data.array_times.8.$foo.2}</td>
+                                    <td class="text-center">
+                                    
+                                        {assign var="color" value=""}
+                                        {if $code|mb_strpos:'IL' === 0}
+                                            {assign var="color" value="success"}
+                                        {/if}
+                                        {if $code|mb_strpos:'OL' === 0}
+                                            {assign var="color" value="danger"}
+                                        {/if}
+                                        {if $code|mb_strpos:'KL' === 0}
+                                            {assign var="color" value="info"}
+                                        {/if}
+                                        {if $color}
+                                        <a href="/movie/session#{$code}" class="btn btn-{$color} w-100" >
+                                        {$code}
+                                        <br />
+                                        {$html.data.array_times.8.$foo.1}
                                         </a>
-                                    </div>
-                                    {/foreach}
+                                        {else}{$code}{/if}
+                                    </td>
+                                </tr>
                                 {/if}
-                            </td>
-                        </tr>
-                        {/for}
-                    </table>
+                                {/for}
+
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <table class="table table-bordered ">
+                                <tr>
+                                    <th class="bg-olive f16" style="width:100px;">時間</th>
+                                    <th class="text-center bg-olive f16">9月9日</th>
+                                </tr>
+                                {for $foo=0 to 100}
+                                {assign var="code" value=$html.data.array_times.9.$foo.0}
+                                {if $code}
+                                <tr>
+                                    <td>{$html.data.array_times.9.$foo.2}</td>
+                                    <td class="text-center">
+                                    
+                                        {assign var="color" value=""}
+                                        {if $code|mb_strpos:'IL' === 0}
+                                            {assign var="color" value="success"}
+                                        {/if}
+                                        {if $code|mb_strpos:'OL' === 0}
+                                            {assign var="color" value="danger"}
+                                        {/if}
+                                        {if $code|mb_strpos:'KL' === 0}
+                                            {assign var="color" value="info"}
+                                        {/if}
+                                        {if $code|mb_strpos:'Poster' === 0}
+                                            {assign var="color" value="warning"}
+                                        {/if}
+                                        {if $color}
+                                        <a href="/movie/session#{$code}" class="btn btn-{$color} w-100" >
+                                        {$code}
+                                        <br />
+                                        {$html.data.array_times.9.$foo.1}
+                                        </a>
+                                        {else}{$code}{/if}
+                                    </td>
+                                </tr>
+                                {/if}
+                                {/for}
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane " id="tab_2">
                     
                     <table class="table table-bordered f11">
                         <tr class="f16">
-                            <th class="bg-olive " nowrap>発表番号</th>
+                            <th class="bg-olive " nowrap style="width:160px;">発表番号</th>
                             <th class="bg-olive">演題名</th>
                             <th class="bg-olive w300" rowspan=2>機能</th>
                         </tr>

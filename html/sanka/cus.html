@@ -54,18 +54,8 @@
                                                 <th nowrap>参加受付番号</th>
                                                 <th nowrap>参加登録者</th>
                                                 <th nowrap>参加登録者かな</th>
-                                                <th  nowrap>所属機関</th>
-                                                <th  nowrap>郵便番号</th>
-                                                <th  nowrap>連絡先</th>
-                                                <th  nowrap>住所</th>
-                                                <th  nowrap>電話番号</th>
-                                                <th  nowrap>内線番号</th>
-                                                <th  nowrap>FAX番号</th>
-                                                <th  nowrap class="w300" >メールアドレス</th>
                                                 <th  nowrap>パスワード</th>
-                                                <th  nowrap>参加種別</th>
-                                                <th  nowrap>懇親会参加</th>
-                                                <th  nowrap>費用(懇親会)</th>
+
                                                 <th  nowrap >支払</th>
                                                 <th  rowspan=2 nowrap>更新日</th>
                                                 <th   nowrap style="width:400px;">備考</th>
@@ -76,39 +66,8 @@
                                                 <th><input type="text" value="" id="code"  class="form-control input-sm search"></th>
                                                 <th><input type="text" value="" id="name"  class="form-control input-sm search"></th>
                                                 <th><input type="text" value="" id="kana"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="daigaku"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="post"  class="form-control input-sm search"></th>
-                                                <th>
-													<select name="address_type" id="address_type"  class="search form-control search">
-													<option value="">-</option>
-													{foreach from=$html.data.array_address item="val" key="key"}
-														<option value="{$key}">{$val}</option>
-													{/foreach}
-													</select>
-												</th>
-                                                <th><input type="text" value="" id="address"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="tel"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="naisen"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="fax"  class="form-control input-sm search"></th>
-                                                <th><input type="text" value="" id="mail"  class="form-control input-sm search"></th>
                                                 <th><input type="text" value="" id="password"  class="form-control input-sm search"></th>
-                                                <th>
-													<select name="join_type" id="join_type"  class="search form-control search">
-													<option value="">-</option>
-													{foreach from=$html.data.jointype item="val" key="key"}
-														<option value="{$key}">{$val}</option>
-													{/foreach}
-													</select>
-												</th>
-                                                <th>
-													<select name="konshinkai" id="konshinkai" class="search form-control">
-													<option value="">-</option>
-													{foreach from=$html.data.konshin item="val" key="key"}
-														<option value="{$key}">{$val}</option>
-													{/foreach}
-													</select>
-												</th>
-                                                <th><input type="text" value="" id="total"  class="form-control input-sm search"></th>
+                                                
                                                 <th>
 													<select name="sanka_pay_status" id="sanka_pay_status"  class="search form-control">
 													<option value="">-</option>

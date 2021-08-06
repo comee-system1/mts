@@ -83,44 +83,45 @@ class reg{
 				$set[ 'name2'           ] = $_REQUEST[ 'name2'           ];
 				$set[ 'kana1'           ] = $_REQUEST[ 'kana1'           ];
 				$set[ 'kana2'           ] = $_REQUEST[ 'kana2'           ];
-				$set[ 'daigaku'         ] = $_REQUEST[ 'daigaku'         ];
-				$set[ 'gakubu'          ] = $_REQUEST[ 'gakubu'          ];
-				$set[ 'kenkyu'          ] = $_REQUEST[ 'kenkyu'          ];
-				$set[ 'address_type'    ] = $_REQUEST[ 'address_type'    ];
-				$set[ 'address'         ] = $_REQUEST[ 'address'         ];
-				$set[ 'post'            ] = $_REQUEST[ 'post'            ];
-				$set[ 'tel'             ] = $_REQUEST[ 'tel'             ];
-				$set[ 'naisen'          ] = $_REQUEST[ 'naisen'          ];
-				$set[ 'fax'             ] = $_REQUEST[ 'fax'             ];
+				// $set[ 'daigaku'         ] = $_REQUEST[ 'daigaku'         ];
+				// $set[ 'gakubu'          ] = $_REQUEST[ 'gakubu'          ];
+				// $set[ 'kenkyu'          ] = $_REQUEST[ 'kenkyu'          ];
+				// $set[ 'address_type'    ] = $_REQUEST[ 'address_type'    ];
+				// $set[ 'address'         ] = $_REQUEST[ 'address'         ];
+				// $set[ 'post'            ] = $_REQUEST[ 'post'            ];
+				// $set[ 'tel'             ] = $_REQUEST[ 'tel'             ];
+				// $set[ 'naisen'          ] = $_REQUEST[ 'naisen'          ];
+				// $set[ 'fax'             ] = $_REQUEST[ 'fax'             ];
 				$set[ 'mail'            ] = $_REQUEST[ 'mail'            ];
 				$set[ 'password'        ] = $_REQUEST[ 'password'        ];
-				$set[ 'join_type'       ] = $_REQUEST[ 'join_type'       ];
-				$set[ 'koushinkai'      ] = $_REQUEST[ 'konshinkai'      ];
-				$set[ 'total'           ] = $_REQUEST[ 'all'             ];
-				$set[ 'bikou'           ] = $_REQUEST[ 'bikou'           ];
-				$set[ 'sankaformselect' ] = implode(',',$_REQUEST[ 'sankaformselect' ]);
-				$set[ 'sankaformselectother' ] = $_REQUEST[ 'sankaformselectother'];
-				$set[ 'syozokuSankaformselect' ] = implode(',',$_REQUEST[ 'syozokuSankaformselect' ]);
-				$set[ 'syozokuSankaformselectOther' ] = $_REQUEST[ 'syozokuSankaformselectOther'];
+				// $set[ 'join_type'       ] = $_REQUEST[ 'join_type'       ];
+				// $set[ 'koushinkai'      ] = $_REQUEST[ 'konshinkai'      ];
+				// $set[ 'total'           ] = $_REQUEST[ 'all'             ];
+				// $set[ 'bikou'           ] = $_REQUEST[ 'bikou'           ];
+				// $set[ 'sankaformselect' ] = implode(',',$_REQUEST[ 'sankaformselect' ]);
+				// $set[ 'sankaformselectother' ] = $_REQUEST[ 'sankaformselectother'];
+				// $set[ 'syozokuSankaformselect' ] = implode(',',$_REQUEST[ 'syozokuSankaformselect' ]);
+				// $set[ 'syozokuSankaformselectOther' ] = $_REQUEST[ 'syozokuSankaformselectOther'];
 
-				$set[ 'sanka_pay_status' ] = $data[ 'sanka_pay_status'           ];
-				$set[ 'selecter' ] = $_REQUEST[ 'selecter'           ];
+				//$set[ 'sanka_pay_status' ] = $data[ 'sanka_pay_status'           ];
+				$set[ 'sanka_pay_status' ] = 1;
+			//	$set[ 'selecter' ] = $_REQUEST[ 'selecter'           ];
 
 				$set[ 'regist_ts'       ] = date("Y-m-d H:i:s");
-				$set[ 'sanka_money'     ] = $this->join_money[$_REQUEST[ 'join_type' ]];
-				if($_REQUEST[ 'konshinkai' ] == 1){
-					//懇親会参加するとき
-					if($_REQUEST[ 'join_type' ] == 1 || $_REQUEST[ 'join_type' ] == 2){
-						$set[ 'konshinkai_monay'] = $this->konshinkai_money[1];
-					}elseif($_REQUEST[ 'join_type' ] == 3 ||  $_REQUEST[ 'join_type' ] == 4){
-						$set[ 'konshinkai_monay'] = $this->konshinkai_money[2];
-					}else{
-						$set[ 'konshinkai_monay'] = 0;
-					}
-				}else{
-					//懇親会参加しない
-					$set[ 'konshinkai_monay'] = 0;
-				}
+				// $set[ 'sanka_money'     ] = $this->join_money[$_REQUEST[ 'join_type' ]];
+				// if($_REQUEST[ 'konshinkai' ] == 1){
+				// 	//懇親会参加するとき
+				// 	if($_REQUEST[ 'join_type' ] == 1 || $_REQUEST[ 'join_type' ] == 2){
+				// 		$set[ 'konshinkai_monay'] = $this->konshinkai_money[1];
+				// 	}elseif($_REQUEST[ 'join_type' ] == 3 ||  $_REQUEST[ 'join_type' ] == 4){
+				// 		$set[ 'konshinkai_monay'] = $this->konshinkai_money[2];
+				// 	}else{
+				// 		$set[ 'konshinkai_monay'] = 0;
+				// 	}
+				// }else{
+				// 	//懇親会参加しない
+				// 	$set[ 'konshinkai_monay'] = 0;
+				// }
 				$table = "kagaku_sanka";
 				
 				$flg = $this->db->setUserData($table,$set);
@@ -144,6 +145,7 @@ class reg{
 				$mail[ 'body'    ] = $sends[ 'note' ];
 				$mail[ 'to'      ] = $_REQUEST[ 'mail'            ];
 
+				/*
 				//「参加者へメールを送る」にチェックをいれると参加者にメールが送信される
 				if($_REQUEST[ 'mail_send' ]){
 					//参加者と管理者にメール配信する
@@ -153,7 +155,7 @@ class reg{
 					//管理者のみメール配信する。
 				   $this->db->sendMailerSecretariat($mail);
 				}
-
+*/
 				if($flg && $_REQUEST[ 'sid' ]){
 					//変更前のデータのステータスを0に変更する
 					$edit = array();

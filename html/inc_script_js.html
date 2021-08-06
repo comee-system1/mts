@@ -616,6 +616,7 @@ function english(_id){
 
 }
 $.fn.getData = function(){
+	
 		_search = { "code" : $("#code").val(),
 					"name" : $("#name").val(),
 					"happyo" : $("#happyo").val(),
@@ -1229,18 +1230,9 @@ $.fn.getData = function(){
 					_tbl += "<td  >"+v.code+"</td>";
 					_tbl += "<td  >"+v.name1+" "+v.name2+"</td>";
 					_tbl += "<td  >"+v.kana1+" "+v.kana2+"</td>";
-					_tbl += "<td  >"+v.daigaku+"<br />"+v.gakubu+"<br />"+v.kenkyu+"</td>";
-					_tbl += "<td  >"+v.post+"</td>";
-					_tbl += "<td  >"+_aryad[v.address_type]+"</td>";
-					_tbl += "<td  >"+v.address+"</td>";
-					_tbl += "<td  ><p>"+v.tel+"</p></td>";
-					_tbl += "<td  ><p>"+v.naisen+"</p></td>";
-					_tbl += "<td  ><p>"+v.fax+"</p></td>";
-					_tbl += "<td class='w300' ><p>"+v.mail+"</p></td>";
+
 					_tbl += "<td ><p>"+v.password+"</p></td>";
-					_tbl += "<td >"+_jtype[v.join_type]+"</td>";
-					_tbl += "<td  >"+_konshin[v.koushinkai]+"</td>";
-					_tbl += "<td  >"+v.total+"円<br />("+v.konshinkai_monay+"円)</td>";
+
 					var _chk = "";
 					if(v.sanka_pay_status > 0 ){
 						_chk = "CHECKED";
