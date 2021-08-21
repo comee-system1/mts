@@ -7,16 +7,18 @@
                 {$html.data.endainame}
             </h2>
         </div>
+        {*
         <div class="box">
             <div class="box-body">
                 {$html.data.explain|nl2br}
             </div>
         </div>
+        *}
         <div class="col-md-8 ">
             
-            <textarea name="chat" class="form-control" rows=5 placeholder="質問内容を入力してください" ></textarea>
+            <textarea name="chat" class="form-control" rows=5 placeholder="Enter  question" ></textarea>
             <div class="text-right mt10">
-                <input type="button" name="send" value="送信" class="btn btn-primary" />
+                <input type="button" name="send" value="Send" class="btn btn-primary" />
             </div>
             <ul class="timeline" id="timeline">
 
@@ -29,10 +31,10 @@
                     <div class="box-body" >
                         <p class="lead" id="replay">-</p>
                     </div>
-                    <textarea class="form-control" name="replay" rows=6 placeholder='返答内容を入力してください。'></textarea>
+                    <textarea class="form-control" name="replay" rows=6 placeholder='Enter reply'></textarea>
                     <div class="text-right mt10">
                         <input type="hidden" id="question_id" value="" />
-                        <input type="button" name="replay_send" id="replay_send" value="返答" class="btn btn-primary" />
+                        <input type="button" name="replay_send" id="replay_send" value="Reply" class="btn btn-primary" />
                     </div>
                     <div id="replaylists">
 

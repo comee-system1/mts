@@ -3332,7 +3332,7 @@ class method extends Auth{
 			SELECT 
 				*,
 				date_format(regist_date, '%M/%d') as date,
-				date_format(regist_date, '%Y.%m.%d') as date_jp,
+				date_format(regist_date, '%m.%d') as date_jp,
 				date_format(regist_ts, '%H:%i') as time
 			FROM
 				question

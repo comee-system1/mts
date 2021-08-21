@@ -4,10 +4,11 @@
         <div id="pg-main">
             <h2 id="pg-title">{$smarty.const.D_TITLE}</h2>
         </div>
-        <h3 class="pd20" >プレゼンテーション動画一覧</h3>
         <div  class="text-right" >
-            <a href="/movie/logout" class="btn btn-warning" >ログアウト</a>
-            
+            <a href="#" class="btn btn-primary" ><i class="fa fa-fw fa-book"></i> Program Book</a>
+        </div>
+        <div  class="text-right mt10" >
+            <a href="/movie/logout" class="btn btn-warning" >Logout</a>
         </div>
         <div class="box mt5">
             <div class="box-body explain_text active" id="tab_1_text">
@@ -18,15 +19,15 @@
                 {$html.data.explain.poster_text|nl2br}
             </div>
             <div class="box-body explain_text" id="tab_3_text">
-                {$html.data.explain.judge_text|nl2br}
+                {$html.data.explain.poster_text|nl2br}
             </div>
         </div>
 
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab_1" data-toggle="tab" class="explainlink">セクション</a></li>
-                <li><a href="#tab_2" data-toggle="tab" class="explainlink" id="tab2">ポスター発表</a></li>
-
+                <li class="active"><a href="#tab_1" data-toggle="tab" class="explainlink">Oral</a></li>
+                <li><a href="#tab_2" data-toggle="tab" class="explainlink" id="tab2">Poster A</a></li>
+                <li><a href="#tab_3" data-toggle="tab" class="explainlink" id="tab3">Poster B</a></li>
             </ul>
 
             <div class="tab-content">
@@ -35,27 +36,30 @@
                         <div class="col-md-4">
                             <table class="table table-bordered ">
                                 <tr>
-                                    <th class="bg-olive f16" style="width:100px;">時間</th>
-                                    <th class="text-center bg-olive f16">9月7日</th>
-                                    
+                                    <th class="bg-olive f16" style="width:100px;">Time</th>
+                                    <th class="text-center bg-olive f16">September 7, Tuesday</th>
+                                    <th class="text-center bg-olive f16">Chair</th>
                                 </tr>
-                                {for $foo=0 to 28}
+                                {for $foo=0 to 28 }
                                 {assign var="code" value=$html.data.array_times.7.$foo.0}
                                 {if $code}
                                 <tr>
                                     <td>{$html.data.array_times.7.$foo.2}</td>
-                                    <td class="text-center">
-                                    
-                                        {assign var="color" value=""}
-                                        {if $code|mb_strpos:'IL' === 0}
-                                            {assign var="color" value="success"}
-                                        {/if}
-                                        {if $code|mb_strpos:'OL' === 0}
-                                            {assign var="color" value="danger"}
-                                        {/if}
 
+                                    {assign var="color" value=""}
+                                    {if $code|mb_strpos:'IL' === 0}
+                                        {assign var="color" value="success"}
+                                    {/if}
+                                    {if $code|mb_strpos:'OP' === 0}
+                                        {assign var="color" value="danger"}
+                                    {/if}
 
-                                        
+                                    {if $color || $code|mb_strpos:'KL' === 0 }
+                                        {assign var="col" value=""}
+                                    {else}
+                                        {assign var="col" value="2"}
+                                    {/if}
+                                    <td class="text-center" colspan="{$col}">
                                         {if $code|mb_strpos:'KL' === 0}
                                             {assign var="color" value="info"}
                                         {/if}
@@ -67,6 +71,12 @@
                                         </a>
                                         {else}{$code}{/if}
                                     </td>
+                                    {assign var="row" value=$html.data.array_rowspan.$foo}
+                                    {assign var="chair" value=$html.data.array_chair.$foo}
+                                    
+                                    {if $row > 1 }
+                                        <td rowspan="{$row}" style="vertical-align: middle;" >{$chair}</td>
+                                    {/if}
                                 </tr>
                                 {/if}
                                 {/for}
@@ -76,26 +86,38 @@
                         <div class="col-md-4">
                             <table class="table table-bordered ">
                                 <tr>
-                                    <th class="bg-olive f16" style="width:100px;">時間</th>
-                                    <th class="text-center bg-olive f16">9月8日</th>
+                                    <th class="bg-olive f16" style="width:100px;">Time</th>
+                                    <th class="text-center bg-olive f16" nowrap>September 8, Wednesday</th>
+                                    <th class="text-center bg-olive f16">Chair</th>
                                 </tr>
                                 {for $foo=0 to 28}
                                 {assign var="code" value=$html.data.array_times.8.$foo.0}
                                 {if $code}
                                 <tr>
                                     <td>{$html.data.array_times.8.$foo.2}</td>
-                                    <td class="text-center">
+
+                                    {assign var="color" value=""}
+                                    {if $code|mb_strpos:'IL' === 0}
+                                        {assign var="color" value="success"}
+                                    {/if}
+                                    {if $code|mb_strpos:'OP' === 0}
+                                        {assign var="color" value="danger"}
+                                    {/if}
+                                    {if $code|mb_strpos:'PL' === 0}
+                                        {assign var="color" value="warning"}
+                                    {/if}
+                                    {if $code|mb_strpos:'KL' === 0}
+                                        {assign var="color" value="info"}
+                                    {/if}
+
+                                    {if $color || $code|mb_strpos:'KL' === 0 }
+                                        {assign var="col" value=""}
+                                    {else}
+                                        {assign var="col" value="2"}
+                                    {/if}
+
+                                    <td class="text-center" colspan="{$col}">
                                     
-                                        {assign var="color" value=""}
-                                        {if $code|mb_strpos:'IL' === 0}
-                                            {assign var="color" value="success"}
-                                        {/if}
-                                        {if $code|mb_strpos:'OL' === 0}
-                                            {assign var="color" value="danger"}
-                                        {/if}
-                                        {if $code|mb_strpos:'KL' === 0}
-                                            {assign var="color" value="info"}
-                                        {/if}
                                         {if $color}
                                         <a href="/movie/session#{$code}" target=_blank class="btn btn-{$color} w-100" >
                                         {$code}
@@ -104,6 +126,14 @@
                                         </a>
                                         {else}{$code}{/if}
                                     </td>
+                                    {assign var="row" value=$html.data.array_rowspan8.$foo}
+                                    {assign var="chair" value=$html.data.array_chair8.$foo}
+                                    
+                                    {if $row >= 1 }
+                                        <td rowspan="{$row}" style="vertical-align: middle;" >
+                                            {$chair}
+                                        </td>
+                                    {/if}
                                 </tr>
                                 {/if}
                                 {/for}
@@ -113,28 +143,34 @@
                         <div class="col-md-4">
                             <table class="table table-bordered ">
                                 <tr>
-                                    <th class="bg-olive f16" style="width:100px;">時間</th>
-                                    <th class="text-center bg-olive f16">9月9日</th>
+                                    <th class="bg-olive f16" style="width:100px;">Time</th>
+                                    <th class="text-center bg-olive f16">September 9, Thursday</th>
+                                    <th class="text-center bg-olive f16">Chair</th>
                                 </tr>
                                 {for $foo=0 to 100}
                                 {assign var="code" value=$html.data.array_times.9.$foo.0}
                                 {if $code}
                                 <tr>
                                     <td>{$html.data.array_times.9.$foo.2}</td>
-                                    <td class="text-center">
+
+                                    {assign var="color" value=""}
+                                    {if $code|mb_strpos:'IL' === 0}
+                                        {assign var="color" value="success"}
+                                    {/if}
+                                    {if $code|mb_strpos:'OP' === 0}
+                                        {assign var="color" value="danger"}
+                                    {/if}
+                                    {if $code|mb_strpos:'KL' === 0}
+                                        {assign var="color" value="info"}
+                                    {/if}
+
+                                    {if $color  }
+                                        {assign var="col" value=""}
+                                    {else}
+                                        {assign var="col" value="2"}
+                                    {/if}
+                                    <td class="text-center" colspan="{$col}">
                                     
-                                        {assign var="color" value=""}
-                                        {if $code|mb_strpos:'IL' === 0}
-                                            {assign var="color" value="success"}
-                                        {/if}
-                                        {if $code|mb_strpos:'OL' === 0}
-                                            {assign var="color" value="danger"}
-                                        {/if}
-                                        {if $code|mb_strpos:'KL' === 0}
-                                            {assign var="color" value="info"}
-                                        {/if}
-
-
                                         {if $code|mb_strpos:'Poster' === 0}
                                             {assign var="color" value="warning"}
                                             <a href="#" class="postertab btn btn-{$color} w-100" >
@@ -150,6 +186,14 @@
                                         </a>
                                         {else}{$code}{/if}
                                     </td>
+                                    {assign var="row" value=$html.data.array_rowspan9.$foo}
+                                    {assign var="chair" value=$html.data.array_chair9.$foo}
+                                    
+                                    {if $row >= 1 }
+                                        <td rowspan="{$row}" style="vertical-align: middle;" >
+                                            {$chair}
+                                        </td>
+                                    {/if}
                                 </tr>
                                 {/if}
                                 {/for}
@@ -162,21 +206,27 @@
                     
                     <table class="table table-bordered f11">
                         <tr class="f16">
-                            <th class="bg-olive " nowrap style="width:160px;">発表番号</th>
-                            <th class="bg-olive">演題名</th>
-                            <th class="bg-olive w300" rowspan=2>機能</th>
+                            <th class="bg-olive " nowrap style="width:160px;">number
+                            </th>
+                            <th class="bg-olive">Title</th>
+                            <th class="bg-olive w300 text-center " rowspan=2 style="vertical-align: middle;">
+                                <a href="" class="btn btn-app" style="margin:0;" >
+                                    <i class="fa fa-users"></i>
+                                    zoom
+                                </a>
+                            </th>
                         </tr>
                         <tr>
                             <td>
                                 <div class="col-md-11">
 
-                                    <input type="text" class="form-control" id="publication_text" value="" placeholder="発表番号絞り込み" />
+                                    <input type="text" class="form-control" id="publication_text" value="" placeholder="num. search" />
                                 </div>
                                 
                             </td>
                             <td>
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="endai_text" value="" placeholder="演題名絞り込み" />
+                                    <input type="text" class="form-control" id="endai_text" value="" placeholder="Tittle search" />
 
                                 </div>
                                 
@@ -186,6 +236,41 @@
                         
                     </table>
                     
+                </div>
+                <div class="tab-pane" id="tab_3">
+
+                    <table class="table table-bordered f11">
+                        <tr class="f16">
+                            <th class="bg-olive " nowrap style="width:160px;">number
+                            </th>
+                            <th class="bg-olive">Title</th>
+                            <th class="bg-olive w300 text-center " rowspan=2 style="vertical-align: middle;">
+                                <a href="" class="btn btn-app" style="margin:0;" >
+                                    <i class="fa fa-users"></i>
+                                    zoom
+                                </a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-11">
+
+                                    <input type="text" class="form-control" id="publication_textB" value="" placeholder="num. search" />
+                                </div>
+                                
+                            </td>
+                            <td>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="endai_textB" value="" placeholder="Tittle search" />
+
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tbody id="bodyB"></tbody>
+                        
+                    </table>
+
                 </div>
             </div>
 
