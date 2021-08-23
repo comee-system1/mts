@@ -404,7 +404,7 @@ class movie{
 
 
 
-        $array_times[8][] = ['KL04','P. Cummings','10:40-11:20','
+        $array_times[8][] = ['KL05','P. Cummings','10:40-11:20','
         <b>
         Molecular Modeling of Supercapacitor Systems
         </b>
@@ -486,7 +486,7 @@ class movie{
         ','','',''];
 
 
-        $array_times[8][] = ['KL05','V. K. Rattan','14:30-15:10','
+        $array_times[8][] = ['KL06','V. K. Rattan','14:30-15:10','
         <b>
         Kinetic viscosities prediction using ASOG-VISCO group contribution method for binary liquid mixtures
         </b>
@@ -664,7 +664,10 @@ class movie{
 
         
         $array_times[9][] = ['Lunch','','12:20-13:30','Session : Lunch','','',''];
-        $array_times[9][] = ['Poster Session','Room A: PA12 - PA16 <br />Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A','','',''];
+        $array_times[9][] = ['Poster Session','Room A: PA12 - PA16 <br />Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A
+        <br />
+        Chair: Prof. Yusuke Shimoyama (Tokyo Institute of Technology, Japan) and Prof. Hiroyuki Miyamoto (Toyama Prefectural University, Japan)
+        ','','',''];
         $array_times[9][] = ['Closing Remarks<br />Student Presentation Award','','14:50-15:10','Session 17: Closing Remarks, Student Presentation Award','','',''];
 
 
@@ -682,7 +685,7 @@ class movie{
 
         $array_poster[] = ['PA01','T. Yamada','09:40-09:50','Tessei Yamada, Yuuhei Nakamura, Kyouhei Minai, Hiroyuki Miyamoto<sup>*</sup>
         <br />
-        Toyama Prefectural University, Japan','Measurements and Modeling of Vapor-Liquid Equilibrium Properties for Low GWP refrigerants R1123/R1234yf/R32 Ternary Mixtures','sample1.mp4','samplePDF.pdf','7a79c35f7ce0704dec63be82440c8182.pdf'];
+        Toyama Prefectural University, Japan','Measurements and Modeling of Vapor-Liquid Equilibrium Properties for Low GWP refrigerants R1123/R1234yf/R32 Ternary Mixtures','','samplePDF.pdf','7a79c35f7ce0704dec63be82440c8182.pdf'];
 
         $array_poster[] = ['PA02','T. Tachibna','09:50-10:00','
         Takumi Tachibana, Hiroaki Matsukawa, Yuya Murakami, Atsushi Shono, Katsuto Otake<sup>*</sup>
@@ -727,11 +730,14 @@ class movie{
         Tokyo Institute of Technology, Japan
         ','Itraconazole cocrystallization in fatty acid under high- pressure CO<sub>2</sub>','','',''];
 
-        $array_poster[] = ['','','10:40 – 11:05','PA 01 – PA 06 Questions','','',''];
+        $array_poster[] = ['','','10:40 – 11:05','PA 01 – PA 06 Questions','notcolor','',''];
 
 
         
-        $array_poster[] = ['','','11:10-12:20','Session 15A: Flash Talk II Room A','','',''];
+        $array_poster[] = ['','','11:10-12:20','Session 15A: Flash Talk II Room A
+        <br />
+        Chair: Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan) and Dr. Sanehiro Muromachi (National Institute of Advanced Industrial Science and Technology, Japan)
+        ','','',''];
 
         $array_poster[] = ['PA07','A. Tokoro','11:10-11:20','
         Atuski Tokoro<sup>1</sup>, 
@@ -798,9 +804,12 @@ class movie{
 
         ','Study for hydration structure through the refractive index during microwave irradiation','','',''];
 
-        $array_poster[] = ['','','12:00 – 12:20','PA 07 – PA 11 Questions','','',''];
-        $array_poster[] = ['','','12:20-13:30','Session : Lunch','','',''];
-        $array_poster[] = ['Poster Session','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A','','',''];
+        $array_poster[] = ['','','12:00 – 12:20','PA 07 – PA 11 Questions','notcolor','',''];
+        $array_poster[] = ['','','12:20-13:30','Session : Lunch','notcolor','',''];
+        $array_poster[] = ['','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A
+        <br />
+        Chair: Prof. Yusuke Shimoyama (Tokyo Institute of Technology, Japan) and Prof. Hiroyuki Miyamoto (Toyama Prefectural University, Japan)
+        ','','',''];
 
 
         $array_poster[] = ['PA12','M. Ota','13:30-13:40','
@@ -865,7 +874,7 @@ class movie{
         
         ','Prediction of thermal conductivities for liquid mixture using ASOG-ThermConduct model','','',''];
 
-        $array_poster[] = ['','','14:20 – 14:40','PA 12 – PA 16 Questions','','',''];
+        $array_poster[] = ['','','14:20 – 14:40','PA 12 – PA 16 Questions','notcolor','',''];
 
 
 
@@ -938,7 +947,7 @@ class movie{
         
         ','Calculation of Solubility of Organic Compounds in Supercritical Carbon Dioxide Using Machine Learning with Molecular Descriptors','','',''];
 
-        $array_posterB[] = ['','','10:40 – 11:05','PB 01 – PB 06 Questions','','',''];
+        $array_posterB[] = ['','','10:40 – 11:05','PB 01 – PB 06 Questions','notcolor','',''];
 
 
 
@@ -987,7 +996,9 @@ class movie{
         ','Prediction of Melting Point and Fusion Enthalpy of Cocrystal by Machine Learning combined with molecular informatics','','',''];
 
 
-        $array_posterB[] = ['','','12:00 – 12:20','PB 07 – PB 11 Questions','','',''];
+        $array_posterB[] = ['','','12:00 – 12:20','PB 07 – PB 11 Questions','notcolor','',''];
+        $array_posterB[] = ['','','12:20-13:30','Session : Lunch','notcolor','',''];
+
         $array_posterB[] = ['','','13:30-14:30','Poster Session with Flash Talk	Room B
         <br />
         Chair: Hirohisa Uchida (Kanazawa University, Japan) and Prof. Makoto Akizuki (University of Tokyo, Japan)
@@ -1053,7 +1064,7 @@ class movie{
 
         
 
-        $array_posterB[] = ['','','14:20 – 14:40','PB 12 – PB 16 Questions','','',''];
+        $array_posterB[] = ['','','14:20 – 14:40','PB 12 – PB 16 Questions','notcolor','',''];
         $array_posterB[] = ['','','14:50-15:10','Closing Remarks and Student Poster Award
         <br />
         Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)
@@ -1334,9 +1345,16 @@ class movie{
             //ポスターの時
             if($this->third == "poster"){
                 $id = $this->four;
-                $list_station_cd= array_column($this->array_poster, '0');
-                $key = array_search($id, $list_station_cd);
-                $posterdata = $this->array_poster[$key];
+                if(preg_match("/^PB/",$this->four)){
+                    $list_station_cd= array_column($this->array_posterB, '0');
+                    $key = array_search($id, $list_station_cd);
+                    $posterdata = $this->array_posterB[$key];
+                }else{
+                    $list_station_cd= array_column($this->array_poster, '0');
+                    $key = array_search($id, $list_station_cd);
+                    $posterdata = $this->array_poster[$key];
+                }
+
                 $set[ 'endainame' ] = $posterdata[4];
             }else{
                 //チャット登録

@@ -510,7 +510,11 @@ $.fn.setBody = function(){
 								_html += "</td>";
 								
 							}else{
-								_html += "<td colspan=3 class='bg-navy'>"+value[3]+"</td>";
+								if(value[4] == "notcolor"){
+									_html += "<td colspan=3 >"+value[3]+"</td>";
+								}else{
+									_html += "<td colspan=3 class='bg-navy'>"+value[3]+"</td>";
+								}
 							}
 
 							_html += "</tr>";
@@ -563,7 +567,11 @@ $.fn.setBodyB = function(){
 								_html += "</td>";
 								
 							}else{
-								_html += "<td colspan=3 class='bg-navy'>"+value[3]+"</td>";
+								if(value[4] == "notcolor"){
+									_html += "<td colspan=3 >"+value[3]+"</td>";
+								}else{
+									_html += "<td colspan=3 class='bg-navy'>"+value[3]+"</td>";
+								}
 							}
 
 							_html += "</tr>";
