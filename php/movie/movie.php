@@ -302,6 +302,7 @@ class movie{
         
         ','','',''];
 
+        /*
         $array_times[7][] = ['KL03','C. J. Peters','18:10-18:50','
         <b>
         Applications of deep eutectic solvents and gas hydrates in gas purifications
@@ -319,7 +320,7 @@ class movie{
 
         
         ','','',''];
-
+*/
 
         /*
         $array_times[7][] = ['Coffee Break','','18:10-18:30','Session: Coffee Break','','',''];
@@ -878,7 +879,13 @@ class movie{
 
 
 
+        $array_poster[] = ['','','14:50-15:10','Closing Remarks and Student Poster Award
+        <br />
+        Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)
+        <br />
+        Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan)
 
+        ','','',''];
 
 
 
@@ -1065,13 +1072,7 @@ class movie{
         
 
         $array_posterB[] = ['','','14:20 – 14:40','PB 12 – PB 16 Questions','notcolor','',''];
-        $array_posterB[] = ['','','14:50-15:10','Closing Remarks and Student Poster Award
-        <br />
-        Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)
-        <br />
-        Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan)
-
-        ','','',''];
+        
         
 
         $array_weekday[7] = "Tuesday"; 
@@ -1084,7 +1085,7 @@ class movie{
         $this->array_rowspan[9] = 2;
         $this->array_rowspan[13] = 5;
         $this->array_rowspan[20] = 3;
-        $this->array_rowspan[25] = 3;
+        $this->array_rowspan[25] = 2;
 
         $this->array_rowspan8[1] = 2;
         $this->array_rowspan8[5] = 3;
