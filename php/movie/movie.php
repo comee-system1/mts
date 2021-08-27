@@ -43,10 +43,10 @@ class movie{
 
 
         $key = 0;
-        $array_times[7][] = ['Opening Remarks','','08:40-08:50','Session 1 : Opening Remarks<br />Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)<br />
+        $array_times[7][] = ['Opening Remarks','','08:40-08:50','Opening Remarks<br />Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)<br />
         Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
-        $array_times[7][] = ['','','08:50-10:40','Session 2 : Session I<br />
+        $array_times[7][] = ['','','08:50-10:40','Session I<br />
         Chair: Prof. Kenji Mishima (Fukuoka University, Japan) and Prof. Ikuo Ushiki (Hiroshima University, Japan)
         ','','',''];
         $array_times[7][] = ['IL01','T. Hiaki','08:50-09:20',
@@ -105,8 +105,8 @@ class movie{
         
         
         
-        $array_times[7][] = ['Coffee Break','','10:40-11:00','Session: Coffee Break','','',''];
-        $array_times[7][] = ['','','11:00-11:50','Session 3 : Session II
+        $array_times[7][] = ['Coffee Break','','10:40-11:00','Coffee Break','','',''];
+        $array_times[7][] = ['','','11:00-11:50','Session II
         <br />
         Chair: Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan) and Prof. Mitsumasa Osada (Shinshu University, Japan)        
         ','','',''];
@@ -137,8 +137,8 @@ class movie{
 
 
 
-        $array_times[7][] = ['Lunch','','11:50-13:20','Session: Lunch','','',''];
-        $array_times[7][] = ['','','13:20-15:10','Session 4: Session III
+        $array_times[7][] = ['Lunch','','11:50-13:20','Lunch','','',''];
+        $array_times[7][] = ['','','13:20-15:10','Session III
         <br />
         Chair: Prof. Taka-aki Hoshina (Nihon University, Japan) and Prof. Hiroshi Machida (Nagoya University, Japan)
         ','','',''];
@@ -222,9 +222,9 @@ class movie{
 
 
 
-        $array_times[7][] = ['Coffee Break','','15:10-15:30','Session: Coffee Break','','',''];
+        $array_times[7][] = ['Coffee Break','','15:10-15:30','Coffee Break','','',''];
         $array_times[7][] = ['','','15:30-16:30','
-        Session 5: Session IV
+        Session IV
         <br />
         Chair: Prof. Ana Soto (Universidade de Santiago de Compostela, Spain) and Prof. Alif Duereh (Tohoku University, Japan)
         ','','',''];
@@ -272,8 +272,8 @@ class movie{
 
 
 
-        $array_times[7][] = ['Coffee Break','','16:30-16:50','Session: Coffee Break','','',''];
-        $array_times[7][] = ['','','16:50-18:40','Session 6: Session V
+        $array_times[7][] = ['Coffee Break','','16:30-16:50','Coffee Break','','',''];
+        $array_times[7][] = ['','','16:50-18:40','Session V
         <br />
         Chair: Prof. Yoshio Iwai (Kyushu University, Japan) and Prof. Richard L. Smith (Tohoku University, Japan)
         ','','',''];
@@ -332,7 +332,7 @@ class movie{
 
 
 
-        $array_times[8][] = ['','','08:20-09:30','Session 8: Session VI
+        $array_times[8][] = ['','','08:20-09:30','Session VI
         <br />
         Chair: Prof. Hiroyuki Matsuda (Nihon University, Japan) and Prof. Hirotoshi Mori (Chuo University, Japan)
         ','','',''];
@@ -364,8 +364,8 @@ class movie{
 
 
 
-        $array_times[8][] = ['Coffee Break','','09:30-09:50','Session : Coffee Break','','',''];
-        $array_times[8][] = ['','','09:50-11:20','Session 9: Session VII
+        $array_times[8][] = ['Coffee Break','','09:30-09:50','Coffee Break','','',''];
+        $array_times[8][] = ['','','09:50-11:20','Session VII
         <br />
         Chair: Dr. Gang Xu (AVEVA, USA) and Prof. Tomoya Tsuji (Universiti Teknologi Malaysia, Malaysia)
         ','','',''];
@@ -417,7 +417,7 @@ class movie{
         
         ','','',''];
         
-        $array_times[8][] = ['Lunch','','11:20-13:00','Session : Lunch','','',''];
+        $array_times[8][] = ['Lunch','','11:20-13:00','Lunch','','',''];
         $array_times[8][] = ['','','13:00-15:10','Session VIII
         <br />
         Chair: Prof. Shiang-Tai Lin (National Taiwan University, Taiwan) and Prof. Hidetaka Yamada (Kanazawa University, Japan)
@@ -509,7 +509,7 @@ class movie{
 
 
         
-        $array_times[8][] = ['Coffee Break','','15:10-15:40','Session : Coffee Break','','',''];
+        $array_times[8][] = ['Coffee Break','','15:10-15:40','Coffee Break','','',''];
         $array_times[8][] = ['','','15:40-17:30','Session IX
         <br />
         Chair: Prof. Daisuke Kodama (Nihon University, Japan) and Dr. Takeshi Furuya (National Institute of Advanced Industrial Science and Technology, Japan)
@@ -588,7 +588,7 @@ class movie{
         ','','',''];
 
 
-        $array_times[8][] = ['Coffee Break','','17:30 - 17:50','Session : Coffee Break','','',''];
+        $array_times[8][] = ['Coffee Break','','17:30 - 17:50','Coffee Break','','',''];
         $array_times[8][] = ['','','17:50 - 19:20','Session X
         <br />
         Chair: Prof. Hiroshi Inomata (Tohoku University, Japan) and Dr. Masakazu Sasaki (Toyo Engineering Co, Japan)
@@ -659,17 +659,17 @@ class movie{
         ','','',''];
 
 
-        $array_times[9][] = ['Coffee Break','','09:30-09:40','Session : Coffee Break','','',''];
+        $array_times[9][] = ['Coffee Break','','09:30-09:40','Coffee Break','','',''];
 
-        $array_times[9][] = ['Poster Session','Room A: PA01 - PA11 <br />Room B: PB01 - PB11','09:40-11:05','Session 14A: Flash Talk I Room A','','',''];
+        $array_times[9][] = ['Poster Session with Flash Talk','Room A: PA01 - PA11 <br />Room B: PB01 - PB11','09:40-12:20','Poster Session with Flash Talk I Room A & Room B','','',''];
 
         
-        $array_times[9][] = ['Lunch','','12:20-13:30','Session : Lunch','','',''];
-        $array_times[9][] = ['Poster Session','Room A: PA12 - PA16 <br />Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A
-        <br />
-        Chair: Prof. Yusuke Shimoyama (Tokyo Institute of Technology, Japan) and Prof. Hiroyuki Miyamoto (Toyama Prefectural University, Japan)
+        $array_times[9][] = ['Lunch','','12:20-13:30','Lunch','','',''];
+
+        $array_times[9][] = ['Poster Session with Flash Talk','Room A: PA12 - PA16 <br />Room B: PB12 - PB15','13:30-14:40','Poster Session with Flash Talk III Room A & Room B','','',''];
+
+        $array_times[9][] = ['Closing Remarks<br />Student Presentation Award','','14:50-15:10','Closing Remarks, Student Presentation Award <br />Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan) Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
-        $array_times[9][] = ['Closing Remarks<br />Student Presentation Award','','14:50-15:10','Session 17: Closing Remarks, Student Presentation Award','','',''];
 
 
 
@@ -735,7 +735,7 @@ class movie{
 
 
         
-        $array_poster[] = ['','','11:10-12:20','Session 15A: Flash Talk II Room A
+        $array_poster[] = ['','','11:10-12:20','Flash Talk II Room A
         <br />
         Chair: Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan) and Dr. Sanehiro Muromachi (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
@@ -806,8 +806,8 @@ class movie{
         ','Study for hydration structure through the refractive index during microwave irradiation','','',''];
 
         $array_poster[] = ['','','12:00 – 12:20','PA 07 – PA 11 Questions','notcolor','',''];
-        $array_poster[] = ['','','12:20-13:30','Session : Lunch','notcolor','',''];
-        $array_poster[] = ['','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Session 16A: Flash Talk III Room A
+        $array_poster[] = ['','','12:20-13:30','Lunch','notcolor','',''];
+        $array_poster[] = ['','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Flash Talk III Room A
         <br />
         Chair: Prof. Yusuke Shimoyama (Tokyo Institute of Technology, Japan) and Prof. Hiroyuki Miyamoto (Toyama Prefectural University, Japan)
         ','','',''];
@@ -879,7 +879,7 @@ class movie{
 
 
 
-        $array_poster[] = ['','','14:50-15:10','Closing Remarks and Student Poster Award
+        $array_poster[] = ['','','14:50-15:10','14:50-15:10<br />Closing Remarks and Student Presentation Award
         <br />
         Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan)
         <br />
@@ -958,7 +958,7 @@ class movie{
 
 
 
-        $array_posterB[] = ['','','11:10-12:20','Session 15B: Flash Talk II Room B
+        $array_posterB[] = ['','','11:10-12:20','Poster Session with Flash Talk  Room B
         <br />
         Chair: Prof. Takeshi Sugahara (Osaka University, Japan) and Prof. Chang Yi Kong (Shizuoka University, Japan)
         ','','',''];
@@ -1004,7 +1004,7 @@ class movie{
 
 
         $array_posterB[] = ['','','12:00 – 12:20','PB 07 – PB 11 Questions','notcolor','',''];
-        $array_posterB[] = ['','','12:20-13:30','Session : Lunch','notcolor','',''];
+        $array_posterB[] = ['','','12:20-13:30','Lunch','notcolor','',''];
 
         $array_posterB[] = ['','','13:30-14:30','Poster Session with Flash Talk	Room B
         <br />
