@@ -666,7 +666,7 @@ class movie{
         
         $array_times[9][] = ['Lunch','','12:20-13:30','Lunch','','',''];
 
-        $array_times[9][] = ['Poster Session with Flash Talk','Room A: PA12 - PA16 <br />Room B: PB12 - PB15','13:30-14:40','Poster Session with Flash Talk III Room A & Room B','','',''];
+        $array_times[9][] = ['Poster Session with Flash Talk','Room A: PA12 - PA16 <br />Room B: PB12 - PB16','13:30-14:40','Poster Session with Flash Talk III Room A & Room B','','',''];
 
         $array_times[9][] = ['Closing Remarks<br />Student Presentation Award','','14:50-15:10','Closing Remarks, Student Presentation Award <br />Prof. Yoshiyuki Sato (Tohoku Institute of Technology, Japan) Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
@@ -679,7 +679,7 @@ class movie{
         // $array_poster[] = ['IL11','C.-C. Chen','08:20-08:50','Chau-Chyun Chen. Association-based Activity Coefficient Models for Electrolyte and Nonelectrolyte Solutions'];
         // $array_poster[] = ['KL07','Y. Iwai','08:50-09:30','Yoshio Iwai. Prediction of vapor-liquid equilibria for multicomponent systems by a modified concentration dependent surface area parameter model'];
         // $array_poster[] = ['','','09:30-09:40','Session : Coffee Break'];
-        $array_poster[] = ['','','09:40-11:10','Poster Session with Flash Talk
+        $array_poster[] = ['','','09:40-11:10','Poster Session with Flash Talk Ⅰ, Room A
         <br />
         Chair: Prof. Masaki Ota (Tohoku University, Japan) and Dr. Takashi Makino (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
@@ -735,7 +735,7 @@ class movie{
 
 
         
-        $array_poster[] = ['','','11:10-12:20','Flash Talk II Room A
+        $array_poster[] = ['','','11:10-12:20','Poster Session with Flash Talk II, Room A
         <br />
         Chair: Dr. Mitsuhiro Kanakubo (National Institute of Advanced Industrial Science and Technology, Japan) and Dr. Sanehiro Muromachi (National Institute of Advanced Industrial Science and Technology, Japan)
         ','','',''];
@@ -807,7 +807,7 @@ class movie{
 
         $array_poster[] = ['','','12:00 – 12:20','PA 07 – PA 11 Questions','notcolor','',''];
         $array_poster[] = ['','','12:20-13:30','Lunch','notcolor','',''];
-        $array_poster[] = ['','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Flash Talk III Room A
+        $array_poster[] = ['','Room A: PA12 - PA16 Room B: PB12 - PB15','13:30-14:40','Poster Session with Flash Talk III, Room A
         <br />
         Chair: Prof. Yusuke Shimoyama (Tokyo Institute of Technology, Japan) and Prof. Hiroyuki Miyamoto (Toyama Prefectural University, Japan)
         ','','',''];
@@ -890,7 +890,7 @@ class movie{
 
 
 
-        $array_posterB[] = ['','','09:40-11:10','Poster Session with Flash Talk	Room B
+        $array_posterB[] = ['','','09:40-11:10','Poster Session with Flash Ⅰ, Talk	Room B
         <br />
         Chair: Prof. Takafumi Sato (Utsunomiya University, Japan) and Prof. Tetsuo Honma (National Institute of Technology (KOSEN), Hachinohe College, Japan)
         ','','',''];
@@ -958,7 +958,7 @@ class movie{
 
 
 
-        $array_posterB[] = ['','','11:10-12:20','Poster Session with Flash Talk  Room B
+        $array_posterB[] = ['','','11:10-12:20','Poster Session with Flash Talk Ⅱ, Room B
         <br />
         Chair: Prof. Takeshi Sugahara (Osaka University, Japan) and Prof. Chang Yi Kong (Shizuoka University, Japan)
         ','','',''];
@@ -1006,7 +1006,7 @@ class movie{
         $array_posterB[] = ['','','12:00 – 12:20','PB 07 – PB 11 Questions','notcolor','',''];
         $array_posterB[] = ['','','12:20-13:30','Lunch','notcolor','',''];
 
-        $array_posterB[] = ['','','13:30-14:30','Poster Session with Flash Talk	Room B
+        $array_posterB[] = ['','','13:30-14:30','Poster Session with Flash Talk	Ⅲ, Room B
         <br />
         Chair: Hirohisa Uchida (Kanazawa University, Japan) and Prof. Makoto Akizuki (University of Tokyo, Japan)
         ','','',''];
