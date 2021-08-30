@@ -55,7 +55,8 @@ class movie{
         <br /><br />
         Toshihiko Hiaki*<br />
         Nihon University, Japan
-         ','7a79c35f7ce0704dec63be82440c8182.pdf','https://www.yahoo.com/','sample.mp4'];
+         ','7a79c35f7ce0704dec63be82440c8182.pdf','IL01','sample.mp4'];
+
 
         $array_times[7][] = ['OP01','H. Matsuda','09:20-09:40','
 
@@ -1110,6 +1111,59 @@ class movie{
 
         $this->array_chair9[1] = "S. Oba<br />T. Furuya";
 
+
+
+        //proceedingファイルがあるもの
+        $array_proc["OP04"] = "OP04.pdf";
+        $array_proc["OP05"] = "OP05.pdf";
+        $array_proc["OP06"] = "OP06.pdf";
+        $array_proc["OP07"] = "OP07.pdf";
+        $array_proc["OP08"] = "OP08.pdf";
+        $array_proc["OP09"] = "OP09.pdf";
+        $array_proc["OP10"] = "OP10.pdf";
+        $array_proc["OP11"] = "OP11.pdf";
+        $array_proc["OP12"] = "OP12.pdf";
+        $array_proc["OP14"] = "OP14.pdf";
+        $array_proc["OP15"] = "OP15.pdf";
+        $array_proc["OP16"] = "OP16.pdf";
+        $array_proc["OP17"] = "OP17.pdf";
+        $array_proc["PA01"] = "PA01.pdf";
+        $array_proc["PA02"] = "PA02.pdf";
+        $array_proc["PA03"] = "PA03.pdf";
+        $array_proc["PA04"] = "PA04.pdf";
+        $array_proc["PA05"] = "PA05.pdf";
+        $array_proc["PA06"] = "PA06.pdf";
+        $array_proc["PA08"] = "PA08.pdf";
+        $array_proc["PA09"] = "PA09.pdf";
+        $array_proc["PA10"] = "PA10.pdf";
+        $array_proc["PA12"] = "PA12.pdf";
+        $array_proc["PA13"] = "PA13.pdf";
+        $array_proc["PA16"] = "PA16.pdf";
+        $array_proc["PB03"] = "PB03.pdf";
+        $array_proc["PB04"] = "PB04.pdf";
+        $array_proc["PB05"] = "PB05.pdf";
+        $array_proc["PB07"] = "PB07.pdf";
+        $array_proc["PB09"] = "PB09.pdf";
+        $array_proc["PB10"] = "PB10.pdf";
+        $array_proc["PB11"] = "PB11.pdf";
+        $array_proc["PB12"] = "PB12.pdf";
+        $array_proc["PB13"] = "PB13.pdf";
+        $array_proc["PB14"] = "PB14.pdf";
+        $array_proc["PB15"] = "PB15.pdf";
+        $array_proc["PB16"] = "PB16.pdf";
+        $array_proc["IL01"] = "IL01.pdf";
+        $array_proc["IL02"] = "IL02.pdf";
+        $array_proc["IL03"] = "IL03.pdf";
+        $array_proc["IL04"] = "IL04.pdf";
+        $array_proc["IL08"] = "IL08.pdf";
+        $array_proc["KL01"] = "KL01.pdf";
+        $array_proc["KL07"] = "KL07.pdf";
+        $array_proc["OP01"] = "OP01.pdf";
+        $array_proc["OP03"] = "OP03.pdf";
+
+
+
+        $this->array_proc = $array_proc;
         $this->array_times = $array_times;
         $this->array_poster = $array_poster;
         $this->array_posterB = $array_posterB;
@@ -1178,6 +1232,7 @@ class movie{
                     $poster = $this->array_poster;
                     $array_poster = $this->array_poster;
                 }
+                $array_proc = $this->array_proc;
                 
                 $k = "";
                 if($_REQUEST[ 'publication' ]){
@@ -1191,8 +1246,11 @@ class movie{
                     $poster = [];
                     $poster[] = $array_poster[$k];
                 }
+                $posterdata['data'] = $poster;
+                $posterdata['proc'] = $array_proc;
+                
                 header('Content-Type: application/json; charset=utf-8');
-                echo json_encode($poster);
+                echo json_encode($posterdata);
                 exit();
             }
             //審査判定
@@ -1248,6 +1306,7 @@ class movie{
             $html['array_ippanKouenposter'] = $this->array_ippanKouenposter;
             $html['array_judge'] = $this->array_judge;
             $html['array_times'] = $this->array_times;
+            $html['array_proc'] = $this->array_proc;
 
             
             //説明文の取得
@@ -1297,6 +1356,7 @@ class movie{
             $html['list'] = $data;          
             */
             $html[ 'list' ] = $this->array_times;
+            $html[ 'proc' ] = $this->array_proc;
             $html[ 'weekday' ] = $this->array_weekday;
             return $html;
         }else{

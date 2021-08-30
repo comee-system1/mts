@@ -491,7 +491,7 @@ $.fn.setBody = function(){
 					
 						var _html = "";
 						$("#body").html("");
-						$.each(data, function(key, value){
+						$.each(data[ 'data' ], function(key, value){
 							_html += "<tr>";
 							if(value[0]){
 								_html += "<td>"+value[0]+"<br />"+value[2]+"</td>";
@@ -501,8 +501,8 @@ $.fn.setBody = function(){
 									_html += "<a href='/poster/"+value[6]+"' target=_blank class='btn btn-success'  >Poster</a> ";
 									_html += "<a href='/movies/flash/"+value[5]+"' target=_blank class='btn btn-primary'  >Movie</a> ";
 									_html += "<a href='/movie/chat/poster/"+value[0]+"' class='btn btn-danger' target=_blank >Chat</a> ";
-									if(value[5]){
-										_html += "<a href='/pdf/"+value[5]+"' target=_blank class='btn btn-info' >Proceeding</a>";
+									if(data['proc'][value[0]]){
+										_html += "<a href='/proc/"+value[0]+".pdf' target=_blank class='btn btn-info' >Proceeding</a>";
 									}else{
 										_html += "<a href='/pdf/"+value[0]+".pdf' target=_blank class='btn btn-info'  >Proceeding</a>";
 									}
@@ -548,7 +548,7 @@ $.fn.setBodyB = function(){
 					
 						var _html = "";
 						$("#bodyB").html("");
-						$.each(data, function(key, value){
+						$.each(data[ 'data' ], function(key, value){
 							_html += "<tr>";
 							if(value[0]){
 								_html += "<td>"+value[0]+"<br />"+value[2]+"</td>";
@@ -558,8 +558,8 @@ $.fn.setBodyB = function(){
 										_html += "<a href='/poster/"+value[6]+"' target=_blank class='btn btn-success'  >Poster</a> ";
 										_html += "<a href='/movies/flash/"+value[5]+"' target=_blank class='btn btn-primary'  >Movie</a> ";
 										_html += "<a href='/movie/chat/poster/"+value[0]+"' class='btn btn-danger' target=_blank >Chat</a> ";
-										if(value[5]){
-											_html += "<a href='/pdf/"+value[5]+"' target=_blank class='btn btn-info' >Proceeding</a>";
+										if(data['proc'][value[0]]){
+											_html += "<a href='/proc/"+value[0]+".pdf' target=_blank class='btn btn-info' >Proceeding</a>";
 										}else{
 											_html += "<a href='/pdf/"+value[0]+".pdf' target=_blank class='btn btn-info'  >Proceeding</a>";
 										}
