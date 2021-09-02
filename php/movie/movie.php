@@ -1161,13 +1161,16 @@ class movie{
         $array_proc["OP01"] = "OP01.pdf";
         $array_proc["OP03"] = "OP03.pdf";
 
-
+        $array_zoom['7'] = "https://zoom.us/j/98612461170?pwd=alprVEUvTVZGVGV3MjZNNjc4R2ozZz09";
+        $array_zoom['8'] = "https://zoom.us/j/99787628293?pwd=SW1QWTkydlpzM05JcmU3U3plbGJFZz09";
+        $array_zoom['9'] = "https://zoom.us/j/94819756575?pwd=SzNQbXROMjV2NnVHcFhjSUpWYi9vZz09";
 
         $this->array_proc = $array_proc;
         $this->array_times = $array_times;
         $this->array_poster = $array_poster;
         $this->array_posterB = $array_posterB;
         $this->array_weekday = $array_weekday;
+        $this->array_zoom = $array_zoom;
 
         
     }
@@ -1358,6 +1361,7 @@ class movie{
             $html[ 'list' ] = $this->array_times;
             $html[ 'proc' ] = $this->array_proc;
             $html[ 'weekday' ] = $this->array_weekday;
+            $html[ 'zoom' ] = $this->array_zoom;
             return $html;
         }else{
             header("Location:/movie/");

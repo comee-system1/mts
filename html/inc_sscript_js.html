@@ -498,8 +498,8 @@ $.fn.setBody = function(){
 								_html += "<td><b>"+value[4]+"</b><br />"+value[3]+"</td>";
 								_html += "<td nowrap>";
 								if(value[4]){
-									_html += "<a href='/poster/"+value[6]+"' target=_blank class='btn btn-success'  >Poster</a> ";
-									_html += "<a href='/movies/flash/"+value[5]+"' target=_blank class='btn btn-primary'  >Movie</a> ";
+									_html += "<a href='/poster/"+value[0]+".pdf' target=_blank class='btn btn-success'  >Poster</a> ";
+									_html += "<a href='/movies/flash/"+value[0]+".mp4' target=_blank class='btn btn-primary'  >Movie</a> ";
 									_html += "<a href='/movie/chat/poster/"+value[0]+"' class='btn btn-danger' target=_blank >Chat</a> ";
 									if(data['proc'][value[0]]){
 										_html += "<a href='/proc/"+value[0]+".pdf' target=_blank class='btn btn-info' >Proceeding</a>";
@@ -555,8 +555,8 @@ $.fn.setBodyB = function(){
 								_html += "<td><b>"+value[4]+"</b><br />"+value[3]+"</td>";
 								_html += "<td nowrap>";
 									if(value[4]){
-										_html += "<a href='/poster/"+value[6]+"' target=_blank class='btn btn-success'  >Poster</a> ";
-										_html += "<a href='/movies/flash/"+value[5]+"' target=_blank class='btn btn-primary'  >Movie</a> ";
+										_html += "<a href='/poster/"+value[0]+".pdf' target=_blank class='btn btn-success'  >Poster</a> ";
+										_html += "<a href='/movies/flash/"+value[0]+".mp4' target=_blank class='btn btn-primary'  >Movie</a> ";
 										_html += "<a href='/movie/chat/poster/"+value[0]+"' class='btn btn-danger' target=_blank >Chat</a> ";
 										if(data['proc'][value[0]]){
 											_html += "<a href='/proc/"+value[0]+".pdf' target=_blank class='btn btn-info' >Proceeding</a>";
