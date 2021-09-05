@@ -1142,6 +1142,7 @@ class movie{
         $array_proc["PB03"] = "PB03.pdf";
         $array_proc["PB04"] = "PB04.pdf";
         $array_proc["PB05"] = "PB05.pdf";
+        $array_proc["PB06"] = "PB06.pdf";
         $array_proc["PB07"] = "PB07.pdf";
         $array_proc["PB09"] = "PB09.pdf";
         $array_proc["PB10"] = "PB10.pdf";
